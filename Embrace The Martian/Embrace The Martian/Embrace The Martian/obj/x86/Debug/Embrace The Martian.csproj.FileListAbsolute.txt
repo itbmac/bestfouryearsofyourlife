@@ -107,3 +107,38 @@ C:\Users\itbmac\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Emb
 C:\Users\itbmac\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\obj\x86\Debug\Embrace The Martian.TrustInfo.xml
 C:\Users\itbmac\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\obj\x86\Debug\Embrace The Martian.exe.manifest
 C:\Users\itbmac\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\obj\x86\Debug\Embrace The Martian.application
+C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\AsteroidSmall.xnb
+C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\BackgroundFinal2.xnb
+C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\Bullet4.xnb
+C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\HUDSmall25.xnb
+C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\SpaceshipFix.xnb
+C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\cursor.xnb
+C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\cursor2.xnb
+C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\cursor3.xnb
+C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\cursorSmall20.xnb
+C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\cursorSmall30.xnb
+C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\HUD.xnb
+C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\HUD2.xnb
+C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\EndScreen.xnb
+C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\InfoScreen.xnb
+C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\Martian.xnb
+C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\PremiseScreen.xnb
+C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\StartScreen.xnb
+C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\ETM SpriteFont1.xnb
+C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\ETM SpriteFont2.xnb
+C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\ETM SpriteFont3.xnb
+C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\Asteroid Hit.xnb
+C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\Death Noise.xnb
+C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\Wave Break.xnb
+C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\Player Injury.xnb
+C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Embrace The Martian.exe.manifest
+C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Embrace The Martian.application
+C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Embrace The Martian.exe
+C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Embrace The Martian.pdb
+C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\obj\x86\Debug\Embrace The Martian.TrustInfo.xml
+C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\obj\x86\Debug\Embrace The Martian.exe.manifest
+C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\obj\x86\Debug\Embrace The Martian.application
+C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\obj\x86\Debug\Embrace The Martian.exe
+C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\obj\x86\Debug\Embrace The Martian.pdb
