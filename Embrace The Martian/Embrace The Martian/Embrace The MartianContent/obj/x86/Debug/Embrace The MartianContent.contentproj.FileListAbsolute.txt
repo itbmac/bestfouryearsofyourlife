@@ -1,0 +1,2 @@
+C:\Users\MacKenzie Bates\Desktop\Embrace The Martian\Embrace The Martian\Embrace The MartianContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The MartianContent\obj\x86\Debug\ResolveAssemblyReference.cache

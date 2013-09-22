@@ -1,0 +1,74 @@
+C:\Users\MacKenzie Bates\Desktop\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\AsteroidSmall.xnb
+C:\Users\MacKenzie Bates\Desktop\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\BackgroundFinal2.xnb
+C:\Users\MacKenzie Bates\Desktop\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\Bullet4.xnb
+C:\Users\MacKenzie Bates\Desktop\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\HUDSmall25.xnb
+C:\Users\MacKenzie Bates\Desktop\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\SpaceshipFix.xnb
+C:\Users\MacKenzie Bates\Desktop\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\SpriteFont1.xnb
+C:\Users\MacKenzie Bates\Desktop\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Embrace The Martian.exe
+C:\Users\MacKenzie Bates\Desktop\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Embrace The Martian.pdb
+C:\Users\MacKenzie Bates\Desktop\Embrace The Martian\Embrace The Martian\Embrace The Martian\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\MacKenzie Bates\Desktop\Embrace The Martian\Embrace The Martian\Embrace The Martian\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\MacKenzie Bates\Desktop\Embrace The Martian\Embrace The Martian\Embrace The Martian\obj\x86\Debug\Embrace The Martian.exe
+C:\Users\MacKenzie Bates\Desktop\Embrace The Martian\Embrace The Martian\Embrace The Martian\obj\x86\Debug\Embrace The Martian.pdb
+C:\Users\MacKenzie Bates\Desktop\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\SpriteFont2.xnb
+C:\Users\MacKenzie Bates\Desktop\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\SpriteFont3.xnb
+C:\Users\MacKenzie Bates\Desktop\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\cursor.xnb
+C:\Users\MacKenzie Bates\Desktop\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\cursor2.xnb
+C:\Users\MacKenzie Bates\Desktop\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\cursor3.xnb
+C:\Users\MacKenzie Bates\Desktop\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\cursorSmall20.xnb
+C:\Users\MacKenzie Bates\Desktop\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\cursorSmall30.xnb
+C:\Users\MacKenzie Bates\Desktop\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\HUD.xnb
+C:\Users\MacKenzie Bates\Desktop\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\HUD2.xnb
+C:\Users\MacKenzie Bates\Desktop\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\EndScreen.xnb
+C:\Users\MacKenzie Bates\Desktop\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\InfoScreen.xnb
+C:\Users\MacKenzie Bates\Desktop\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\Martian.xnb
+C:\Users\MacKenzie Bates\Desktop\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\PremiseScreen.xnb
+C:\Users\MacKenzie Bates\Desktop\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\StartScreen.xnb
+C:\Users\MacKenzie Bates\Desktop\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\Asteroid Hit.xnb
+C:\Users\MacKenzie Bates\Desktop\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\Death Noise.xnb
+C:\Users\MacKenzie Bates\Desktop\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\Embrace The Martian.xnb
+C:\Users\MacKenzie Bates\Desktop\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\Player Injury.xnb
+C:\Users\MacKenzie Bates\Desktop\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\The Arrival.xnb
+C:\Users\MacKenzie Bates\Desktop\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\Wave Break.xnb
+C:\Users\MacKenzie Bates\Desktop\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Embrace The Martian.exe.manifest
+C:\Users\MacKenzie Bates\Desktop\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Embrace The Martian.application
+C:\Users\MacKenzie Bates\Desktop\Embrace The Martian\Embrace The Martian\Embrace The Martian\obj\x86\Debug\Embrace The Martian.TrustInfo.xml
+C:\Users\MacKenzie Bates\Desktop\Embrace The Martian\Embrace The Martian\Embrace The Martian\obj\x86\Debug\Embrace The Martian.exe.manifest
+C:\Users\MacKenzie Bates\Desktop\Embrace The Martian\Embrace The Martian\Embrace The Martian\obj\x86\Debug\Embrace The Martian.application
+C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\AsteroidSmall.xnb
+C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\BackgroundFinal2.xnb
+C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\Bullet4.xnb
+C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\HUDSmall25.xnb
+C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\SpaceshipFix.xnb
+C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\cursor.xnb
+C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\cursor2.xnb
+C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\cursor3.xnb
+C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\cursorSmall20.xnb
+C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\cursorSmall30.xnb
+C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\HUD.xnb
+C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\HUD2.xnb
+C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\EndScreen.xnb
+C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\InfoScreen.xnb
+C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\Martian.xnb
+C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\PremiseScreen.xnb
+C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\StartScreen.xnb
+C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\Asteroid Hit.xnb
+C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\Death Noise.xnb
+C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\Embrace The Martian.xnb
+C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\The Arrival.xnb
+C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\Wave Break.xnb
+C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\Player Injury.xnb
+C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Embrace The Martian.exe.manifest
+C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Embrace The Martian.application
+C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Embrace The Martian.exe
+C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Embrace The Martian.pdb
+C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\obj\x86\Debug\Embrace The Martian.TrustInfo.xml
+C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\obj\x86\Debug\Embrace The Martian.exe.manifest
+C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\obj\x86\Debug\Embrace The Martian.application
+C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\obj\x86\Debug\Embrace The Martian.exe
+C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\obj\x86\Debug\Embrace The Martian.pdb
+C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\ETM SpriteFont1.xnb
+C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\ETM SpriteFont2.xnb
+C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\ETM SpriteFont3.xnb

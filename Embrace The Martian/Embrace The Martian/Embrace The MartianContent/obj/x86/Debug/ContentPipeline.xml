@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>AsteroidSmall.png</Source>
+      <Name>AsteroidSmall</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\AsteroidSmall.xnb</Output>
+      <Time>2012-03-06T19:25:53.1957002-05:00</Time>
+    </Item>
+    <Item>
+      <Source>BackgroundFinal2.png</Source>
+      <Name>BackgroundFinal2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\BackgroundFinal2.xnb</Output>
+      <Time>2012-03-06T19:25:53.2157003-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Bullet4.png</Source>
+      <Name>Bullet4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\Bullet4.xnb</Output>
+      <Time>2012-03-06T19:25:53.2557003-05:00</Time>
+    </Item>
+    <Item>
+      <Source>HUDSmall25.png</Source>
+      <Name>HUDSmall25</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\HUDSmall25.xnb</Output>
+      <Time>2012-03-06T19:25:53.2657003-05:00</Time>
+    </Item>
+    <Item>
+      <Source>SpaceshipFix.png</Source>
+      <Name>SpaceshipFix</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\SpaceshipFix.xnb</Output>
+      <Time>2012-03-06T19:25:53.2757003-05:00</Time>
+    </Item>
+    <Item>
+      <Source>cursor.png</Source>
+      <Name>cursor</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\cursor.xnb</Output>
+      <Time>2012-03-06T19:35:03.6519659-05:00</Time>
+    </Item>
+    <Item>
+      <Source>cursor2.png</Source>
+      <Name>cursor2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\cursor2.xnb</Output>
+      <Time>2012-03-06T20:08:18-05:00</Time>
+    </Item>
+    <Item>
+      <Source>cursor3.png</Source>
+      <Name>cursor3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\cursor3.xnb</Output>
+      <Time>2012-03-06T20:08:37-05:00</Time>
+    </Item>
+    <Item>
+      <Source>cursorSmall20.png</Source>
+      <Name>cursorSmall20</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\cursorSmall20.xnb</Output>
+      <Time>2012-03-07T09:28:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>cursorSmall30.png</Source>
+      <Name>cursorSmall30</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\cursorSmall30.xnb</Output>
+      <Time>2012-03-10T19:07:58-05:00</Time>
+    </Item>
+    <Item>
+      <Source>HUD.png</Source>
+      <Name>HUD</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\HUD.xnb</Output>
+      <Time>2012-03-05T20:26:27-05:00</Time>
+    </Item>
+    <Item>
+      <Source>HUD2.png</Source>
+      <Name>HUD2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\HUD2.xnb</Output>
+      <Time>2012-03-06T13:48:45-05:00</Time>
+    </Item>
+    <Item>
+      <Source>EndScreen.png</Source>
+      <Name>EndScreen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\EndScreen.xnb</Output>
+      <Time>2012-03-10T17:53:32-05:00</Time>
+    </Item>
+    <Item>
+      <Source>InfoScreen.png</Source>
+      <Name>InfoScreen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\InfoScreen.xnb</Output>
+      <Time>2012-03-11T00:23:27-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Martian.png</Source>
+      <Name>Martian</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\Martian.xnb</Output>
+      <Time>2012-03-10T17:08:33-05:00</Time>
+    </Item>
+    <Item>
+      <Source>PremiseScreen.png</Source>
+      <Name>PremiseScreen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\PremiseScreen.xnb</Output>
+      <Time>2012-03-10T17:29:11-05:00</Time>
+    </Item>
+    <Item>
+      <Source>StartScreen.png</Source>
+      <Name>StartScreen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\StartScreen.xnb</Output>
+      <Time>2012-03-11T00:30:21-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Asteroid Hit.wav</Source>
+      <Name>Asteroid Hit</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\Asteroid Hit.xnb</Output>
+      <Time>2012-03-10T19:35:22-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Death Noise.wav</Source>
+      <Name>Death Noise</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\Death Noise.xnb</Output>
+      <Time>2012-03-10T19:25:33-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Embrace The Martian.wav</Source>
+      <Name>Embrace The Martian</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\Embrace The Martian.xnb</Output>
+      <Time>2012-03-10T19:18:00-05:00</Time>
+    </Item>
+    <Item>
+      <Source>The Arrival.wav</Source>
+      <Name>The Arrival</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\The Arrival.xnb</Output>
+      <Time>2012-03-10T19:18:55-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Wave Break.wav</Source>
+      <Name>Wave Break</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\Wave Break.xnb</Output>
+      <Time>2012-03-10T19:39:03-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Player Injury.wav</Source>
+      <Name>Player Injury</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\Player Injury.xnb</Output>
+      <Time>2012-03-10T19:34:47-05:00</Time>
+    </Item>
+    <Item>
+      <Source>ETM SpriteFont1.spritefont</Source>
+      <Name>ETM SpriteFont1</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\ETM SpriteFont1.xnb</Output>
+      <Time>2012-03-06T19:27:32.7590409-05:00</Time>
+    </Item>
+    <Item>
+      <Source>ETM SpriteFont2.spritefont</Source>
+      <Name>ETM SpriteFont2</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\ETM SpriteFont2.xnb</Output>
+      <Time>2012-03-10T14:44:22.2270107-05:00</Time>
+    </Item>
+    <Item>
+      <Source>ETM SpriteFont3.spritefont</Source>
+      <Name>ETM SpriteFont3</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\ETM SpriteFont3.xnb</Output>
+      <Time>2012-03-06T19:33:30.3352352-05:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>Reach</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The MartianContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The MartianContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\MacKenzie Bates\Desktop\XNA\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2010-08-23T13:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2010-08-23T13:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2010-08-23T13:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2010-08-23T13:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2010-08-23T13:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2010-08-23T13:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2012-01-18T19:50:25.3711615-05:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>
