@@ -175,16 +175,6 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="Embrace The Martian.wav">
-      <Name>Embrace The Martian</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-    </Compile>
-    <Compile Include="The Arrival.wav">
-      <Name>The Arrival</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-    </Compile>
     <Compile Include="Wave Break.wav">
       <Name>Wave Break</Name>
       <Importer>WavImporter</Importer>

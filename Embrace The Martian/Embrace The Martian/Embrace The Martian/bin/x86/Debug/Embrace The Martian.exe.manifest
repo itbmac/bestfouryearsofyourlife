@@ -100,7 +100,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>4xaRbHXjj5PKS9rLiFrSzqKpKu0=</dsig:DigestValue>
+        <dsig:DigestValue>LZ2thOwx2mXSMemLw+kKkgufOT0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -192,15 +192,6 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>NtDN1Ygc2iBCWLAdvn/OlUIkjH8=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\Embrace The Martian.xnb" size="38309993">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>xHPr4rU+A/16mXhrdndPHBh49tg=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\EndScreen.xnb" size="2160187">
@@ -318,15 +309,6 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>9hoeFAonL4SRt6iSOhwH2qN00do=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\The Arrival.xnb" size="30326889">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>c6JQJmEEOUCc7WWLimXHFr2BmaQ=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Wave Break.xnb" size="882105">

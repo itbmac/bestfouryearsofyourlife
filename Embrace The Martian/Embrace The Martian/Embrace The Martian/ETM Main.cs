@@ -155,12 +155,12 @@ namespace Embrace_The_Martian
 
             if (audioTimer < 1 && newMusic == true)
             {
-                SpaceObject.helper.PlaySound("Content/Embrace The Martian");
+               // SpaceObject.helper.PlaySound("Content/Embrace The Martian");
                 newMusic = false;
             }
             else if (audioTimer > 184 && audioTimer < 188 && newMusic == false)
             {
-                SpaceObject.helper.PlaySound("Content/The Arrival");
+              //  SpaceObject.helper.PlaySound("Content/The Arrival");
                 newMusic = true;
             }
             else if (audioTimer > 320)
