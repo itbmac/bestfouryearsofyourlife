@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tbfyoyl", "tbfyoyl\tbfyoyl\tbfyoyl.csproj", "{916638C9-CCBD-46E1-AB2A-17C7D457FB0E}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "tbfyoylContent", "tbfyoyl\tbfyoylContent\tbfyoylContent.contentproj", "{7B28A253-7A47-44FA-81D6-A8FE740A99AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{916638C9-CCBD-46E1-AB2A-17C7D457FB0E}.Debug|x86.ActiveCfg = Debug|x86
+		{916638C9-CCBD-46E1-AB2A-17C7D457FB0E}.Debug|x86.Build.0 = Debug|x86
+		{916638C9-CCBD-46E1-AB2A-17C7D457FB0E}.Release|x86.ActiveCfg = Release|x86
+		{916638C9-CCBD-46E1-AB2A-17C7D457FB0E}.Release|x86.Build.0 = Release|x86
+		{7B28A253-7A47-44FA-81D6-A8FE740A99AD}.Debug|x86.ActiveCfg = Debug|x86
+		{7B28A253-7A47-44FA-81D6-A8FE740A99AD}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
