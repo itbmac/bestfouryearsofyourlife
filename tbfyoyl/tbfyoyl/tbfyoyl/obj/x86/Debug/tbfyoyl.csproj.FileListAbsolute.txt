@@ -10,3 +10,4 @@ C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoy
 C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\obj\x86\Debug\tbfyoyl.exe
 C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\obj\x86\Debug\tbfyoyl.pdb
+C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\MainSpriteFont1.xnb
