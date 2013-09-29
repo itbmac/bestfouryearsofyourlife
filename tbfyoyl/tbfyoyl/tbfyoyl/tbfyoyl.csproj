@@ -72,10 +72,16 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Helper121.cs" />
+    <Compile Include="BookstoreGame.cs" />
+    <Compile Include="GameState.cs" />
+    <Compile Include="MediaManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Game1.cs" />
+    <Compile Include="MainGame.cs" />
+    <Compile Include="SplashScreen.cs" />
+    <Compile Include="TAGame.cs" />
+    <Compile Include="UI.cs" />
+    <Compile Include="WorldMap.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />

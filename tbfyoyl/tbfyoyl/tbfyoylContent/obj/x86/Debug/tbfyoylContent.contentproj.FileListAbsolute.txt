@@ -1,1 +1,2 @@
 C:\Users\itbmac\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoylContent\obj\x86\Debug\tbfyoylContent.contentprojResolveAssemblyReference.cache
+C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoylContent\obj\x86\Debug\tbfyoylContent.contentprojResolveAssemblyReference.cache
