@@ -16,24 +16,26 @@ namespace tbfyoyl
     /// </summary>
     public class MainGame : Microsoft.Xna.Framework.Game
     {
-        GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
+        public GraphicsDeviceManager graphics;
+        public SpriteBatch spriteBatch;
 
-        DrawableGameComponent[] games;
-        DrawableGameComponent activeGame;
+        public MediaManager helper;
+
+        public Minigame[] games;
+        public int activeGame;
 
         public const int NUM_GAMES = 5;
 
         public MainGame()
         {
             graphics = new GraphicsDeviceManager(this);
-            games = new DrawableGameComponent[NUM_GAMES];
-            games[0] = new UI(this); //TODO: add enum for games[INDEX]
-            games[1] = new WorldMap(this);
-            games[2] = new BookstoreGame(this);
-            games[3] = new TAGame(this);
+            games = new Minigame[NUM_GAMES];
+            //games[0] = new UI(this); //TODO: add enum for games[INDEX]
+            //games[1] = new WorldMap(this);
+            //games[2] = new BookstoreGame(this);
+            //games[3] = new TAGame(this);
             games[4] = new SplashScreen(this);
-            activeGame = games[4];
+            activeGame = 4;
             Content.RootDirectory = "Content";
         }
 
@@ -47,8 +49,8 @@ namespace tbfyoyl
         {
             // TODO: Add your initialization logic 
             base.Initialize();
-            for(int i = 0; i < NUM_GAMES; i++)
-                games[i].Initialize();
+            //for(int i = 4; i < NUM_GAMES; i++)
+                games[4].Initialize();
         }
 
         /// <summary>
@@ -59,6 +61,10 @@ namespace tbfyoyl
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            helper = new MediaManager();
+            helper.Setup(Services, graphics);
+
 
             // TODO: use this.Content to load your game content here
         }
@@ -79,12 +85,12 @@ namespace tbfyoyl
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            activeGame.Update(gameTime);
+            games[activeGame].Update(gameTime);
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
-            activeGame.Update(gameTime);
+            games[activeGame].Update(gameTime);
 
             base.Update(gameTime);
         }
@@ -97,8 +103,13 @@ namespace tbfyoyl
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            activeGame.Draw(gameTime);
+            spriteBatch.Begin();
 
+            System.Diagnostics.Debug.WriteLine(" BEFORE: calling draw " + activeGame.ToString());
+            games[activeGame].Draw(spriteBatch);
+            System.Diagnostics.Debug.WriteLine(" AFTER: calling draw " + activeGame.ToString());
+
+            spriteBatch.End();
             base.Draw(gameTime);
         }
     }

@@ -54,6 +54,8 @@ public class MediaManager
           //  mediumFont3 = content.Load<SpriteFont>("Content/ETM SpriteFont3");
         }
 
+        mediumFont2 = content.Load<SpriteFont>("Content/MainSpriteFont1");
+
         Color[] sffColor = new Color[1];
         sffColor[0] = Color.White;
 
@@ -157,7 +159,7 @@ public class MediaManager
         pos.X = x;
         pos.Y = y;
 
-        sb.DrawString(mediumFont, text, pos, c);
+        sb.DrawString(mediumFont2, text, pos, c);
     }
 
     //*************************************************************************
@@ -168,17 +170,6 @@ public class MediaManager
 
         sb.DrawString(mediumFont, text, pos, c);
     }
-
-    //*************************************************************************
-    public Boolean IfKeyIsDown(Keys key)
-    {
-        KeyboardState ks = Keyboard.GetState();
-        if (ks.IsKeyDown(key))
-            return true;
-
-        return false;
-    }
-
 
     //*************************************************************************
     public void DrawPoint(SpriteBatch sb, Vector2 point, Color color)
@@ -216,24 +207,6 @@ public class MediaManager
         DrawLine(sb, TopLeft, BottomLeft, color);
         DrawLine(sb, TopRight, BottomRight, color);
         DrawLine(sb, BottomLeft, BottomRight, color);
-    }
-
-    //*************************************************************************
-    public void DrawFilledRectangle(SpriteBatch sb, Rectangle rectangle, Color color)
-    {
-        sb.Draw(pixel, rectangle, color);
-    }
-
-    //*************************************************************************
-    public int GetRandomInt(int min, int max)
-    {
-        return randomNumberGenerator.Next(max - min) + min;
-    }
-
-    //*************************************************************************
-    public float GetRandomFloat(double min, double max)
-    {
-        return (float)(randomNumberGenerator.NextDouble() * (max - min) + min);
     }
 
 }
