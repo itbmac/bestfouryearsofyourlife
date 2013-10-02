@@ -85,6 +85,7 @@
     <Compile Include="WorldMap.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CHANGELOG.txt" />
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png">
       <XnaPlatformSpecific>true</XnaPlatformSpecific>

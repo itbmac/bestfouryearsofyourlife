@@ -49,7 +49,7 @@ namespace tbfyoyl
 
             KeyboardState curKeyState = Keyboard.GetState();
 
-            if (currentOption < numOptions && curKeyState.IsKeyUp(Keys.Down) && prevKeyState.IsKeyDown(Keys.Down))
+            if (currentOption < (numOptions-1) && curKeyState.IsKeyUp(Keys.Down) && prevKeyState.IsKeyDown(Keys.Down))
                 currentOption++;
             if (currentOption > 0  && curKeyState.IsKeyUp(Keys.Up) && prevKeyState.IsKeyDown(Keys.Up))
                 currentOption--;
