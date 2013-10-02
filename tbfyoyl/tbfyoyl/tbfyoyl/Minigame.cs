@@ -13,12 +13,14 @@ using Microsoft.Xna.Framework.Media;
 namespace tbfyoyl
 {
     /// <summary>
-    /// This is a game component that implements IUpdateable.
+    /// Each "minigame" represents one possible state of the screen. A game
+    /// can have several states, like a loading state, a state where you're
+    /// playing a specific minigame, one for the world map, etc.
     /// </summary>
     public abstract class Minigame : Microsoft.Xna.Framework.DrawableGameComponent
     {
 
-        protected MainGame game;
+        protected MainGame game; //the game that this minigame displays onto
 
         public Minigame(MainGame m_game)
             : base(m_game)

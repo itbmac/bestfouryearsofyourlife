@@ -16,27 +16,52 @@ namespace tbfyoyl
     /// </summary>
     public class MainGame : Microsoft.Xna.Framework.Game
     {
-        public GraphicsDeviceManager graphics;
-        public SpriteBatch spriteBatch;
+        private GraphicsDeviceManager graphics;
+        private SpriteBatch spriteBatch;
 
-        public MediaManager helper;
+        //tool to handle display of the game
+        public MediaManager Helper;
 
-        public Minigame[] games;
-        public int activeGame;
+        //a list of the contexts in this game
+        private Dictionary<String, Minigame> games;
+        //the currently active context
+        private Minigame activeGame;
 
-        public const int NUM_GAMES = 5;
+        //a public accessor for the activeGame context, allowing safe access
+        //to the activeGame
+        public string ActiveGame
+        {
+            get
+            {
+                foreach (KeyValuePair<String, Minigame> pair in games)
+                {
+                    if (pair.Value == activeGame)
+                        return pair.Key;
+                }
+                return null;
+            }
+            set
+            {
+                if(games.ContainsKey(value))
+                    activeGame = games[value];
+            }
+        }
 
         public MainGame()
         {
             graphics = new GraphicsDeviceManager(this);
-            games = new Minigame[NUM_GAMES];
-            //games[0] = new UI(this); //TODO: add enum for games[INDEX]
-            //games[1] = new WorldMap(this);
-            //games[2] = new BookstoreGame(this);
-            //games[3] = new TAGame(this);
-            games[4] = new SplashScreen(this);
-            activeGame = 4;
             Content.RootDirectory = "Content";
+
+            games = new Dictionary<String, Minigame>()
+            {
+                {"UI", new UI(this)},
+                {"MAP", new WorldMap(this)},
+                {"BOOKSTORE", new BookstoreGame(this)},
+                {"TA", new TAGame(this)},
+                {"MENU", new SplashScreen(this)},
+            };
+            ActiveGame = "MENU";
+
         }
 
         /// <summary>
@@ -47,10 +72,9 @@ namespace tbfyoyl
         /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic 
             base.Initialize();
-            //for(int i = 4; i < NUM_GAMES; i++)
-                games[4].Initialize();
+            foreach (Minigame game in games.Values)
+                game.Initialize();
         }
 
         /// <summary>
@@ -62,9 +86,8 @@ namespace tbfyoyl
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            helper = new MediaManager();
-            helper.Setup(Services, graphics);
-
+            Helper = new MediaManager();
+            Helper.Setup(Services, graphics);
 
             // TODO: use this.Content to load your game content here
         }
@@ -85,12 +108,12 @@ namespace tbfyoyl
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            games[activeGame].Update(gameTime);
+            activeGame.Update(gameTime);
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
-            games[activeGame].Update(gameTime);
+            activeGame.Update(gameTime);
 
             base.Update(gameTime);
         }
@@ -102,12 +125,9 @@ namespace tbfyoyl
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
             spriteBatch.Begin();
 
-            System.Diagnostics.Debug.WriteLine(" BEFORE: calling draw " + activeGame.ToString());
-            games[activeGame].Draw(spriteBatch);
-            System.Diagnostics.Debug.WriteLine(" AFTER: calling draw " + activeGame.ToString());
+            activeGame.Draw(spriteBatch);
 
             spriteBatch.End();
             base.Draw(gameTime);

@@ -1,0 +1,8 @@
+﻿I though it would be a good idea to have a changelog so that we could document
+our changes to the code in detail without having to fatten up our commit
+messages too much.
+
+My changes include adding a dictionary to keep track of the minigames, and
+changing a couple of the data members to private. The one major change I made
+was wrapping activeGame up in an accessor, ActiveGame, so that one has to 
+change activeGame only through the string name of that game.

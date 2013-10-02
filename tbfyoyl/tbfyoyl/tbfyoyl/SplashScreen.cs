@@ -58,7 +58,7 @@ namespace tbfyoyl
                 switch (currentOption)
                 {
                     case 0:
-                        game.activeGame = 1;
+                        game.ActiveGame = "MAP";
                         break;
                     case 1:
                         game.Exit();
@@ -75,21 +75,20 @@ namespace tbfyoyl
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            System.Diagnostics.Debug.WriteLine(" calling draw ");
 
             spriteBatch.GraphicsDevice.Clear(Color.Black);
 
             //Main.helper.DrawFilledRectangle(spriteBatch, new Rectangle(0,0,640,720), Color.Blue);
 
             //Main.helper.DrawText(spriteBatch, "Main Menu", 352, 90, unselectedColor);
-            spriteBatch.DrawString(game.helper.mediumFont2, "Time To Pretend", new Vector2(130, 50), Color.White);
+            spriteBatch.DrawString(game.Helper.mediumFont2, "Time To Pretend", new Vector2(130, 50), Color.White);
 
             int height = 300;
             int heightStep = 70;
 
-            game.helper.DrawText(spriteBatch, "Play", 510, height, currentOption == 0 ? selectedColor : unselectedColor);
+            game.Helper.DrawText(spriteBatch, "Play", 510, height, currentOption == 0 ? selectedColor : unselectedColor);
             height = height + heightStep;
-            game.helper.DrawText(spriteBatch, "Exit", 485, height, currentOption == 1 ? selectedColor : unselectedColor);
+            game.Helper.DrawText(spriteBatch, "Exit", 485, height, currentOption == 1 ? selectedColor : unselectedColor);
             height = height + heightStep;
 
         }

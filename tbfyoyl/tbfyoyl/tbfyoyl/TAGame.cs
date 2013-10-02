@@ -15,9 +15,9 @@ namespace tbfyoyl
     /// <summary>
     /// This is a game component that implements IUpdateable.
     /// </summary>
-    public class TAGame : Microsoft.Xna.Framework.DrawableGameComponent
+    public class TAGame : Minigame
     {
-        public TAGame(Game game)
+        public TAGame(MainGame game)
             : base(game)
         {
             // TODO: Construct any child components here
@@ -44,5 +44,10 @@ namespace tbfyoyl
 
             base.Update(gameTime);
         }
+
+        public override void Draw(SpriteBatch spriteBatch)
+        {
+        }
+
     }
 }
