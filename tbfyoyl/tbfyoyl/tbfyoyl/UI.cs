@@ -17,10 +17,13 @@ namespace tbfyoyl
     /// </summary>
     public class UI : Minigame
     {
+        //tool to handle display of the game
+        public MediaManager Helper;
+
         public UI(MainGame game)
             : base(game)
         {
-            // TODO: Construct any child components here
+            Helper = game.Helper;
         }
 
         /// <summary>
@@ -45,9 +48,18 @@ namespace tbfyoyl
             base.Update(gameTime);
         }
 
-
         public override void Draw(SpriteBatch spriteBatch)
         {
+            MouseState ms = Mouse.GetState();
+            Helper.DrawArt(spriteBatch, "Content/cursorSmall30", (int)ms.X - 64 / 2, (int)ms.Y - 64 / 2);
+                Helper.DrawArt(spriteBatch, "Content/HUDSmall25", 0, 575);
+                Helper.DrawText(spriteBatch, "MONEY: " + game.money.ToString(), 35, 575, Color.Black);
+                Helper.DrawText(spriteBatch, "BSL: " + game.bloodSugarLevel.ToString() , 195, 575, Color.Black);
+                Helper.DrawText(spriteBatch, "SCORE: " + game.score, 340, 575, Color.Black);
+                Helper.DrawText(spriteBatch, "TIME: " + game.time, 500, 575, Color.Black);
+                Helper.DrawText(spriteBatch, "BOOKS: " , 625, 575, Color.Black);
+                Helper.DrawText(spriteBatch, "GRADE: " , 760, 575, Color.Black);
+            
         }
 
     }

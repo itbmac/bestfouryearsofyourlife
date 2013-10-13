@@ -217,6 +217,18 @@ public class MediaManager
         DrawLine(sb, BottomLeft, BottomRight, color);
     }
 
+    //*************************************************************************
+    public int GetRandomInt(int min, int max)
+    {
+        return randomNumberGenerator.Next(max - min) + min;
+    }
+
+    //*************************************************************************
+    public float GetRandomFloat(double min, double max)
+    {
+        return (float)(randomNumberGenerator.NextDouble() * (max - min) + min);
+    }
+
 }
 
 

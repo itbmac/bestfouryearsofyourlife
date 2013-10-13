@@ -60,6 +60,8 @@ namespace tbfyoyl
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
 
+            graphics.PreferredBackBufferWidth = 900;
+            graphics.PreferredBackBufferHeight = 600;
         }
 
         /// <summary>
@@ -127,6 +129,12 @@ namespace tbfyoyl
 
             activeGame.Update(gameTime);
 
+            if (gameTime.TotalGameTime.Seconds % 13 == 0)
+            {
+                money++;
+                bloodSugarLevel = Helper.GetRandomInt(40, 250);
+            }
+
             base.Update(gameTime);
         }
 
@@ -140,6 +148,8 @@ namespace tbfyoyl
             spriteBatch.Begin();
 
             activeGame.Draw(spriteBatch);
+
+            games["UI"].Draw(spriteBatch);
 
             spriteBatch.End();
             base.Draw(gameTime);

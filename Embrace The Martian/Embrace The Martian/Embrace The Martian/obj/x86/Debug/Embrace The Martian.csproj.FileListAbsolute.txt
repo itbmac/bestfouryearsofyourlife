@@ -102,7 +102,6 @@ C:\Users\itbmac\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Emb
 C:\Users\itbmac\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Embrace The Martian.application
 C:\Users\itbmac\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Embrace The Martian.exe
 C:\Users\itbmac\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\bin\x86\Debug\Embrace The Martian.pdb
-C:\Users\itbmac\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\itbmac\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\itbmac\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\obj\x86\Debug\Embrace The Martian.TrustInfo.xml
 C:\Users\itbmac\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\obj\x86\Debug\Embrace The Martian.exe.manifest
@@ -142,3 +141,4 @@ C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Em
 C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\obj\x86\Debug\Embrace The Martian.application
 C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\obj\x86\Debug\Embrace The Martian.exe
 C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\obj\x86\Debug\Embrace The Martian.pdb
+C:\Users\itbmac\Documents\GitHub\bestfouryearsofyourlife\Embrace The Martian\Embrace The Martian\Embrace The Martian\obj\x86\Debug\Embrace The Martian.csprojResolveAssemblyReference.cache
