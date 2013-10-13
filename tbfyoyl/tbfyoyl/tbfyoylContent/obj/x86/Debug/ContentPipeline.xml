@@ -10,6 +10,15 @@
       <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\MainSpriteFont1.xnb</Output>
       <Time>2013-09-29T15:10:48.2756871-04:00</Time>
     </Item>
+    <Item>
+      <Source>MENU1.bmp</Source>
+      <Name>MENU1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\MENU1.xnb</Output>
+      <Time>2013-10-06T19:53:23.3446881-04:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

@@ -18,17 +18,26 @@ namespace tbfyoyl
     public class SplashScreen : Minigame
     {
 
-        public int currentOption; //0=Play, 1=Exit
-        public int numOptions;
-        static public Color selectedColor = Color.Red;
-        static public Color unselectedColor = Color.White;
-        static KeyboardState prevKeyState;
+        //static public Color selectedColor = Color.Red;
+        //static public Color unselectedColor = Color.White;
+        //static KeyboardState prevKeyState;
+
+        MenuObject[] menuItems;
 
         public SplashScreen(MainGame game)
             : base(game)
         {
-            currentOption = 0;
-            numOptions = 2;
+            menuItems = new MenuObject[2];
+            menuItems[0] = new MenuObject(new DrawableObject(game.Helper.textures["MENU1"], new Vector2(0, 0)),
+                delegate()
+                {
+                    game.ActiveGame = "WORLDMAP";
+                });
+            menuItems[1] = new MenuObject(new DrawableObject(game.Helper.textures["MENU2"], new Vector2(100, 0)),
+                delegate()
+                {
+                    game.Exit();
+                });
         }
 
         /// <summary>
@@ -47,50 +56,23 @@ namespace tbfyoyl
         public override void Update(GameTime gameTime)
         {
 
-            KeyboardState curKeyState = Keyboard.GetState();
-
-            if (currentOption < (numOptions-1) && curKeyState.IsKeyUp(Keys.Down) && prevKeyState.IsKeyDown(Keys.Down))
-                currentOption++;
-            if (currentOption > 0  && curKeyState.IsKeyUp(Keys.Up) && prevKeyState.IsKeyDown(Keys.Up))
-                currentOption--;
-            if (curKeyState.IsKeyUp(Keys.Enter) && prevKeyState.IsKeyDown(Keys.Enter))
+            MouseState curMouseState = Mouse.GetState();
+            if (curMouseState.LeftButton == ButtonState.Pressed)
             {
-                switch (currentOption)
-                {
-                    case 0:
-                        game.ActiveGame = "MAP";
-                        break;
-                    case 1:
-                        game.Exit();
-                        break;
-                    default:
-                        break;
-                }
+                foreach (MenuObject o in menuItems)
+                    o.Click(curMouseState.X, curMouseState.Y);
             }
-
-            prevKeyState = curKeyState;
 
             base.Update(gameTime);
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-
-            spriteBatch.GraphicsDevice.Clear(Color.Black);
-
-            //Main.helper.DrawFilledRectangle(spriteBatch, new Rectangle(0,0,640,720), Color.Blue);
-
-            //Main.helper.DrawText(spriteBatch, "Main Menu", 352, 90, unselectedColor);
-            spriteBatch.DrawString(game.Helper.mediumFont2, "Time To Pretend", new Vector2(130, 50), Color.White);
-
-            int height = 300;
-            int heightStep = 70;
-
-            game.Helper.DrawText(spriteBatch, "Play", 510, height, currentOption == 0 ? selectedColor : unselectedColor);
-            height = height + heightStep;
-            game.Helper.DrawText(spriteBatch, "Exit", 485, height, currentOption == 1 ? selectedColor : unselectedColor);
-            height = height + heightStep;
-
+            foreach (MenuObject o in menuItems)
+            {
+                o.Draw(spriteBatch);
+            }
+            //prettify
         }
 
     }

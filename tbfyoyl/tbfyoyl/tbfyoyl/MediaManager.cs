@@ -16,6 +16,8 @@ public class MediaManager
 {
     ContentManager content;
 
+    public Dictionary<String, Texture2D> textures;
+
     ArrayList arrayArt = new ArrayList();
     ArrayList arraySound = new ArrayList();
 
@@ -38,7 +40,13 @@ public class MediaManager
     //*************************************************************************
     public void Setup(IServiceProvider Services, GraphicsDeviceManager g, bool advancedFlag = false)
     {
+
         content = new ContentManager(Services);
+
+        textures = new Dictionary<string, Texture2D>();
+        //TODO: add right pictures
+        textures.Add("MENU1", content.Load<Texture2D>("content/MENU1"));
+        textures.Add("MENU2", content.Load<Texture2D>("content/MENU1"));
 
         isAdvanced = advancedFlag;
         if (advancedFlag)

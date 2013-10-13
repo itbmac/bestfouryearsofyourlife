@@ -9,6 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
+
 namespace tbfyoyl
 {
     /// <summary>
@@ -26,6 +27,13 @@ namespace tbfyoyl
         private Dictionary<String, Minigame> games;
         //the currently active context
         private Minigame activeGame;
+
+        //in cents
+        public int money;
+        //mg/dL
+        public int bloodSugarLevel;
+        public int score;
+        public int time;
 
         //a public accessor for the activeGame context, allowing safe access
         //to the activeGame
@@ -52,16 +60,6 @@ namespace tbfyoyl
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
 
-            games = new Dictionary<String, Minigame>()
-            {
-                {"UI", new UI(this)},
-                {"MAP", new WorldMap(this)},
-                {"BOOKSTORE", new BookstoreGame(this)},
-                {"TA", new TAGame(this)},
-                {"MENU", new SplashScreen(this)},
-            };
-            ActiveGame = "MENU";
-
         }
 
         /// <summary>
@@ -73,6 +71,26 @@ namespace tbfyoyl
         protected override void Initialize()
         {
             base.Initialize();
+
+
+            // Create a new SpriteBatch, which can be used to draw textures.
+            spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            Helper = new MediaManager();
+            Helper.Setup(Services, graphics);
+
+
+            games = new Dictionary<String, Minigame>()
+            {
+                {"UI", new UI(this)},
+                {"WORLDMAP", new WorldMap(this)},
+                {"BOOKSTOREGAME", new BookstoreGame(this)},
+                {"TAGAME", new TAGame(this)},
+                {"SPLASHSCREEN", new SplashScreen(this)},
+            };
+            ActiveGame = "SPLASHSCREEN";
+
+
             foreach (Minigame game in games.Values)
                 game.Initialize();
         }
@@ -83,12 +101,6 @@ namespace tbfyoyl
         /// </summary>
         protected override void LoadContent()
         {
-            // Create a new SpriteBatch, which can be used to draw textures.
-            spriteBatch = new SpriteBatch(GraphicsDevice);
-
-            Helper = new MediaManager();
-            Helper.Setup(Services, graphics);
-
             // TODO: use this.Content to load your game content here
         }
 

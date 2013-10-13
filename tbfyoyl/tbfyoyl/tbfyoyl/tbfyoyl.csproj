@@ -73,6 +73,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BookstoreGame.cs" />
+    <Compile Include="MenuObject.cs" />
+    <Compile Include="DecoratorObject.cs" />
+    <Compile Include="DrawableObject.cs" />
+    <Compile Include="GameObject.cs" />
     <Compile Include="GameState.cs" />
     <Compile Include="MediaManager.cs" />
     <Compile Include="Minigame.cs" />
