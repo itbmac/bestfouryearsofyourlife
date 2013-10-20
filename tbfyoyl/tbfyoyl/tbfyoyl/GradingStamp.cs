@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
@@ -9,25 +10,25 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
+
 namespace tbfyoyl
 {
-    public class DecoratorObject : GameObject
+    class GradingStamp : DrawableObject
     {
-        protected GameObject parent;
-        public DecoratorObject(GameObject p)
+        
+        public GradingStamp(Texture2D t, Vector2 p)
+            : base(t, p)
         {
-            parent = p;
         }
 
-        public override void Draw(SpriteBatch b)
+        public override void Draw(SpriteBatch spriteBatch)
         {
-            parent.Draw(b);
+            base.Draw(spriteBatch);
         }
 
-        public override void SetPosition(Vector2 newP)
+        public override void Click(int x, int y)
         {
-            parent.SetPosition(newP);
         }
-
     }
 }
+

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
@@ -11,22 +12,20 @@ using Microsoft.Xna.Framework.Media;
 
 namespace tbfyoyl
 {
-    public class DecoratorObject : GameObject
+    class PaperStack : DrawableObject
     {
-        protected GameObject parent;
-        public DecoratorObject(GameObject p)
+        public PaperStack(Texture2D t, Vector2 p)
+            : base(t, p)
         {
-            parent = p;
         }
 
-        public override void Draw(SpriteBatch b)
+        public Paper getPaper()
         {
-            parent.Draw(b);
+            return null;
         }
 
-        public override void SetPosition(Vector2 newP)
+        public void addPaper(Paper p)
         {
-            parent.SetPosition(newP);
         }
 
     }

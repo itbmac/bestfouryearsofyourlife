@@ -29,6 +29,7 @@ namespace tbfyoyl
         private Minigame activeGame;
 
         private MouseState prevMouseState;
+        private MouseState startClickState;
 
         //in cents
         public int money;
@@ -135,18 +136,31 @@ namespace tbfyoyl
 
             if ((prevMouseState.LeftButton == ButtonState.Released) && (curMouseState.LeftButton == ButtonState.Pressed))
             {
-                if (games["UI"].Click(curMouseState.X, curMouseState.Y))
+                startClickState = curMouseState;
+            }
+
+            double distance = Math.Sqrt(Math.Pow(startClickState.X - curMouseState.X, 2)
+                + Math.Pow(startClickState.Y - curMouseState.Y, 2));
+
+            if ((prevMouseState.LeftButton == ButtonState.Pressed) && (curMouseState.LeftButton == ButtonState.Pressed)
+                && (distance > 10))
+            {
+                activeGame.Drag(prevMouseState.X, prevMouseState.Y, curMouseState.X, curMouseState.Y);
+            }
+
+            if ((prevMouseState.LeftButton == ButtonState.Pressed) && (curMouseState.LeftButton == ButtonState.Released))
+            {
+                if (distance < 10)
+                {
+                    activeGame.EndDrag(curMouseState.X, curMouseState.Y);
+                }
+                else if (games["UI"].Click(curMouseState.X, curMouseState.Y))
                 {
                     activeGame.Click(curMouseState.X, curMouseState.Y);
                 }
             }
 
             prevMouseState = curMouseState;
-
-            if ((prevMouseState.LeftButton == ButtonState.Pressed) && (curMouseState.LeftButton == ButtonState.Pressed))
-            {
-                activeGame.Drag(prevMouseState.X, prevMouseState.Y, curMouseState.X, curMouseState.Y);
-            }
 
             activeGame.Update(gameTime);
 

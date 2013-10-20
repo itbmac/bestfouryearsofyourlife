@@ -50,7 +50,6 @@ namespace tbfyoyl
             base.Initialize();
         }
 
-
         /// <summary>
         /// Allows the game component to update itself.
         /// </summary>
