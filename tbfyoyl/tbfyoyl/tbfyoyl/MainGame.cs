@@ -28,6 +28,8 @@ namespace tbfyoyl
         //the currently active context
         private Minigame activeGame;
 
+        private MouseState prevMouseState;
+
         //in cents
         public int money;
         //mg/dL
@@ -60,7 +62,7 @@ namespace tbfyoyl
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
 
-            graphics.PreferredBackBufferWidth = 900;
+            graphics.PreferredBackBufferWidth = 800;
             graphics.PreferredBackBufferHeight = 600;
         }
 
@@ -81,6 +83,7 @@ namespace tbfyoyl
             Helper = new MediaManager();
             Helper.Setup(Services, graphics);
 
+            prevMouseState = Mouse.GetState();
 
             games = new Dictionary<String, Minigame>()
             {
@@ -122,10 +125,25 @@ namespace tbfyoyl
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            activeGame.Update(gameTime);
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
+
+            MouseState curMouseState = Mouse.GetState();
+            if ((prevMouseState.LeftButton == ButtonState.Released) && (curMouseState.LeftButton == ButtonState.Pressed))
+            {
+                if (games["UI"].Click(curMouseState.X, curMouseState.Y))
+                {
+                    activeGame.Click(curMouseState.X, curMouseState.Y);
+                }
+            }
+
+            prevMouseState = curMouseState;
+
+            if ((prevMouseState.LeftButton == ButtonState.Pressed) && (curMouseState.LeftButton == ButtonState.Pressed))
+            {
+                activeGame.Drag(prevMouseState.X, prevMouseState.Y, curMouseState.X, curMouseState.Y);
+            }
 
             activeGame.Update(gameTime);
 

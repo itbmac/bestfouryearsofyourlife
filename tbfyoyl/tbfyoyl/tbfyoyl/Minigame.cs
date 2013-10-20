@@ -51,6 +51,13 @@ namespace tbfyoyl
 
 
         public abstract void Draw(SpriteBatch spriteBatch);
+        public virtual bool Click(int x, int y)
+        {
+            return true;
+        }
+        public virtual void Drag(int x1, int y1, int x2, int y2)
+        {
+        }
 
     }
 }

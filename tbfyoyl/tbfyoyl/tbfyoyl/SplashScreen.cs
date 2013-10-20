@@ -18,10 +18,6 @@ namespace tbfyoyl
     public class SplashScreen : Minigame
     {
 
-        //static public Color selectedColor = Color.Red;
-        //static public Color unselectedColor = Color.White;
-        //static KeyboardState prevKeyState;
-
         MenuObject[] menuItems;
 
         public SplashScreen(MainGame game)
@@ -49,20 +45,19 @@ namespace tbfyoyl
             base.Initialize();
         }
 
+        public override bool Click(int x, int y)
+        {
+            foreach (MenuObject o in menuItems)
+                o.Click(x, y);
+            return base.Click(x, y);
+        }
+
         /// <summary>
         /// Allows the game component to update itself.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         public override void Update(GameTime gameTime)
         {
-
-            MouseState curMouseState = Mouse.GetState();
-            if (curMouseState.LeftButton == ButtonState.Pressed)
-            {
-                foreach (MenuObject o in menuItems)
-                    o.Click(curMouseState.X, curMouseState.Y);
-            }
-
             base.Update(gameTime);
         }
 

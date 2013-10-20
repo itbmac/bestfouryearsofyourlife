@@ -17,10 +17,23 @@ namespace tbfyoyl
     /// </summary>
     public class WorldMap : Minigame
     {
+
+        MenuObject[] menuItems;
+
         public WorldMap(MainGame game)
             : base(game)
         {
-            // TODO: Construct any child components here
+            menuItems = new MenuObject[2];
+            menuItems[0] = new MenuObject(new DrawableObject(game.Helper.textures["MENU1"], new Vector2(100, 100)),
+                delegate()
+                {
+                    game.ActiveGame = "TAGAME";
+                });
+            menuItems[1] = new MenuObject(new DrawableObject(game.Helper.textures["MENU2"], new Vector2(700, 100)),
+                delegate()
+                {
+                    game.ActiveGame = "BOOKSTOREGAME";
+                });
         }
 
         /// <summary>
@@ -34,19 +47,29 @@ namespace tbfyoyl
             base.Initialize();
         }
 
+        public override bool Click(int x, int y)
+        {
+            foreach (MenuObject o in menuItems)
+                o.Click(x, y);
+            return base.Click(x, y);
+        }
+
         /// <summary>
         /// Allows the game component to update itself.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         public override void Update(GameTime gameTime)
         {
-            // TODO: Add your update code here
-
             base.Update(gameTime);
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
+            foreach (MenuObject o in menuItems)
+            {
+                o.Draw(spriteBatch);
+            }
+            //prettify
         }
 
     }

@@ -8,7 +8,7 @@
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\MainSpriteFont1.xnb</Output>
-      <Time>2013-09-29T15:10:48.2756871-04:00</Time>
+      <Time>2013-10-13T18:08:14.7605365-04:00</Time>
     </Item>
     <Item>
       <Source>MENU1.bmp</Source>
@@ -17,7 +17,25 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\MENU1.xnb</Output>
-      <Time>2013-10-06T19:53:23.3446881-04:00</Time>
+      <Time>2013-10-13T13:32:04.3160515-04:00</Time>
+    </Item>
+    <Item>
+      <Source>cursorSmall30.png</Source>
+      <Name>cursorSmall30</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\cursorSmall30.xnb</Output>
+      <Time>2013-10-13T18:08:14.7715371-04:00</Time>
+    </Item>
+    <Item>
+      <Source>HUDSmall25.png</Source>
+      <Name>HUDSmall25</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\HUDSmall25.xnb</Output>
+      <Time>2013-10-13T18:08:14.7495358-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
