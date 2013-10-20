@@ -51,6 +51,10 @@ namespace tbfyoyl
 
 
         public abstract void Draw(SpriteBatch spriteBatch);
+        
+        public virtual void MousePosition(int x, int y)
+        {
+        }
         public virtual bool Click(int x, int y)
         {
             return true;

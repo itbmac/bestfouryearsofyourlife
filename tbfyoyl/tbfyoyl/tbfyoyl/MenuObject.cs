@@ -23,6 +23,12 @@ namespace tbfyoyl
         }
 
         //function pointer -> on click
+        public bool InsideBoundingBox(int x, int y)
+        {
+            return parent.BoundingBox().Contains(x, y);
+        }
+
+        //function pointer -> on click
         public override void Click(int x, int y)
         {
             parent.Click(x, y);

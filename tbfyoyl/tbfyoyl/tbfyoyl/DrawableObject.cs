@@ -25,6 +25,12 @@ namespace tbfyoyl
             position = p;
         }
 
+        public override void SetPosition(Vector2 newP)
+        {
+            System.Diagnostics.Debug.WriteLine("SET POS");
+            position = newP;
+        }
+
         public override Rectangle BoundingBox()
         {
             Rectangle bounds = texture.Bounds;

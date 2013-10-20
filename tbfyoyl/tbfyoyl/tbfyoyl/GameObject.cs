@@ -16,5 +16,6 @@ namespace tbfyoyl
         public virtual void Draw(SpriteBatch spriteBatch) { }
         public virtual void Click(int x, int y) { }
         public virtual Rectangle BoundingBox() { return new Rectangle(0, 0, 0, 0); }
+        public virtual void SetPosition(Vector2 newP) { }
     }
 }

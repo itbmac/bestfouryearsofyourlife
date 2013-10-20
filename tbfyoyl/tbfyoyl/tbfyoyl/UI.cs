@@ -19,12 +19,24 @@ namespace tbfyoyl
     {
         //tool to handle display of the game
         public MediaManager Helper;
-
+        private int UI_display_state = 0;
+        private int UI_button_state = 0;
+        MenuObject[] menuItems;
 
         public UI(MainGame game)
             : base(game)
         {
             Helper = game.Helper;
+            
+            menuItems = new MenuObject[1];
+            menuItems[0] = new MenuObject(new DrawableObject(game.Helper.textures["MENU1"], new Vector2(700, 400)),
+                delegate()
+                {
+                    if (UI_display_state == 0)
+                        UI_display_state = 1;
+                    else
+                        UI_display_state = 0;
+                });
         }
 
         /// <summary>
@@ -37,6 +49,7 @@ namespace tbfyoyl
 
             base.Initialize();
         }
+
 
         /// <summary>
         /// Allows the game component to update itself.
@@ -51,8 +64,23 @@ namespace tbfyoyl
 
         public override bool Click(int x, int y)
         {
+            foreach (MenuObject o in menuItems)
+                o.Click(x, y);
+            
             bool isInUI = true;
             return isInUI;
+        }
+
+        public override void MousePosition(int x, int y)
+        {
+            if (menuItems[0].InsideBoundingBox(x, y))
+            {
+                UI_button_state = 1;
+            }
+            else
+            {
+                UI_button_state = 0;
+            }
         }
 
         public override void Draw(SpriteBatch spriteBatch)
@@ -61,33 +89,79 @@ namespace tbfyoyl
             int UI_width = 100;
             int line_height = 25;
             int window_width = 800;
+            int UI_DIST_BW_AS_AND_HID = 20;
             int UI_X = window_width - UI_width;
+            int UI_Y_AS = 0;
+            int UI_Y_HID = 0;
 
             MouseState ms = Mouse.GetState();
             Helper.DrawArt(spriteBatch, "Content/cursorSmall30", (int)ms.X - 30 / 2, (int)ms.Y - 30 / 2);
 
             Helper.DrawArt(spriteBatch, "Content/HUDSmall25", UI_X, 0);
-            Helper.DrawText(spriteBatch, "MONEY: " + game.money.ToString(), UI_X, line_height, Color.Black);
-            Helper.DrawText(spriteBatch, "BSL: " + game.bloodSugarLevel.ToString(), UI_X, line_height*2, Color.Black);
-            Helper.DrawText(spriteBatch, "SCORE: " + game.score, UI_X, line_height * 3, Color.Black);
-            Helper.DrawText(spriteBatch, "TIME: " + game.time, UI_X, line_height*4, Color.Black);
-            Helper.DrawText(spriteBatch, "BOOKS: ", UI_X, line_height*5, Color.Black);
-            Helper.DrawText(spriteBatch, "GRADE: ", UI_X, line_height*6, Color.Black);
+
+            Helper.DrawText(spriteBatch, "TIME: " + game.time, UI_X, UI_Y_AS, Color.Black); 
+            UI_Y_AS += line_height;
+            Helper.DrawText(spriteBatch, "BSL: " + game.bloodSugarLevel.ToString(), UI_X, UI_Y_AS, Color.Black);
+            UI_Y_AS += line_height;
 
             switch (game.ActiveGame)
             {
                 case "TAGAME":
-                    Helper.DrawText(spriteBatch, "PAPERS LEFT: ", UI_X, line_height * 7, Color.Black);
-                    Helper.DrawText(spriteBatch, "CLASS PERCENTAGE: ", UI_X, line_height * 8, Color.Black);
+                    Helper.DrawText(spriteBatch, "PAPERS LEFT: ", UI_X, UI_Y_AS, Color.Black);
+                    UI_Y_AS += line_height;
+                    Helper.DrawText(spriteBatch, "CLASS PERCENTAGE: ", UI_X, UI_Y_AS, Color.Black);
+                    UI_Y_AS += line_height;
                     break;
                 case "BOOKSTOREGAME":
-                    Helper.DrawText(spriteBatch, "CUSTOMERS: ", UI_X, line_height * 7, Color.Black);
-                    Helper.DrawText(spriteBatch, "TIME TIL CLOSING: ", UI_X, line_height * 8, Color.Black);
+                    Helper.DrawText(spriteBatch, "CUSTOMERS: ", UI_X, UI_Y_AS, Color.Black);
+                    UI_Y_AS += line_height;
+                    Helper.DrawText(spriteBatch, "TIME TIL CLOSING: ", UI_X, UI_Y_AS, Color.Black);
+                    UI_Y_AS += line_height;
                     break;
                 default:
                     break;
             }
 
+            UI_Y_HID = UI_Y_AS + UI_DIST_BW_AS_AND_HID;
+
+            if (UI_display_state == 1)
+            {
+                Helper.DrawText(spriteBatch, "SCORE: " + game.score, UI_X, UI_Y_HID, Color.Black);
+                UI_Y_HID += line_height;
+                Helper.DrawText(spriteBatch, "TIME: " + game.time, UI_X, UI_Y_HID, Color.Black);
+                UI_Y_HID += line_height;
+                Helper.DrawText(spriteBatch, "GRADE: ", UI_X, UI_Y_HID, Color.Black);
+                UI_Y_HID += line_height;
+
+                switch (game.ActiveGame)
+                {
+                    case "TAGAME":
+                        Helper.DrawText(spriteBatch, "PAPERS LEFT: ", UI_X, UI_Y_HID, Color.Black);
+                        UI_Y_HID += line_height;
+                        Helper.DrawText(spriteBatch, "CLASS PERCENTAGE: ", UI_X, UI_Y_HID, Color.Black);
+                        UI_Y_HID += line_height;
+                        break;
+                    case "BOOKSTOREGAME":
+                        Helper.DrawText(spriteBatch, "CUSTOMERS: ", UI_X, UI_Y_HID, Color.Black);
+                        UI_Y_HID += line_height;
+                        Helper.DrawText(spriteBatch, "TIME TIL CLOSING: ", UI_X, UI_Y_HID, Color.Black);
+                        UI_Y_HID += line_height;
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            Vector2 newButtonPos = new Vector2(UI_X, UI_Y_HID + UI_DIST_BW_AS_AND_HID);
+            menuItems[0].SetPosition(newButtonPos);
+
+            if (UI_button_state == 1)
+            {
+                foreach (MenuObject o in menuItems)
+                {
+                    o.Draw(spriteBatch);
+                }
+            }
         }
 
     }

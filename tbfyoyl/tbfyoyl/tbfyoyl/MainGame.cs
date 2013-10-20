@@ -130,6 +130,9 @@ namespace tbfyoyl
                 this.Exit();
 
             MouseState curMouseState = Mouse.GetState();
+
+            games["UI"].MousePosition(curMouseState.X, curMouseState.Y);
+
             if ((prevMouseState.LeftButton == ButtonState.Released) && (curMouseState.LeftButton == ButtonState.Pressed))
             {
                 if (games["UI"].Click(curMouseState.X, curMouseState.Y))
