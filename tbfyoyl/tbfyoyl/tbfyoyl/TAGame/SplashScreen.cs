@@ -12,12 +12,11 @@ using Microsoft.Xna.Framework.Media;
 
 namespace tbfyoyl
 {
-    /// <summary>
-    /// This is a game component that implements IUpdateable.
-    /// </summary>
     public class SplashScreen : Minigame
     {
-
+        /*
+         * The initial splash screen for the game
+         */
         MenuObject[] menuItems;
 
         public SplashScreen(MainGame game)
