@@ -15,8 +15,16 @@ namespace tbfyoyl
 {
     public class DrawableObject : GameObject
     {
+        /*
+         * The concrete implementation of the GameObject class. In this project
+         * all game objects should be drawable.
+         */
 
+        // The texture???? (consider creating a content class) that this drawable 
+        // object should show
         private Texture2D texture;
+
+        // The position of this object
         private Vector2 position;
 
         public DrawableObject(Texture2D t, Vector2 p)
@@ -25,11 +33,15 @@ namespace tbfyoyl
             position = p;
         }
 
-        public override void SetPosition(Vector2 newP)
+        public override void Draw(SpriteBatch spriteBatch)
         {
-            System.Diagnostics.Debug.WriteLine("SET POS");
-            position = newP;
+            //assumes spriteBatch.begin() has already been called
+            spriteBatch.Draw(texture, position, Color.White);
         }
+
+        public override void Click(int x, int y) { }
+
+        public override void Drag(int x1, int y1, int x2, int y2) { }
 
         public override Rectangle BoundingBox()
         {
@@ -38,10 +50,10 @@ namespace tbfyoyl
             return bounds;
         }
 
-        public override void Draw(SpriteBatch spriteBatch)
+        public override void SetPosition(Vector2 newP)
         {
-            //assumes spriteBatch.begin() has already been called
-            spriteBatch.Draw(texture, position, Color.White);
+            System.Diagnostics.Debug.WriteLine("SET POS");
+            position = newP;
         }
 
     }

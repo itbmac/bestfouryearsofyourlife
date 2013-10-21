@@ -31,11 +31,11 @@ namespace tbfyoyl
         //function pointer -> on click
         public override void Click(int x, int y)
         {
-            parent.Click(x, y);
-            if(parent.BoundingBox().Contains(x, y))
+            if (parent.BoundingBox().Contains(x, y))
             {
                 onClick();
             }
+            parent.Click(x, y);
         }
     }
 }
