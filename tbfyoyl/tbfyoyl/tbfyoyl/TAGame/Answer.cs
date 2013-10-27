@@ -17,14 +17,16 @@ namespace tbfyoyl
     {
 
         bool isSelected;
-        bool isMarkedCorrect;
+        bool isCorrect;
         bool isActuallyCorrect;
         bool isCopied;
         bool isActuallyCopied;
         
-        public Answer(Texture2D t, Vector2 p)
+        public Answer(Texture2D t, Vector2 p, bool isCorrect, bool isCopied)
             : base(t, p)
         {
+            this.isCopied = isCopied;
+            this.isCorrect = isCorrect;
         }
 
         public override void Draw(SpriteBatch spriteBatch)
@@ -46,7 +48,7 @@ namespace tbfyoyl
         public void Stamp(bool isCopyStamp)
         {
             isCopied = isCopyStamp;
-            isMarkedCorrect = false;
+            isCorrect = false;
             isSelected = false;
         }
 
@@ -55,7 +57,7 @@ namespace tbfyoyl
             isSelected = false;
         }
 
-        public override bool Click(int x, int y)
+        public new bool Click(int x, int y)
         {
             if (base.BoundingBox().Contains(x, y))
             {

@@ -77,25 +77,13 @@
     <Compile Include="Framework\DecoratorObject.cs" />
     <Compile Include="Framework\DrawableObject.cs" />
     <Compile Include="Framework\GameObject.cs" />
-    <Compile Include="GameState.cs" />
     <Compile Include="TAGame\GradingStamp.cs" />
-    <Compile Include="MediaManager.cs" />
     <Compile Include="SplashScreen\MenuObject.cs" />
     <Compile Include="Framework\Minigame.cs" />
     <Compile Include="TAGame\Paper.cs" />
     <Compile Include="TAGame\PaperStack.cs" />
-    <Compile Include="Answer.cs" />
-    <Compile Include="BookstoreGame.cs" />
-    <Compile Include="DecoratorObject.cs" />
-    <Compile Include="DrawableObject.cs" />
-    <Compile Include="GameObject.cs" />
     <Compile Include="GameState.cs" />
-    <Compile Include="GradingStamp.cs" />
     <Compile Include="MediaManager.cs" />
-    <Compile Include="MenuObject.cs" />
-    <Compile Include="Minigame.cs" />
-    <Compile Include="Paper.cs" />
-    <Compile Include="PaperStack.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="MainGame.cs" />
@@ -144,11 +132,7 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram2.cd" />
-    <Folder Include="Bookstore\" />
-    <Folder Include="TA\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />
   <!--
