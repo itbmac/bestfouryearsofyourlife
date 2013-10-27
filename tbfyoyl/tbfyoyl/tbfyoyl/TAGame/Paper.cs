@@ -24,10 +24,16 @@ namespace tbfyoyl
         int expectedScore;
         int actualScore;
 
-        public Paper(Texture2D t, Vector2 p)
+        public Paper(Texture2D t, Vector2 p, Answer[] ans)
             : base(t, p)
         {
+            float paperX = base.BoundingBox().X;
+            float paperY = base.BoundingBox().Y;
+            answers = new Answer[ans.Length];
+            ans.CopyTo(answers, 0);
+            
             selectedAnswer = answers[0];
+            SetCurrentPage(0);
         }
 
         public override void Draw(SpriteBatch spriteBatch)
@@ -37,12 +43,21 @@ namespace tbfyoyl
             answers[currentPage * 2 + 1].Draw(spriteBatch);
         }
 
-        public void TryStamp(int x, int y, bool isCopyStamp)
+        public void SetCurrentPage(int newPageIndex)
         {
+            currentPage = newPageIndex;
+            answers[currentPage * 2].SetPosition(new Vector2(this.BoundingBox().X, this.BoundingBox().Y));
+            answers[currentPage * 2 + 1].SetPosition(new Vector2(this.BoundingBox().X, this.BoundingBox().Y+60));
+        }
+
+        
+        public void TryStamp(int x, int y, bool isCopyStamp)
+        {/*
             if (selectedAnswer.BoundingBox().Contains(x, y))
             {
                 selectedAnswer.Stamp(isCopyStamp);
-            }
+            }*/
+
         }
 
         public override void Click(int x, int y)

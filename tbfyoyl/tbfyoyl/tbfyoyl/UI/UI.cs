@@ -29,7 +29,7 @@ namespace tbfyoyl
             Helper = game.Helper;
             
             menuItems = new MenuObject[1];
-            menuItems[0] = new MenuObject(new DrawableObject(game.Helper.textures["MENU1"], new Vector2(700, 400)),
+            menuItems[0] = new MenuObject(new DrawableObject(MediaManager.textures["MENU1"], new Vector2(700, 400)),
                 delegate()
                 {
                     if (UI_display_state == 0)

@@ -21,6 +21,7 @@ namespace tbfyoyl
         bool isActuallyCorrect;
         bool isCopied;
         bool isActuallyCopied;
+        Vector2 pageOffset;
         
         public Answer(Texture2D t, Vector2 p, bool isCorrect, bool isCopied)
             : base(t, p)
@@ -37,6 +38,7 @@ namespace tbfyoyl
             }
             else
             {
+                base.Draw(spriteBatch);
             }
         }
 

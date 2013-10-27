@@ -94,7 +94,7 @@ namespace tbfyoyl
                 {"TAGAME", new TAGame(this)},
                 {"SPLASHSCREEN", new SplashScreen(this)},
             };
-            ActiveGame = "SPLASHSCREEN";
+            ActiveGame = "TAGAME";
 
 
             foreach (Minigame game in games.Values)

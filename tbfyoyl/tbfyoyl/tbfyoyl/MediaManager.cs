@@ -16,7 +16,7 @@ public class MediaManager
 {
     ContentManager content;
 
-    public Dictionary<String, Texture2D> textures;
+    public static Dictionary<String, Texture2D> textures;
 
     ArrayList arrayArt = new ArrayList();
     ArrayList arraySound = new ArrayList();
@@ -26,6 +26,8 @@ public class MediaManager
     public SpriteFont mediumFont2;
     public SpriteFont mediumFont3;
     SpriteFont bigFont;
+
+    public static tbfyoyl.Answer[][] allAnswers;
 
     public Texture2D pixel;
 
@@ -47,6 +49,16 @@ public class MediaManager
         //TODO: add right pictures
         textures.Add("MENU1", content.Load<Texture2D>("content/MENU1"));
         textures.Add("MENU2", content.Load<Texture2D>("content/MENU1"));
+        textures.Add("paper", content.Load<Texture2D>("content/Paper"));
+        textures.Add("answer", content.Load<Texture2D>("content/MENU1"));
+        textures.Add("pen", content.Load<Texture2D>("content/MENU1"));
+        textures.Add("paper stack", content.Load<Texture2D>("content/Paper"));
+
+        allAnswers = new tbfyoyl.Answer[1][];
+            
+            new Array( new Array(new tbfyoyl.Answer(content.Load<Texture2D>("content/MENU1"), new Vector2(0,0), true, true), 
+                                          new tbfyoyl.Answer(content.Load<Texture2D>("content/MENU1"), new Vector2(0,0), true, true))
+                              );
 
         isAdvanced = advancedFlag;
         if (advancedFlag)

@@ -41,7 +41,13 @@ namespace tbfyoyl
         public override void Initialize()
         {
             // TODO: Add your initialization code here
-
+            //currentPaper = new Paper(MediaManager.textures["paper"], new Vector2(100, 100));
+            answerKey = new Paper(MediaManager.textures["paper"], new Vector2(100, 200), MediaManager.allAnswers[0]);
+            graded = new PaperStack(MediaManager.textures["paper stack"], new Vector2(0, 0));
+            ungraded = new PaperStack(MediaManager.textures["paper stack"], new Vector2(0, 400));
+            pen = new GradingStamp(MediaManager.textures["pen"], new Vector2(400, 500));
+            cheater = new GradingStamp(MediaManager.textures["pen"], new Vector2(500, 500));
+            
             base.Initialize();
         }
 
@@ -56,8 +62,19 @@ namespace tbfyoyl
             base.Update(gameTime);
         }
 
+        public Answer[] getAnswerKey()
+        {
+            return null;
+        }
+
         public override void Draw(SpriteBatch spriteBatch)
         {
+            currentPaper.Draw(spriteBatch);
+            answerKey.Draw(spriteBatch);
+            graded.Draw(spriteBatch);
+            ungraded.Draw(spriteBatch);
+            pen.Draw(spriteBatch);
+            cheater.Draw(spriteBatch);
         }
 
         public override bool Click(int x, int y)
