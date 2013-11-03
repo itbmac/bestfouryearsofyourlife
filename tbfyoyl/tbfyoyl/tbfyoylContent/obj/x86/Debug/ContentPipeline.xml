@@ -8,16 +8,7 @@
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\MainSpriteFont1.xnb</Output>
-      <Time>2013-10-13T18:08:14.7605365-04:00</Time>
-    </Item>
-    <Item>
-      <Source>MENU1.bmp</Source>
-      <Name>MENU1</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\MENU1.xnb</Output>
-      <Time>2013-10-13T13:32:04.3160515-04:00</Time>
+      <Time>2013-11-03T17:05:03.5555806-05:00</Time>
     </Item>
     <Item>
       <Source>cursorSmall30.png</Source>
@@ -44,7 +35,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\Paper.xnb</Output>
-      <Time>2013-11-02T21:47:22.5320087-04:00</Time>
+      <Time>2013-11-03T17:05:03.5595809-05:00</Time>
     </Item>
     <Item>
       <Source>UI_250.png</Source>
@@ -63,6 +54,69 @@
       <Options>None</Options>
       <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\UI_CTE_250.xnb</Output>
       <Time>2013-11-02T21:47:22.5400092-04:00</Time>
+    </Item>
+    <Item>
+      <Source>UI_Bottom_150p.png</Source>
+      <Name>UI_Bottom_150p</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\UI_Bottom_150p.xnb</Output>
+      <Time>2013-11-03T17:05:03.5715815-05:00</Time>
+    </Item>
+    <Item>
+      <Source>UI_Middle_150p.png</Source>
+      <Name>UI_Middle_150p</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\UI_Middle_150p.xnb</Output>
+      <Time>2013-11-03T17:05:03.5735817-05:00</Time>
+    </Item>
+    <Item>
+      <Source>UI_Top_150p.png</Source>
+      <Name>UI_Top_150p</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\UI_Top_150p.xnb</Output>
+      <Time>2013-11-03T17:05:03.5765818-05:00</Time>
+    </Item>
+    <Item>
+      <Source>BLAH.bmp</Source>
+      <Name>BLAH</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\BLAH.xnb</Output>
+      <Time>2013-11-03T17:05:03.684588-05:00</Time>
+    </Item>
+    <Item>
+      <Source>background.png</Source>
+      <Name>background</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\background.xnb</Output>
+      <Time>2013-11-03T17:05:03.5895826-05:00</Time>
+    </Item>
+    <Item>
+      <Source>pen_cheater.png</Source>
+      <Name>pen_cheater</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\pen_cheater.xnb</Output>
+      <Time>2013-11-03T17:05:03.5925827-05:00</Time>
+    </Item>
+    <Item>
+      <Source>pen_incorrect.png</Source>
+      <Name>pen_incorrect</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\pen_incorrect.xnb</Output>
+      <Time>2013-11-03T17:05:03.5945829-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

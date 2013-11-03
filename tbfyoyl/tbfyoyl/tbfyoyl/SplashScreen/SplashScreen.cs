@@ -23,12 +23,12 @@ namespace tbfyoyl
             : base(game)
         {
             menuItems = new ClickableObject[2];
-            menuItems[0] = new ClickableObject(new TextureObject(MediaManager.textures["MENU1"], new Vector2(0, 0)),
+            menuItems[0] = new ClickableObject(new TextureObject(MediaManager.textures["BLAH"], new Vector2(0, 0)),
                 delegate()
                 {
                     game.ActiveGame = "WORLDMAP";
                 });
-            menuItems[1] = new ClickableObject(new TextureObject(MediaManager.textures["MENU2"], new Vector2(100, 0)),
+            menuItems[1] = new ClickableObject(new TextureObject(MediaManager.textures["BLAH"], new Vector2(100, 0)),
                 delegate()
                 {
                     game.Exit();

@@ -24,12 +24,12 @@ namespace tbfyoyl
             : base(game)
         {
             menuItems = new ClickableObject[2];
-            menuItems[0] = new ClickableObject(new TextureObject(MediaManager.textures["MENU1"], new Vector2(100, 100)),
+            menuItems[0] = new ClickableObject(new TextureObject(MediaManager.textures["BLAH"], new Vector2(100, 100)),
                 delegate()
                 {
                     game.ActiveGame = "TAGAME";
                 });
-            menuItems[1] = new ClickableObject(new TextureObject(MediaManager.textures["MENU2"], new Vector2(700, 100)),
+            menuItems[1] = new ClickableObject(new TextureObject(MediaManager.textures["BLAH"], new Vector2(700, 100)),
                 delegate()
                 {
                     game.ActiveGame = "BOOKSTOREGAME";

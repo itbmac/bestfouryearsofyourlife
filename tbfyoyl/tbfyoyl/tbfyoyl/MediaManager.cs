@@ -43,22 +43,26 @@ namespace tbfyoyl
 
         public static float MasterVolume { get; set; }
 
+
         //*************************************************************************
         public void Setup(IServiceProvider Services, GraphicsDeviceManager g, bool advancedFlag = false)
         {
 
-            content = new ContentManager(Services);
+        content = new ContentManager(Services);
 
-            textures = new Dictionary<string, Texture2D>();
-            //TODO: add right pictures
-            textures.Add("MENU1", content.Load<Texture2D>("content/MENU1"));
-            textures.Add("MENU2", content.Load<Texture2D>("content/MENU1"));
-            textures.Add("paper", content.Load<Texture2D>("content/Paper"));
-            textures.Add("answer", content.Load<Texture2D>("content/MENU1"));
-            textures.Add("pen", content.Load<Texture2D>("content/MENU1"));
-            textures.Add("paper stack", content.Load<Texture2D>("content/Paper"));
+        textures = new Dictionary<string, Texture2D>();
+        //TODO: add right pictures
+        textures.Add("BLAH", content.Load<Texture2D>("content/BLAH"));
+        textures.Add("MENU_TOP", content.Load<Texture2D>("content/UI_Top_150p"));
+        textures.Add("MENU_MIDDLE", content.Load<Texture2D>("content/UI_Middle_150p"));
+        textures.Add("MENU_BOTTOM", content.Load<Texture2D>("content/UI_Bottom_150p"));
+        textures.Add("paper", content.Load<Texture2D>("content/Paper"));
+        textures.Add("answer", content.Load<Texture2D>("content/BLAH"));
+        textures.Add("pen_incorrect", content.Load<Texture2D>("content/pen_incorrect"));
+        textures.Add("pen_cheater", content.Load<Texture2D>("content/pen_cheater"));
+        textures.Add("paper stack", content.Load<Texture2D>("content/Paper"));
 
-            Texture2D answerTexture = textures["answer"];
+            Texture2D answerTexture = textures["BLAH"];
             allAnswers = new Answer[][]
             {
                 new Answer[] {new Answer(answerTexture, new Vector2(0, 0), true, true),

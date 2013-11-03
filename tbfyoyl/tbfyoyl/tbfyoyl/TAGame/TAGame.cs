@@ -16,7 +16,7 @@ namespace tbfyoyl
     /// </summary>
     public class TAGame : Minigame
     {
-
+        public MediaManager Helper;
         Paper currentPaper;
         Paper answerKey;
         PaperStack graded;
@@ -33,6 +33,7 @@ namespace tbfyoyl
             : base(game)
         {
             // TODO: Construct any child components here
+            Helper = game.Helper;
         }
 
         /// <summary>
@@ -42,12 +43,12 @@ namespace tbfyoyl
         public override void Initialize()
         {
             // TODO: Add your initialization code here
-            //currentPaper = new Paper(MediaManager.textures["paper"], new Vector2(100, 100));
+            currentPaper = new Paper(MediaManager.textures["paper"], new Vector2(100, 100), MediaManager.allAnswers[0]);
             answerKey = new Paper(MediaManager.textures["paper"], new Vector2(100, 200), MediaManager.allAnswers[0]);
             graded = new PaperStack(MediaManager.textures["paper stack"], new Vector2(0, 0));
             ungraded = new PaperStack(MediaManager.textures["paper stack"], new Vector2(0, 400));
-            pen = new GradingStamp(MediaManager.textures["pen"], new Vector2(400, 500));
-            cheater = new GradingStamp(MediaManager.textures["pen"], new Vector2(500, 500));
+            pen = new GradingStamp(MediaManager.textures["pen_incorrect"], new Vector2(400, 500));
+            cheater = new GradingStamp(MediaManager.textures["pen_cheater"], new Vector2(500, 500));
             
             base.Initialize();
         }
@@ -63,17 +64,18 @@ namespace tbfyoyl
             base.Update(gameTime);
         }
 
-        public Answer[] getAnswerKey()
+        public tbfyoyl.Answer[] getAnswerKey()
         {
             return null;
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            //currentPaper.Draw(spriteBatch);
-            answerKey.Draw(spriteBatch);
-            graded.Draw(spriteBatch);
-            ungraded.Draw(spriteBatch);
+            Helper.DrawArt(spriteBatch, "Content/background", 0,0);
+            currentPaper.Draw(spriteBatch);
+            //answerKey.Draw(spriteBatch);
+            //graded.Draw(spriteBatch);
+            //ungraded.Draw(spriteBatch);
             pen.Draw(spriteBatch);
             cheater.Draw(spriteBatch);
         }
