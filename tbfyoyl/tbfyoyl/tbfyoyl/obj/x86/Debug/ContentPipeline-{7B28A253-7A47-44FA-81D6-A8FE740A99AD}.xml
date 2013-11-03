@@ -91,6 +91,15 @@
       <Output>C:\Users\itbmac\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\BLAH.xnb</Output>
       <Time>2013-10-27T17:08:16.8224002-04:00</Time>
     </Item>
+    <Item>
+      <Source>background.png</Source>
+      <Name>background</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\itbmac\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\background.xnb</Output>
+      <Time>2013-11-03T14:36:26.4594154-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{7B28A253-7A47-44FA-81D6-A8FE740A99AD}</ContentProjectGUID>

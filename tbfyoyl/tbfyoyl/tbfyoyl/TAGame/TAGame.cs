@@ -16,7 +16,7 @@ namespace tbfyoyl
     /// </summary>
     public class TAGame : Minigame
     {
-
+        public MediaManager Helper;
         Paper currentPaper;
         Paper answerKey;
         PaperStack graded;
@@ -32,6 +32,7 @@ namespace tbfyoyl
             : base(game)
         {
             // TODO: Construct any child components here
+            Helper = game.Helper;
         }
 
         /// <summary>
@@ -69,6 +70,7 @@ namespace tbfyoyl
 
         public override void Draw(SpriteBatch spriteBatch)
         {
+            Helper.DrawArt(spriteBatch, "Content/background", 0,0);
             //currentPaper.Draw(spriteBatch);
             //answerKey.Draw(spriteBatch);
             //graded.Draw(spriteBatch);
