@@ -44,11 +44,11 @@ namespace tbfyoyl
             base.Initialize();
         }
 
-        public override bool Click(int x, int y)
+        public override bool ClickUp(int x, int y)
         {
             foreach (MenuObject o in menuItems)
                 o.Click(x, y);
-            return base.Click(x, y);
+            return base.ClickUp(x, y);
         }
 
         /// <summary>

@@ -136,6 +136,7 @@ namespace tbfyoyl
 
             if ((prevMouseState.LeftButton == ButtonState.Released) && (curMouseState.LeftButton == ButtonState.Pressed))
             {
+                activeGame.ClickDown(curMouseState.X, curMouseState.Y);
                 startClickState = curMouseState;
             }
 
@@ -150,13 +151,9 @@ namespace tbfyoyl
 
             if ((prevMouseState.LeftButton == ButtonState.Pressed) && (curMouseState.LeftButton == ButtonState.Released))
             {
-                if (distance < 10)
+                if (games["UI"].ClickUp(curMouseState.X, curMouseState.Y))
                 {
-                    activeGame.EndDrag(curMouseState.X, curMouseState.Y);
-                }
-                else if (games["UI"].Click(curMouseState.X, curMouseState.Y))
-                {
-                    activeGame.Click(curMouseState.X, curMouseState.Y);
+                    activeGame.ClickUp(curMouseState.X, curMouseState.Y);
                 }
             }
 
