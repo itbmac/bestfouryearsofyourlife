@@ -13,7 +13,7 @@ using tbfyoyl;
 
 namespace tbfyoyl
 {
-    class Answer : DrawableObject
+    public class Answer : DrawableObject
     {
 
         bool isSelected;

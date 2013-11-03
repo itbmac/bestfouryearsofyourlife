@@ -37,13 +37,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MENU1.bmp">
-      <Name>MENU1</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="cursorSmall30.png">
       <Name>cursorSmall30</Name>
       <Importer>TextureImporter</Importer>
@@ -70,6 +63,30 @@
     </Compile>
     <Compile Include="UI_CTE_250.png">
       <Name>UI_CTE_250</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="UI_Bottom_150p.png">
+      <Name>UI_Bottom_150p</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="UI_Middle_150p.png">
+      <Name>UI_Middle_150p</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="UI_Top_150p.png">
+      <Name>UI_Top_150p</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLAH.bmp">
+      <Name>BLAH</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

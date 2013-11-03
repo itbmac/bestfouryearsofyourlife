@@ -62,17 +62,17 @@ namespace tbfyoyl
             base.Update(gameTime);
         }
 
-        public Answer[] getAnswerKey()
+        public tbfyoyl.Answer[] getAnswerKey()
         {
             return null;
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            currentPaper.Draw(spriteBatch);
-            answerKey.Draw(spriteBatch);
-            graded.Draw(spriteBatch);
-            ungraded.Draw(spriteBatch);
+            //currentPaper.Draw(spriteBatch);
+            //answerKey.Draw(spriteBatch);
+            //graded.Draw(spriteBatch);
+            //ungraded.Draw(spriteBatch);
             pen.Draw(spriteBatch);
             cheater.Draw(spriteBatch);
         }

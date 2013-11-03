@@ -8,16 +8,7 @@
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\itbmac\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\MainSpriteFont1.xnb</Output>
-      <Time>2013-10-27T17:08:17.0554136-04:00</Time>
-    </Item>
-    <Item>
-      <Source>MENU1.bmp</Source>
-      <Name>MENU1</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\itbmac\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\MENU1.xnb</Output>
-      <Time>2013-10-27T17:08:16.8224002-04:00</Time>
+      <Time>2013-11-02T16:05:39.3030106-04:00</Time>
     </Item>
     <Item>
       <Source>cursorSmall30.png</Source>
@@ -63,6 +54,42 @@
       <Options>None</Options>
       <Output>C:\Users\itbmac\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\UI_CTE_250.xnb</Output>
       <Time>2013-10-27T17:42:32.3349671-04:00</Time>
+    </Item>
+    <Item>
+      <Source>UI_Bottom_150p.png</Source>
+      <Name>UI_Bottom_150p</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\itbmac\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\UI_Bottom_150p.xnb</Output>
+      <Time>2013-11-02T15:28:55.5932309-04:00</Time>
+    </Item>
+    <Item>
+      <Source>UI_Middle_150p.png</Source>
+      <Name>UI_Middle_150p</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\itbmac\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\UI_Middle_150p.xnb</Output>
+      <Time>2013-11-03T14:13:02.2600998-05:00</Time>
+    </Item>
+    <Item>
+      <Source>UI_Top_150p.png</Source>
+      <Name>UI_Top_150p</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\itbmac\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\UI_Top_150p.xnb</Output>
+      <Time>2013-11-02T14:56:15.3648874-04:00</Time>
+    </Item>
+    <Item>
+      <Source>BLAH.bmp</Source>
+      <Name>BLAH</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\itbmac\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\BLAH.xnb</Output>
+      <Time>2013-10-27T17:08:16.8224002-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

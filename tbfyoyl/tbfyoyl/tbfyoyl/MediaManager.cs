@@ -47,19 +47,21 @@ public class MediaManager
 
         textures = new Dictionary<string, Texture2D>();
         //TODO: add right pictures
-        textures.Add("MENU1", content.Load<Texture2D>("content/MENU1"));
-        textures.Add("MENU2", content.Load<Texture2D>("content/MENU1"));
+        textures.Add("BLAH", content.Load<Texture2D>("content/BLAH"));
+        textures.Add("MENU_TOP", content.Load<Texture2D>("content/UI_Top_150p"));
+        textures.Add("MENU_MIDDLE", content.Load<Texture2D>("content/UI_Middle_150p"));
+        textures.Add("MENU_BOTTOM", content.Load<Texture2D>("content/UI_Bottom_150p"));
         textures.Add("paper", content.Load<Texture2D>("content/Paper"));
-        textures.Add("answer", content.Load<Texture2D>("content/MENU1"));
-        textures.Add("pen", content.Load<Texture2D>("content/MENU1"));
+        textures.Add("answer", content.Load<Texture2D>("content/BLAH"));
+        textures.Add("pen", content.Load<Texture2D>("content/BLAH"));
         textures.Add("paper stack", content.Load<Texture2D>("content/Paper"));
 
         allAnswers = new tbfyoyl.Answer[1][];
-            
-            new Array( new Array(new tbfyoyl.Answer(content.Load<Texture2D>("content/MENU1"), new Vector2(0,0), true, true), 
-                                          new tbfyoyl.Answer(content.Load<Texture2D>("content/MENU1"), new Vector2(0,0), true, true))
-                              );
-
+        
+        tbfyoyl.Answer[] aSet1 = new tbfyoyl.Answer[2] {new tbfyoyl.Answer(content.Load<Texture2D>("content/BLAH"), new Vector2(0,0), true, true), new tbfyoyl.Answer(content.Load<Texture2D>("content/BLAH"), new Vector2(0,0), true, true)};
+   
+        allAnswers = new tbfyoyl.Answer[][] {aSet1};
+        
         isAdvanced = advancedFlag;
         if (advancedFlag)
         {

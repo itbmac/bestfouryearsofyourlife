@@ -63,8 +63,8 @@ namespace tbfyoyl
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
 
-            graphics.PreferredBackBufferWidth = 800;
-            graphics.PreferredBackBufferHeight = 600;
+            graphics.PreferredBackBufferWidth = 1200;
+            graphics.PreferredBackBufferHeight = 800;
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace tbfyoyl
                 {"TAGAME", new TAGame(this)},
                 {"SPLASHSCREEN", new SplashScreen(this)},
             };
-            ActiveGame = "TAGAME";
+            ActiveGame = "SPLASHSCREEN";
 
 
             foreach (Minigame game in games.Values)
@@ -150,7 +150,7 @@ namespace tbfyoyl
 
             if ((prevMouseState.LeftButton == ButtonState.Pressed) && (curMouseState.LeftButton == ButtonState.Released))
             {
-                if (distance < 10)
+                if (distance > 10)
                 {
                     activeGame.EndDrag(curMouseState.X, curMouseState.Y);
                 }
