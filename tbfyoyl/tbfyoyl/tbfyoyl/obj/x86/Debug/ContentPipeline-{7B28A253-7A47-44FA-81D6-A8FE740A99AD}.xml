@@ -35,7 +35,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\itbmac\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\Paper.xnb</Output>
-      <Time>2013-10-27T18:51:31.4021258-04:00</Time>
+      <Time>2013-11-03T14:55:25.189547-05:00</Time>
     </Item>
     <Item>
       <Source>UI_250.png</Source>
@@ -99,6 +99,24 @@
       <Options>None</Options>
       <Output>C:\Users\itbmac\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\background.xnb</Output>
       <Time>2013-11-03T14:36:26.4594154-05:00</Time>
+    </Item>
+    <Item>
+      <Source>pen_cheater.png</Source>
+      <Name>pen_cheater</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\itbmac\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\pen_cheater.xnb</Output>
+      <Time>2013-11-03T15:04:59.3883893-05:00</Time>
+    </Item>
+    <Item>
+      <Source>pen_incorrect.png</Source>
+      <Name>pen_incorrect</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\itbmac\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\pen_incorrect.xnb</Output>
+      <Time>2013-11-03T15:03:02.2916918-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

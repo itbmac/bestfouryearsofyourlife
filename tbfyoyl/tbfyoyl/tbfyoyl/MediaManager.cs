@@ -53,7 +53,8 @@ public class MediaManager
         textures.Add("MENU_BOTTOM", content.Load<Texture2D>("content/UI_Bottom_150p"));
         textures.Add("paper", content.Load<Texture2D>("content/Paper"));
         textures.Add("answer", content.Load<Texture2D>("content/BLAH"));
-        textures.Add("pen", content.Load<Texture2D>("content/BLAH"));
+        textures.Add("pen_incorrect", content.Load<Texture2D>("content/pen_incorrect"));
+        textures.Add("pen_cheater", content.Load<Texture2D>("content/pen_cheater"));
         textures.Add("paper stack", content.Load<Texture2D>("content/Paper"));
 
         allAnswers = new tbfyoyl.Answer[1][];
