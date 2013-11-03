@@ -13,7 +13,7 @@ using tbfyoyl;
 
 namespace tbfyoyl
 {
-    class Answer : DrawableObject
+    public class Answer : TextureObject
     {
 
         bool isSelected;
@@ -23,8 +23,8 @@ namespace tbfyoyl
         bool isActuallyCopied;
         Vector2 pageOffset;
         
-        public Answer(Texture2D t, Vector2 p, bool isCorrect, bool isCopied)
-            : base(t, p)
+        public Answer(Texture2D t, Vector2 pos, bool isCorrect, bool isCopied)
+            : base(t, pos)
         {
             this.isCopied = isCopied;
             this.isCorrect = isCorrect;
@@ -59,9 +59,9 @@ namespace tbfyoyl
             isSelected = false;
         }
 
-        public new bool Click(int x, int y)
+        public new bool Click(Vector2 pos)
         {
-            if (base.BoundingBox().Contains(x, y))
+            if (base.Contains(pos))
             {
                 isSelected = !isSelected;
                 return true;

@@ -11,31 +11,23 @@ using Microsoft.Xna.Framework.Media;
 
 namespace tbfyoyl
 {
-    public class MenuObject : DecoratorObject
+    public class ClickableObject : DecoratorObject
     {
-        public delegate void OnClick();
-        private OnClick onClick;
+        private Action onClick;
 
-        public MenuObject(GameObject p, OnClick behavior)
+        public ClickableObject(GameObject p, Action behavior)
             : base(p)
         {
             onClick = behavior;
         }
 
-        //function pointer -> on click
-        public bool InsideBoundingBox(int x, int y)
+        public override void Click(Vector2 pos)
         {
-            return parent.BoundingBox().Contains(x, y);
-        }
-
-        //function pointer -> on click
-        public override void Click(int x, int y)
-        {
-            if (parent.BoundingBox().Contains(x, y))
+            if (parent.Contains(pos))
             {
                 onClick();
             }
-            parent.Click(x, y);
+            parent.Click(pos);
         }
     }
 }

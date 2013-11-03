@@ -24,8 +24,6 @@ namespace tbfyoyl
         GradingStamp pen;
         GradingStamp cheater;
 
-        GameObject activeObject;
-
         double runningTotal;
         int numPapersGraded;
         int numPapersLeft;
@@ -72,7 +70,7 @@ namespace tbfyoyl
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            currentPaper.Draw(spriteBatch);
+            //currentPaper.Draw(spriteBatch);
             answerKey.Draw(spriteBatch);
             graded.Draw(spriteBatch);
             ungraded.Draw(spriteBatch);
@@ -80,51 +78,47 @@ namespace tbfyoyl
             cheater.Draw(spriteBatch);
         }
 
-        public override bool ClickDown(int x, int y)
+        public override bool ClickDown(Vector2 pos)
         {
-            if (pen.BoundingBox().Contains(x, y))
+            if (pen.Contains(pos))
             {
                 activeObject = pen;
             }
-            else if (cheater.BoundingBox().Contains(x, y))
+            else if (cheater.Contains(pos))
             {
                 activeObject = cheater;
-            }
-            else if (currentPaper.BoundingBox().Contains(x, y))
+            }/*
+            else if (currentPaper.Contains(pos))
             {
                 activeObject = currentPaper;
+            }*/
+            else if (answerKey.Contains(pos))
+            {
+                activeObject = answerKey;
             }
-            else if (graded.BoundingBox().Contains(x, y))
+            else if (graded.Contains(pos))
             {
                 activeObject = graded;
             }
-            else if (ungraded.BoundingBox().Contains(x, y))
+            else if (ungraded.Contains(pos))
             {
                 activeObject = ungraded;
             }
-            return base.ClickDown(x, y);
+            return base.ClickDown(pos);
         }
-
-        public override bool Drag(int x1, int y1, int x2, int y2)
+        /*
+        public override bool Drag(Vector2 start, Vector2 end)
         {
-            if (pen.BoundingBox().Contains(x1, y1))
+            if (pen.Contains(start))
             {
-                pen.SetPosition(new Vector2(x2, y2));
+                pen.Drag(start, end);
             }
-            if (cheater.BoundingBox().Contains(x1, y1))
+            if (cheater.Contains(start))
             {
-                cheater.SetPosition(new Vector2(x2, y2));
+                cheater.Drag(start, end);
             }
-            return base.Drag(x1, y1, x2, y2);
+            return base.Drag(start, end);
         }
-
-        public override bool ClickUp(int x, int y)
-        {
-
-            activeObject.Click(x, y);
-            activeObject = null;
-            return base.ClickUp(x, y);
-        }
-
+        */
     }
 }

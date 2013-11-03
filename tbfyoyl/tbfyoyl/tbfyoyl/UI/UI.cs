@@ -21,15 +21,15 @@ namespace tbfyoyl
         public MediaManager Helper;
         private int UI_display_state = 0;
         private int UI_button_state = 0;
-        MenuObject[] menuItems;
+        ClickableObject[] menuItems;
 
         public UI(MainGame game)
             : base(game)
         {
             Helper = game.Helper;
             
-            menuItems = new MenuObject[1];
-            menuItems[0] = new MenuObject(new DrawableObject(MediaManager.textures["MENU1"], new Vector2(700, 400)),
+            menuItems = new ClickableObject[1];
+            menuItems[0] = new ClickableObject(new TextureObject(MediaManager.textures["MENU1"], new Vector2(700, 400)),
                 delegate()
                 {
                     if (UI_display_state == 0)
@@ -61,18 +61,18 @@ namespace tbfyoyl
             base.Update(gameTime);
         }
 
-        public override bool ClickUp(int x, int y)
+        public override bool ClickUp(Vector2 pos)
         {
-            foreach (MenuObject o in menuItems)
-                o.Click(x, y);
+            foreach (ClickableObject o in menuItems)
+                o.Click(pos);
             
             bool isInUI = true;
             return isInUI;
         }
 
-        public override void MousePosition(int x, int y)
+        public override void MouseOver(Vector2 pos)
         {
-            if (menuItems[0].InsideBoundingBox(x, y))
+            if (menuItems[0].Contains(pos))
             {
                 UI_button_state = 1;
             }
@@ -152,11 +152,11 @@ namespace tbfyoyl
             }
 
             Vector2 newButtonPos = new Vector2(UI_X, UI_Y_HID + UI_DIST_BW_AS_AND_HID);
-            menuItems[0].SetPosition(newButtonPos);
+            menuItems[0].Position = newButtonPos;
 
             if (UI_button_state == 1)
             {
-                foreach (MenuObject o in menuItems)
+                foreach (ClickableObject o in menuItems)
                 {
                     o.Draw(spriteBatch);
                 }

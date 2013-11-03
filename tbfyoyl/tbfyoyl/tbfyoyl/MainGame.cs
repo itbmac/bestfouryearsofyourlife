@@ -21,7 +21,14 @@ namespace tbfyoyl
         private SpriteBatch spriteBatch;
 
         //tool to handle display of the game
-        public MediaManager Helper;
+        private MediaManager helper;
+        public MediaManager Helper
+        {
+            get
+            {
+                return helper;
+            }
+        }
 
         //a list of the contexts in this game
         private Dictionary<String, Minigame> games;
@@ -81,8 +88,8 @@ namespace tbfyoyl
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            Helper = new MediaManager();
-            Helper.Setup(Services, graphics);
+            helper = new MediaManager();
+            helper.Setup(Services, graphics);
 
             prevMouseState = Mouse.GetState();
 
@@ -96,9 +103,10 @@ namespace tbfyoyl
             };
             ActiveGame = "TAGAME";
 
-
             foreach (Minigame game in games.Values)
+            {
                 game.Initialize();
+            }
         }
 
         /// <summary>
@@ -132,28 +140,31 @@ namespace tbfyoyl
 
             MouseState curMouseState = Mouse.GetState();
 
-            games["UI"].MousePosition(curMouseState.X, curMouseState.Y);
+            Vector2 curPos = new Vector2(curMouseState.X, curMouseState.Y);
+            Vector2 prevPos = new Vector2(prevMouseState.X, prevMouseState.Y);
+            games["UI"].MouseOver(curPos);
+            activeGame.MouseOver(curPos);
 
             if ((prevMouseState.LeftButton == ButtonState.Released) && (curMouseState.LeftButton == ButtonState.Pressed))
             {
-                activeGame.ClickDown(curMouseState.X, curMouseState.Y);
+                activeGame.ClickDown(curPos);
                 startClickState = curMouseState;
             }
 
-            double distance = Math.Sqrt(Math.Pow(startClickState.X - curMouseState.X, 2)
-                + Math.Pow(startClickState.Y - curMouseState.Y, 2));
+            //double distance = Math.Sqrt(Math.Pow(startClickState.X - curMouseState.X, 2)
+            //    + Math.Pow(startClickState.Y - curMouseState.Y, 2));
 
             if ((prevMouseState.LeftButton == ButtonState.Pressed) && (curMouseState.LeftButton == ButtonState.Pressed)
-                && (distance > 10))
+                && prevPos != curPos)
             {
-                activeGame.Drag(prevMouseState.X, prevMouseState.Y, curMouseState.X, curMouseState.Y);
+                activeGame.Drag(prevPos, curPos);
             }
 
             if ((prevMouseState.LeftButton == ButtonState.Pressed) && (curMouseState.LeftButton == ButtonState.Released))
             {
-                if (games["UI"].ClickUp(curMouseState.X, curMouseState.Y))
+                if (games["UI"].ClickUp(curPos))
                 {
-                    activeGame.ClickUp(curMouseState.X, curMouseState.Y);
+                    activeGame.ClickUp(curPos);
                 }
             }
 
@@ -180,7 +191,6 @@ namespace tbfyoyl
             spriteBatch.Begin();
 
             activeGame.Draw(spriteBatch);
-
             games["UI"].Draw(spriteBatch);
 
             spriteBatch.End();

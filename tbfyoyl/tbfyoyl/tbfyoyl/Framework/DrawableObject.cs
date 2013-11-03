@@ -13,47 +13,50 @@ using Microsoft.Xna.Framework.Media;
 
 namespace tbfyoyl
 {
-    public class DrawableObject : GameObject
+    public class TextureObject : GameObject
     {
         /*
-         * The concrete implementation of the GameObject class. In this project
-         * all game objects should be drawable.
+         * A GameObject that is drawn with a Texture2D
          */
 
-        // The texture???? (consider creating a content class) that this drawable 
-        // object should show
+        // The texture this object should display as
         private Texture2D texture;
 
-        // The position of this object
+        // The absolute position of this object
         private Vector2 position;
 
-        public DrawableObject(Texture2D t, Vector2 p)
+        public TextureObject(Texture2D t, Vector2 pos)
         {
             texture = t;
-            position = p;
+            position = new Vector2(pos.X, pos.Y);
         }
 
-        public override void Draw(SpriteBatch spriteBatch)
+        public virtual void Draw(SpriteBatch spriteBatch)
         {
             //assumes spriteBatch.begin() has already been called
             spriteBatch.Draw(texture, position, Color.White);
         }
 
-        public override void Click(int x, int y) { }
+        public virtual void Click(Vector2 pos) { }
 
-        public override void Drag(int x1, int y1, int x2, int y2) { }
+        public virtual void Drag(Vector2 start, Vector2 end) { }
 
-        public override Rectangle BoundingBox()
+        public virtual bool Contains(Vector2 pos)
         {
-            Rectangle bounds = texture.Bounds;
-            bounds.Offset((int)position.X, (int)position.Y);
-            return bounds;
+            Vector2 relative = pos - position;
+            return texture.Bounds.Contains((int)relative.X, (int)relative.Y);
         }
 
-        public override void SetPosition(Vector2 newP)
+        public Vector2 Position
         {
-            System.Diagnostics.Debug.WriteLine("SET POS");
-            position = newP;
+            get
+            {
+                return position;
+            }
+            set
+            {
+                position = new Vector2(value.X, value.Y);
+            }
         }
 
     }

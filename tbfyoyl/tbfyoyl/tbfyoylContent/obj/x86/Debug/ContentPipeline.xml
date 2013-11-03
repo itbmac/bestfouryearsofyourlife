@@ -37,6 +37,33 @@
       <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\HUDSmall25.xnb</Output>
       <Time>2013-10-13T18:08:14.7495358-04:00</Time>
     </Item>
+    <Item>
+      <Source>Paper.png</Source>
+      <Name>Paper</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\Paper.xnb</Output>
+      <Time>2013-11-02T21:47:22.5320087-04:00</Time>
+    </Item>
+    <Item>
+      <Source>UI_250.png</Source>
+      <Name>UI_250</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\UI_250.xnb</Output>
+      <Time>2013-11-02T21:47:22.5380091-04:00</Time>
+    </Item>
+    <Item>
+      <Source>UI_CTE_250.png</Source>
+      <Name>UI_CTE_250</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\UI_CTE_250.xnb</Output>
+      <Time>2013-11-02T21:47:22.5400092-04:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

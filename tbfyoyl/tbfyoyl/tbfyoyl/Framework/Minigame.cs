@@ -21,6 +21,7 @@ namespace tbfyoyl
     {
 
         protected MainGame game; //the game that this minigame displays onto
+        protected GameObject activeObject; //the object that was first selected when clicking
 
         public Minigame(MainGame m_game)
             : base(m_game)
@@ -35,8 +36,8 @@ namespace tbfyoyl
         public override void Initialize()
         {
             // TODO: Add your initialization code here
-
             base.Initialize();
+            activeObject = null;
         }
 
         /// <summary>
@@ -49,22 +50,30 @@ namespace tbfyoyl
             base.Update(gameTime);
         }
 
-
         public abstract void Draw(SpriteBatch spriteBatch);
         
-        public virtual void MousePosition(int x, int y)
+        public virtual void MouseOver(Vector2 pos)
         {
         }
-        public virtual bool ClickDown(int x, int y)
+        public virtual bool ClickDown(Vector2 pos)
         {
             return true;
         }
-        public virtual bool Drag(int x1, int y1, int x2, int y2)
+        public virtual bool Drag(Vector2 start, Vector2 end)
         {
+            if (activeObject != null)
+            {
+                activeObject.Drag(start, end);
+            }
             return true;
         }
-        public virtual bool ClickUp(int x, int y)
+        public virtual bool ClickUp(Vector2 pos)
         {
+            if (activeObject != null)
+            {
+                activeObject.Click(pos);
+            }
+            activeObject = null;
             return true;
         }
 

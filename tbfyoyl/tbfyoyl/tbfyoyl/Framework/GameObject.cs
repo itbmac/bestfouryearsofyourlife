@@ -11,17 +11,19 @@ using Microsoft.Xna.Framework.Media;
 
 namespace tbfyoyl
 {
-    public abstract class GameObject
+    public interface GameObject
     {
         /*
-         * Abstract class representing any object that could theoretically exist in
-         * the game. In theory, all non-trivial objects that we end of drawing on
-         * the screen should end up subclassing off of this class eventually. 
+         * Interface showing all functionalities an object in the game
+         * should support. In theory, all non-trivial objects in the
+         * game will implement this interface in some form or another.
          */
-        public abstract void Draw(SpriteBatch spriteBatch);
-        public abstract void Click(int x, int y);
-        public abstract void Drag(int x1, int y1, int x2, int y2);
-        public abstract Rectangle BoundingBox();
-        public abstract void SetPosition(Vector2 newP);
+
+        Vector2 Position { get; set; }
+
+        void Draw(SpriteBatch spriteBatch);
+        void Click(Vector2 pos);
+        void Drag(Vector2 start, Vector2 end);
+        bool Contains(Vector2 pos);
     }
 }

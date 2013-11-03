@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace tbfyoyl
 {
-    class Paper : DrawableObject
+    class Paper : TextureObject
     {
 
         Answer[] answers;
@@ -27,8 +27,6 @@ namespace tbfyoyl
         public Paper(Texture2D t, Vector2 p, Answer[] ans)
             : base(t, p)
         {
-            float paperX = base.BoundingBox().X;
-            float paperY = base.BoundingBox().Y;
             answers = new Answer[ans.Length];
             ans.CopyTo(answers, 0);
             
@@ -46,8 +44,8 @@ namespace tbfyoyl
         public void SetCurrentPage(int newPageIndex)
         {
             currentPage = newPageIndex;
-            answers[currentPage * 2].SetPosition(new Vector2(this.BoundingBox().X, this.BoundingBox().Y));
-            answers[currentPage * 2 + 1].SetPosition(new Vector2(this.BoundingBox().X, this.BoundingBox().Y+60));
+            answers[currentPage * 2].Position = this.Position;
+            answers[currentPage * 2 + 1].Position = this.Position + new Vector2(0, 60);
         }
 
         
@@ -60,21 +58,28 @@ namespace tbfyoyl
 
         }
 
-        public override void Click(int x, int y)
+        public override void Click(Vector2 pos)
         {
-            if(base.BoundingBox().Contains(x, y))
+            if(base.Contains(pos))
             {
-                if (answers[currentPage * 2].Click(x, y))
+                if (answers[currentPage * 2].Click(pos))
                 {
                     selectedAnswer.Deselect();
                     selectedAnswer = answers[currentPage * 2];
                 }
-                else if (answers[currentPage * 2 + 1].Click(x, y))
+                else if (answers[currentPage * 2 + 1].Click(pos))
                 {
                     selectedAnswer.Deselect();
                     selectedAnswer = answers[currentPage * 2 + 1];
                 }
             }
+        }
+
+        public override void Drag(Vector2 start, Vector2 end)
+        {
+            Position += end - start;
+            answers[currentPage * 2].Position += end - start;
+            answers[currentPage * 2 + 1].Position += end - start;
         }
 
     }

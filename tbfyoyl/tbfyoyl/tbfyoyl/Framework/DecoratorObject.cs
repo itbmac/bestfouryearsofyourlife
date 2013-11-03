@@ -26,29 +26,36 @@ namespace tbfyoyl
             parent = p;
         }
 
-        public override void Draw(SpriteBatch b)
+        public virtual void Draw(SpriteBatch b)
         {
             parent.Draw(b);
         }
 
-        public override void Click(int x, int y)
+        public virtual void Click(Vector2 pos)
         {
-            parent.Click(x, y);
+            parent.Click(pos);
         }
 
-        public override void Drag(int x1, int y1, int x2, int y2)
+        public virtual void Drag(Vector2 start, Vector2 end)
         {
-            parent.Drag(x1, y1, x2, y2);
+            parent.Drag(start, end);
         }
 
-        public override Rectangle BoundingBox()
+        public virtual bool Contains(Vector2 pos)
         {
-            return parent.BoundingBox();
+            return parent.Contains(pos);
         }
 
-        public override void SetPosition(Vector2 newP)
+        public Vector2 Position
         {
-            parent.SetPosition(newP);
+            get
+            {
+                return parent.Position;
+            }
+            set
+            {
+                parent.Position = value;
+            }
         }
 
     }

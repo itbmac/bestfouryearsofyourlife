@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace tbfyoyl
 {
-    class PaperStack : DrawableObject
+    class PaperStack : TextureObject
     {
         public PaperStack(Texture2D t, Vector2 p)
             : base(t, p)

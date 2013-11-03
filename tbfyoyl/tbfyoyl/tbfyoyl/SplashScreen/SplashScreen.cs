@@ -17,18 +17,18 @@ namespace tbfyoyl
         /*
          * The initial splash screen for the game
          */
-        MenuObject[] menuItems;
+        ClickableObject[] menuItems;
 
         public SplashScreen(MainGame game)
             : base(game)
         {
-            menuItems = new MenuObject[2];
-            menuItems[0] = new MenuObject(new DrawableObject(MediaManager.textures["MENU1"], new Vector2(0, 0)),
+            menuItems = new ClickableObject[2];
+            menuItems[0] = new ClickableObject(new TextureObject(MediaManager.textures["MENU1"], new Vector2(0, 0)),
                 delegate()
                 {
                     game.ActiveGame = "WORLDMAP";
                 });
-            menuItems[1] = new MenuObject(new DrawableObject(MediaManager.textures["MENU2"], new Vector2(100, 0)),
+            menuItems[1] = new ClickableObject(new TextureObject(MediaManager.textures["MENU2"], new Vector2(100, 0)),
                 delegate()
                 {
                     game.Exit();
@@ -44,11 +44,17 @@ namespace tbfyoyl
             base.Initialize();
         }
 
-        public override bool ClickUp(int x, int y)
+        public override bool ClickDown(Vector2 pos)
         {
-            foreach (MenuObject o in menuItems)
-                o.Click(x, y);
-            return base.ClickUp(x, y);
+            foreach (GameObject o in menuItems)
+            {
+                if (o.Contains(pos))
+                {
+                    activeObject = o;
+                    break;
+                }
+            }
+            return base.ClickDown(pos);
         }
 
         /// <summary>
@@ -62,11 +68,10 @@ namespace tbfyoyl
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            foreach (MenuObject o in menuItems)
+            foreach (ClickableObject o in menuItems)
             {
                 o.Draw(spriteBatch);
             }
-            //prettify
         }
 
     }
