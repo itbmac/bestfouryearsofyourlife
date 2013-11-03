@@ -23,6 +23,9 @@ namespace tbfyoyl
         PaperStack ungraded;
         GradingStamp pen;
         GradingStamp cheater;
+
+        GameObject activeObject;
+
         double runningTotal;
         int numPapersGraded;
         int numPapersLeft;
@@ -60,12 +63,32 @@ namespace tbfyoyl
         {
         }
 
-        public override bool Click(int x, int y)
+        public override bool ClickDown(int x, int y)
         {
-            return base.Click(x, y);
+            if (pen.BoundingBox().Contains(x, y))
+            {
+                activeObject = pen;
+            }
+            else if (cheater.BoundingBox().Contains(x, y))
+            {
+                activeObject = cheater;
+            }
+            else if (currentPaper.BoundingBox().Contains(x, y))
+            {
+                activeObject = currentPaper;
+            }
+            else if (graded.BoundingBox().Contains(x, y))
+            {
+                activeObject = graded;
+            }
+            else if (ungraded.BoundingBox().Contains(x, y))
+            {
+                activeObject = ungraded;
+            }
+            return base.ClickDown(x, y);
         }
 
-        public override void Drag(int x1, int y1, int x2, int y2)
+        public override bool Drag(int x1, int y1, int x2, int y2)
         {
             if (pen.BoundingBox().Contains(x1, y1))
             {
@@ -75,22 +98,15 @@ namespace tbfyoyl
             {
                 cheater.SetPosition(new Vector2(x2, y2));
             }
-            base.Drag(x1, y1, x2, y2);
+            return base.Drag(x1, y1, x2, y2);
         }
 
-        public override void EndDrag(int x, int y)
+        public override bool ClickUp(int x, int y)
         {
 
-            if (pen.BoundingBox().Contains(x, y))
-            {
-                currentPaper.TryStamp(x, y, false);
-            }
-            if (cheater.BoundingBox().Contains(x, y))
-            {
-                currentPaper.TryStamp(x, y, true);
-            }
-            base.EndDrag(x, y);
-
+            activeObject.Click(x, y);
+            activeObject = null;
+            return base.ClickUp(x, y);
         }
 
     }

@@ -61,7 +61,7 @@ namespace tbfyoyl
             base.Update(gameTime);
         }
 
-        public override bool Click(int x, int y)
+        public override bool ClickUp(int x, int y)
         {
             foreach (MenuObject o in menuItems)
                 o.Click(x, y);

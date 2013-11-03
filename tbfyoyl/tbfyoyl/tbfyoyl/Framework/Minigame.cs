@@ -55,15 +55,17 @@ namespace tbfyoyl
         public virtual void MousePosition(int x, int y)
         {
         }
-        public virtual bool Click(int x, int y)
+        public virtual bool ClickDown(int x, int y)
         {
             return true;
         }
-        public virtual void Drag(int x1, int y1, int x2, int y2)
+        public virtual bool Drag(int x1, int y1, int x2, int y2)
         {
+            return true;
         }
-        public virtual void EndDrag(int x, int y)
+        public virtual bool ClickUp(int x, int y)
         {
+            return true;
         }
 
     }
