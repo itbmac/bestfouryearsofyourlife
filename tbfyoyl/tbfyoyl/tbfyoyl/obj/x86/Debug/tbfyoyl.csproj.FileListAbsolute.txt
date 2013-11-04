@@ -37,3 +37,10 @@ C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoy
 C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\pen_cheater.xnb
 C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\pen_incorrect.xnb
 C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\PaperStack.xnb
+C:\Users\itbmac\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\PaperStack.xnb
+C:\Users\itbmac\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\data\goblins.png
+C:\Users\itbmac\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\data\spineboy.png
+C:\Users\itbmac\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\data\goblins.atlas
+C:\Users\itbmac\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\data\goblins.json
+C:\Users\itbmac\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\data\spineboy.atlas
+C:\Users\itbmac\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\data\spineboy.json
