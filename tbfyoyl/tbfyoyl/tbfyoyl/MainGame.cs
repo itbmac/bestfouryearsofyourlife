@@ -20,16 +20,6 @@ namespace tbfyoyl
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
 
-        //tool to handle display of the game
-        private MediaManager helper;
-        public MediaManager Helper
-        {
-            get
-            {
-                return helper;
-            }
-        }
-
         //a list of the contexts in this game
         private Dictionary<String, Minigame> games;
         //the currently active context
@@ -88,8 +78,7 @@ namespace tbfyoyl
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            helper = new MediaManager();
-            helper.Setup(Services, graphics);
+            MediaManager.Setup(Services, graphics);
 
             prevMouseState = Mouse.GetState();
 
@@ -175,7 +164,7 @@ namespace tbfyoyl
             if (gameTime.TotalGameTime.Seconds % 13 == 0)
             {
                 money++;
-                bloodSugarLevel = Helper.GetRandomInt(40, 250);
+                bloodSugarLevel = MediaManager.GetRandomInt(40, 250);
             }
 
             base.Update(gameTime);

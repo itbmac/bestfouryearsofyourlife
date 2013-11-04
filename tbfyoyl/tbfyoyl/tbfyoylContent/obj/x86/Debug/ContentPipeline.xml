@@ -118,6 +118,15 @@
       <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\pen_incorrect.xnb</Output>
       <Time>2013-11-03T17:05:03.5945829-05:00</Time>
     </Item>
+    <Item>
+      <Source>PaperStack.png</Source>
+      <Name>PaperStack</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\PaperStack.xnb</Output>
+      <Time>2013-11-03T18:14:29.5107127-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

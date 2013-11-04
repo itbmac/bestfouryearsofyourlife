@@ -17,29 +17,67 @@ namespace tbfyoyl.Framework
          * A GameObject made of a collection of other GameObjects
          * The objects in this collection are such that the last object is on
          * top, ie. is drawn last, and clicked on first.
-         * 
-         * All method calls are made by calling the corresponding
-         * method on each of the 
          */
+
+        public enum Click_Mode { NONE, FIRST, ALL };
+        private Click_Mode click_mode;
+        private Vector2 position;
+
         public CollectionObject() 
             : base()
         {
+            click_mode = Click_Mode.FIRST;
+            position = new Vector2(0, 0);
+        }
+
+        public Vector2 Position
+        {
+            get
+            {
+                return new Vector2(position.X, position.Y);
+            }
+            set
+            {
+                Vector2 diff = value - position;
+                foreach(GameObject o in this)
+                {
+                    o.Position += diff;
+                }
+                position = new Vector2(value.X, value.Y);
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            for(int i = 0; i < this.Count[]; i++)
+            for(int i = 0; i < this.Count; i++)
             {
                 this[i].Draw(spriteBatch);
             }
         }
 
-        public void Click(int x, int y)
+        public void ClickUp(Vector2 pos)
         {
+            switch (click_mode)
+            {
+            }
+            for (int i = this.Count - 1; i >= 0; i--)
+            {
+            }
         }
 
-        public abstract void Drag(int x1, int y1, int x2, int y2);
-        public abstract Rectangle BoundingBox();
-        public abstract void SetPosition(Vector2 newP);
+        public void ClickDown(Vector2 pos)
+        {
+            for (int i = this.Count - 1; i >= 0; i--)
+            {
+            }
+        }
+
+        public void Drag(Vector2 start, Vector2 end)
+        {
+        }
+        public bool Contains(Vector2 pos)
+        {
+            return true;
+        }
     }
 }

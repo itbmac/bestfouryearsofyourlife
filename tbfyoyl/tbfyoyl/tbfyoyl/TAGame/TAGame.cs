@@ -16,24 +16,23 @@ namespace tbfyoyl
     /// </summary>
     public class TAGame : Minigame
     {
-        public MediaManager Helper;
-        Paper currentPaper;
-        Paper answerKey;
-        PaperStack graded;
-        PaperStack ungraded;
-        GradingStamp pen;
-        GradingStamp cheater;
+        private Paper currentPaper;
+        private Paper answerKey;
+        private PaperStack graded;
+        private PaperStack ungraded;
+        private GradingStamp pen;
+        private GradingStamp cheater;
 
-        double runningTotal;
-        int numPapersGraded;
-        int numPapersLeft;
-
+/*
+        private double runningTotal;
+        private int numPapersGraded;
+        private int numPapersLeft;
+*/
 
         public TAGame(MainGame game)
             : base(game)
         {
             // TODO: Construct any child components here
-            Helper = game.Helper;
         }
 
         /// <summary>
@@ -44,11 +43,24 @@ namespace tbfyoyl
         {
             // TODO: Add your initialization code here
             currentPaper = new Paper(MediaManager.textures["paper"], new Vector2(100, 100), MediaManager.allAnswers[0]);
-            answerKey = new Paper(MediaManager.textures["paper"], new Vector2(100, 200), MediaManager.allAnswers[0]);
+            answerKey = new Paper(MediaManager.textures["paper"], new Vector2(100, 200), MediaManager.allAnswers[1]);
             graded = new PaperStack(MediaManager.textures["paper stack"], new Vector2(0, 0));
             ungraded = new PaperStack(MediaManager.textures["paper stack"], new Vector2(0, 400));
             pen = new GradingStamp(MediaManager.textures["pen_incorrect"], new Vector2(400, 500));
             cheater = new GradingStamp(MediaManager.textures["pen_cheater"], new Vector2(500, 500));
+
+            drawableObjects.Add(ungraded);
+            drawableObjects.Add(graded);
+            drawableObjects.Add(answerKey);
+            drawableObjects.Add(currentPaper);
+            drawableObjects.Add(cheater);
+            drawableObjects.Add(pen);
+            clickableObjects.Add(ungraded);
+            clickableObjects.Add(graded);
+            clickableObjects.Add(answerKey);
+            clickableObjects.Add(currentPaper);
+            clickableObjects.Add(cheater);
+            clickableObjects.Add(pen);
             
             base.Initialize();
         }
@@ -69,58 +81,35 @@ namespace tbfyoyl
             return null;
         }
 
-        public override void Draw(SpriteBatch spriteBatch)
-        {
-            Helper.DrawArt(spriteBatch, "Content/background", 0,0);
-            currentPaper.Draw(spriteBatch);
-            //answerKey.Draw(spriteBatch);
-            //graded.Draw(spriteBatch);
-            //ungraded.Draw(spriteBatch);
-            pen.Draw(spriteBatch);
-            cheater.Draw(spriteBatch);
-        }
-
         public override bool ClickDown(Vector2 pos)
         {
-            if (pen.Contains(pos))
+            bool ret = base.ClickDown(pos);
+            if (activeObject == ungraded)
             {
-                activeObject = pen;
-            }
-            else if (cheater.Contains(pos))
-            {
-                activeObject = cheater;
-            }/*
-            else if (currentPaper.Contains(pos))
-            {
+                currentPaper.Position = pos;
+                drawableObjects.Add(currentPaper);
+                clickableObjects.Add(currentPaper);
                 activeObject = currentPaper;
-            }*/
-            else if (answerKey.Contains(pos))
-            {
-                activeObject = answerKey;
             }
-            else if (graded.Contains(pos))
-            {
-                activeObject = graded;
-            }
-            else if (ungraded.Contains(pos))
-            {
-                activeObject = ungraded;
-            }
-            return base.ClickDown(pos);
+            return ret;
         }
-        /*
-        public override bool Drag(Vector2 start, Vector2 end)
+
+        public override bool ClickUp(Vector2 pos)
         {
-            if (pen.Contains(start))
+            if (activeObject == currentPaper && ungraded.Contains(pos))
             {
-                pen.Drag(start, end);
+                drawableObjects.Remove(currentPaper);
+                clickableObjects.Remove(currentPaper);
+                activeObject = null;
             }
-            if (cheater.Contains(start))
-            {
-                cheater.Drag(start, end);
-            }
-            return base.Drag(start, end);
+            bool ret = base.ClickUp(pos);
+            return ret;
         }
-        */
+
+        public override void Draw(SpriteBatch spriteBatch)
+        {
+            MediaManager.DrawArt(spriteBatch, "Content/background", 0, 0);
+            base.Draw(spriteBatch);
+        }
     }
 }

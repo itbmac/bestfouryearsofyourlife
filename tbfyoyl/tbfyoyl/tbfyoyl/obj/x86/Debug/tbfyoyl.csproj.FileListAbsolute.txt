@@ -36,3 +36,4 @@ C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoy
 C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\background.xnb
 C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\pen_cheater.xnb
 C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\pen_incorrect.xnb
+C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\PaperStack.xnb

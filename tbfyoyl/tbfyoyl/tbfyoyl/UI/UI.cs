@@ -18,7 +18,6 @@ namespace tbfyoyl
     public class UI : Minigame
     {
         //tool to handle display of the game
-        public MediaManager Helper;
         private int UI_display_state = 0;
         private int UI_button_state = 0;
         private int UI_MAX_Y = 0;
@@ -30,8 +29,6 @@ namespace tbfyoyl
         public UI(MainGame game)
             : base(game)
         {
-            Helper = game.Helper;
-            
             menuItems = new ClickableObject[1];
             menuItems[0] = new ClickableObject(new TextureObject(MediaManager.textures["MENU_MIDDLE"], new Vector2(700, 400)),
                 delegate()
@@ -70,7 +67,7 @@ namespace tbfyoyl
             if (pos.X >= UI_MIN_X && pos.Y <= UI_MAX_Y)
             {
                 foreach (ClickableObject o in menuItems)
-                    o.Click(pos);
+                    o.ClickDown(new Vector2(UI_BUTTON_X, UI_BUTTON_Y));
             }
             
             bool isInUI = true;
@@ -143,41 +140,41 @@ namespace tbfyoyl
                         UI_MAX_Y = TA_GAME_HEIGHT_AS;
                         if (UI_display_state == 1)
                         {
-                            Helper.DrawArt(spriteBatch, "Content/UI_Bottom_150p", UI_X - 50, TA_GAME_HEIGHT_AS + TA_GAME_HEIGHT_NS - UI_Bot_Height);
+                            MediaManager.DrawArt(spriteBatch, "Content/UI_Bottom_150p", UI_X - 50, TA_GAME_HEIGHT_AS + TA_GAME_HEIGHT_NS - UI_Bot_Height);
                             UI_MAX_Y = TA_GAME_HEIGHT_AS + TA_GAME_HEIGHT_NS;
                         }
-                        Helper.DrawArt(spriteBatch, "Content/UI_Top_150p", UI_X - 50, TA_GAME_HEIGHT_AS - UI_Top_Height);
+                        MediaManager.DrawArt(spriteBatch, "Content/UI_Top_150p", UI_X - 50, TA_GAME_HEIGHT_AS - UI_Top_Height);
                         break;
                     case "BOOKSTOREGAME":
                         UI_MAX_Y = BS_GAME_HEIGHT_AS;
                         if (UI_display_state == 1)
                         {
-                            Helper.DrawArt(spriteBatch, "Content/UI_Bottom_150p", UI_X - 50, BS_GAME_HEIGHT_AS + BS_GAME_HEIGHT_NS - UI_Bot_Height);
+                            MediaManager.DrawArt(spriteBatch, "Content/UI_Bottom_150p", UI_X - 50, BS_GAME_HEIGHT_AS + BS_GAME_HEIGHT_NS - UI_Bot_Height);
                             UI_MAX_Y = BS_GAME_HEIGHT_AS + BS_GAME_HEIGHT_NS;
                         }
-                        Helper.DrawArt(spriteBatch, "Content/UI_Top_150p", UI_X - 50, BS_GAME_HEIGHT_AS - UI_Top_Height);
+                        MediaManager.DrawArt(spriteBatch, "Content/UI_Top_150p", UI_X - 50, BS_GAME_HEIGHT_AS - UI_Top_Height);
                         break;
                     default:
                         break;
                 }
 
-                Helper.DrawText(spriteBatch, "TIME: " + game.time, UI_Font_X, UI_Y_AS, UI_Color);
+                MediaManager.DrawText(spriteBatch, "TIME: " + game.time, UI_Font_X, UI_Y_AS, UI_Color);
                 UI_Y_AS += line_height;
-                Helper.DrawText(spriteBatch, "BSL: " + game.bloodSugarLevel.ToString(), UI_Font_X, UI_Y_AS, UI_Color);
+                MediaManager.DrawText(spriteBatch, "BSL: " + game.bloodSugarLevel.ToString(), UI_Font_X, UI_Y_AS, UI_Color);
                 UI_Y_AS += line_height;
 
                 switch (game.ActiveGame)
                 {
                     case "TAGAME":
-                        Helper.DrawText(spriteBatch, "PAPERS LEFT: ", UI_Font_X, UI_Y_AS, UI_Color);
+                        MediaManager.DrawText(spriteBatch, "PAPERS LEFT: ", UI_Font_X, UI_Y_AS, UI_Color);
                         UI_Y_AS += line_height;
-                        Helper.DrawText(spriteBatch, "CLASS PERCENTAGE: ", UI_Font_X, UI_Y_AS, UI_Color);
+                        MediaManager.DrawText(spriteBatch, "CLASS PERCENTAGE: ", UI_Font_X, UI_Y_AS, UI_Color);
                         UI_Y_AS += line_height;
                         break;
                     case "BOOKSTOREGAME":
-                        Helper.DrawText(spriteBatch, "CUSTOMERS: ", UI_Font_X, UI_Y_AS, UI_Color);
+                        MediaManager.DrawText(spriteBatch, "CUSTOMERS: ", UI_Font_X, UI_Y_AS, UI_Color);
                         UI_Y_AS += line_height;
-                        Helper.DrawText(spriteBatch, "TIME TIL CLOSING: ", UI_Font_X, UI_Y_AS, UI_Color);
+                        MediaManager.DrawText(spriteBatch, "TIME TIL CLOSING: ", UI_Font_X, UI_Y_AS, UI_Color);
                         UI_Y_AS += line_height;
                         break;
                     default:
@@ -188,25 +185,25 @@ namespace tbfyoyl
 
                 if (UI_display_state == 1)
                 {
-                    Helper.DrawText(spriteBatch, "SCORE: " + game.score, UI_Font_X, UI_Y_HID, UI_Color);
+                    MediaManager.DrawText(spriteBatch, "SCORE: " + game.score, UI_Font_X, UI_Y_HID, UI_Color);
                     UI_Y_HID += line_height;
-                    Helper.DrawText(spriteBatch, "TIME: " + game.time, UI_Font_X, UI_Y_HID, UI_Color);
+                    MediaManager.DrawText(spriteBatch, "TIME: " + game.time, UI_Font_X, UI_Y_HID, UI_Color);
                     UI_Y_HID += line_height;
-                    Helper.DrawText(spriteBatch, "GRADE: ", UI_Font_X, UI_Y_HID, UI_Color);
+                    MediaManager.DrawText(spriteBatch, "GRADE: ", UI_Font_X, UI_Y_HID, UI_Color);
                     UI_Y_HID += line_height;
 
                     switch (game.ActiveGame)
                     {
                         case "TAGAME":
-                            Helper.DrawText(spriteBatch, "PAPERS LEFT: ", UI_Font_X, UI_Y_HID, UI_Color);
+                            MediaManager.DrawText(spriteBatch, "PAPERS LEFT: ", UI_Font_X, UI_Y_HID, UI_Color);
                             UI_Y_HID += line_height;
-                            Helper.DrawText(spriteBatch, "CLASS PERCENTAGE: ", UI_Font_X, UI_Y_HID, UI_Color);
+                            MediaManager.DrawText(spriteBatch, "CLASS PERCENTAGE: ", UI_Font_X, UI_Y_HID, UI_Color);
                             UI_Y_HID += line_height;
                             break;
                         case "BOOKSTOREGAME":
-                            Helper.DrawText(spriteBatch, "CUSTOMERS: ", UI_Font_X, UI_Y_HID, UI_Color);
+                            MediaManager.DrawText(spriteBatch, "CUSTOMERS: ", UI_Font_X, UI_Y_HID, UI_Color);
                             UI_Y_HID += line_height;
-                            Helper.DrawText(spriteBatch, "TIME TIL CLOSING: ", UI_Font_X, UI_Y_HID, UI_Color);
+                            MediaManager.DrawText(spriteBatch, "TIME TIL CLOSING: ", UI_Font_X, UI_Y_HID, UI_Color);
                             UI_Y_HID += line_height;
                             break;
                         default:
@@ -223,7 +220,7 @@ namespace tbfyoyl
                             menuItems[0].Position = newButtonPos;
                             if (UI_button_state == 1)
                             {
-                                Helper.DrawText(spriteBatch, "Click to Expand", UI_X + 22, TA_GAME_HEIGHT_AS + UI_Mid_Height + 14, UI_Color);
+                                MediaManager.DrawText(spriteBatch, "Click to Expand", UI_X + 22, TA_GAME_HEIGHT_AS + UI_Mid_Height + 14, UI_Color);
                             }
                             UI_BUTTON_Y = TA_GAME_HEIGHT_AS + UI_Mid_Height;
                         }
@@ -233,7 +230,7 @@ namespace tbfyoyl
                             menuItems[0].Position = newButtonPos;
                             if (UI_button_state == 1)
                             {
-                                Helper.DrawText(spriteBatch, "Click to Hide", UI_X + 37, TA_GAME_HEIGHT_AS + TA_GAME_HEIGHT_NS + UI_Mid_Height + 14, UI_Color);
+                                MediaManager.DrawText(spriteBatch, "Click to Hide", UI_X + 37, TA_GAME_HEIGHT_AS + TA_GAME_HEIGHT_NS + UI_Mid_Height + 14, UI_Color);
                             }
                             UI_BUTTON_Y = TA_GAME_HEIGHT_AS + TA_GAME_HEIGHT_NS + UI_Mid_Height;
                         }
@@ -245,7 +242,7 @@ namespace tbfyoyl
                             menuItems[0].Position = newButtonPos;
                             if (UI_button_state == 1)
                             {
-                                Helper.DrawText(spriteBatch, "Click to Expand", UI_X + 22, BS_GAME_HEIGHT_AS + UI_Mid_Height + 14, UI_Color);
+                                MediaManager.DrawText(spriteBatch, "Click to Expand", UI_X + 22, BS_GAME_HEIGHT_AS + UI_Mid_Height + 14, UI_Color);
                             }
                             UI_BUTTON_Y = BS_GAME_HEIGHT_AS + UI_Mid_Height;
                         }
@@ -255,7 +252,7 @@ namespace tbfyoyl
                             menuItems[0].Position = newButtonPos;
                             if (UI_button_state == 1)
                             {
-                                Helper.DrawText(spriteBatch, "Click to Hide", UI_X + 37, BS_GAME_HEIGHT_AS + BS_GAME_HEIGHT_NS + UI_Mid_Height + 14, UI_Color);
+                                MediaManager.DrawText(spriteBatch, "Click to Hide", UI_X + 37, BS_GAME_HEIGHT_AS + BS_GAME_HEIGHT_NS + UI_Mid_Height + 14, UI_Color);
                             }
                             UI_BUTTON_Y = BS_GAME_HEIGHT_AS + BS_GAME_HEIGHT_NS + UI_Mid_Height;
                         }
@@ -266,7 +263,7 @@ namespace tbfyoyl
                 UI_BUTTON_X = UI_X;
             }
 
-            Helper.DrawArt(spriteBatch, "Content/cursorSmall30", (int)ms.X - 30 / 2, (int)ms.Y - 30 / 2);
+            MediaManager.DrawArt(spriteBatch, "Content/cursorSmall30", (int)ms.X - 30 / 2, (int)ms.Y - 30 / 2);
         }
 
     }

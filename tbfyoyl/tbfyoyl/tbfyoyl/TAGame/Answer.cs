@@ -59,7 +59,7 @@ namespace tbfyoyl
             isSelected = false;
         }
 
-        public new bool Click(Vector2 pos)
+        public new bool ClickDown(Vector2 pos)
         {
             if (base.Contains(pos))
             {

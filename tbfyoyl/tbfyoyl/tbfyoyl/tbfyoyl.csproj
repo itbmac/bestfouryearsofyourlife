@@ -72,10 +72,11 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Framework\CollectionObject.cs" />
     <Compile Include="TAGame\Answer.cs" />
     <Compile Include="BookstoreGame\BookstoreGame.cs" />
     <Compile Include="Framework\DecoratorObject.cs" />
-    <Compile Include="Framework\DrawableObject.cs" />
+    <Compile Include="Framework\TextureObject.cs" />
     <Compile Include="Framework\GameObject.cs" />
     <Compile Include="TAGame\GradingStamp.cs" />
     <Compile Include="Framework\ClickableObject.cs" />

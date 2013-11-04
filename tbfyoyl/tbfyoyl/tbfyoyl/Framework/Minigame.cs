@@ -22,11 +22,16 @@ namespace tbfyoyl
 
         protected MainGame game; //the game that this minigame displays onto
         protected GameObject activeObject; //the object that was first selected when clicking
+        protected List<GameObject> clickableObjects; //all objects in the game that are clickable
+        protected List<GameObject> drawableObjects; //all objects in the game that should be drawn
 
         public Minigame(MainGame m_game)
             : base(m_game)
         {
             this.game = m_game;
+            activeObject = null;
+            clickableObjects = new List<GameObject>();
+            drawableObjects = new List<GameObject>();
         }
 
         /// <summary>
@@ -50,13 +55,29 @@ namespace tbfyoyl
             base.Update(gameTime);
         }
 
-        public abstract void Draw(SpriteBatch spriteBatch);
+        public virtual void Draw(SpriteBatch spriteBatch)
+        {
+            foreach(GameObject o in drawableObjects)
+            {
+                o.Draw(spriteBatch);
+            }
+        }
         
         public virtual void MouseOver(Vector2 pos)
         {
         }
+
         public virtual bool ClickDown(Vector2 pos)
         {
+            for (int i = clickableObjects.Count - 1; i >= 0; i--)
+            {
+                if (clickableObjects[i].Contains(pos))
+                {
+                    activeObject = clickableObjects[i];
+                    activeObject.ClickDown(pos);
+                    break;
+                }
+            }
             return true;
         }
         public virtual bool Drag(Vector2 start, Vector2 end)
@@ -71,7 +92,7 @@ namespace tbfyoyl
         {
             if (activeObject != null)
             {
-                activeObject.Click(pos);
+                activeObject.ClickUp(pos);
             }
             activeObject = null;
             return true;

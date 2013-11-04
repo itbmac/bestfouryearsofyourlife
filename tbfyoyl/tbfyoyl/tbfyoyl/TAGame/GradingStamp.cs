@@ -26,7 +26,7 @@ namespace tbfyoyl
             base.Draw(spriteBatch);
         }
 
-        public override void Click(Vector2 pos)
+        public override void ClickDown(Vector2 pos)
         {
         }
 

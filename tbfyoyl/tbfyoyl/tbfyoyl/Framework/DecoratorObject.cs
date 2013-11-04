@@ -31,9 +31,14 @@ namespace tbfyoyl
             parent.Draw(b);
         }
 
-        public virtual void Click(Vector2 pos)
+        public virtual void ClickDown(Vector2 pos)
         {
-            parent.Click(pos);
+            parent.ClickDown(pos);
+        }
+
+        public virtual void ClickUp(Vector2 pos)
+        {
+            parent.ClickUp(pos);
         }
 
         public virtual void Drag(Vector2 start, Vector2 end)

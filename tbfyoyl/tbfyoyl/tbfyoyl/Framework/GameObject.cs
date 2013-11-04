@@ -22,7 +22,8 @@ namespace tbfyoyl
         Vector2 Position { get; set; }
 
         void Draw(SpriteBatch spriteBatch);
-        void Click(Vector2 pos);
+        void ClickDown(Vector2 pos);
+        void ClickUp(Vector2 pos);
         void Drag(Vector2 start, Vector2 end);
         bool Contains(Vector2 pos);
     }

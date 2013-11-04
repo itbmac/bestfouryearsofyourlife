@@ -21,13 +21,13 @@ namespace tbfyoyl
             onClick = behavior;
         }
 
-        public override void Click(Vector2 pos)
+        public override void ClickUp(Vector2 pos)
         {
             if (parent.Contains(pos))
             {
                 onClick();
             }
-            parent.Click(pos);
+            parent.ClickDown(pos);
         }
     }
 }

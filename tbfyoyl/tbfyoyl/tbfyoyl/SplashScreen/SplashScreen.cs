@@ -17,7 +17,7 @@ namespace tbfyoyl
         /*
          * The initial splash screen for the game
          */
-        ClickableObject[] menuItems;
+        private ClickableObject[] menuItems;
 
         public SplashScreen(MainGame game)
             : base(game)

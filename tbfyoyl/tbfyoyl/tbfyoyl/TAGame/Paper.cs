@@ -50,24 +50,19 @@ namespace tbfyoyl
 
         
         public void TryStamp(int x, int y, bool isCopyStamp)
-        {/*
-            if (selectedAnswer.BoundingBox().Contains(x, y))
-            {
-                selectedAnswer.Stamp(isCopyStamp);
-            }*/
-
+        {
         }
 
-        public override void Click(Vector2 pos)
+        public override void ClickDown(Vector2 pos)
         {
             if(base.Contains(pos))
             {
-                if (answers[currentPage * 2].Click(pos))
+                if (answers[currentPage * 2].ClickDown(pos))
                 {
                     selectedAnswer.Deselect();
                     selectedAnswer = answers[currentPage * 2];
                 }
-                else if (answers[currentPage * 2 + 1].Click(pos))
+                else if (answers[currentPage * 2 + 1].ClickDown(pos))
                 {
                     selectedAnswer.Deselect();
                     selectedAnswer = answers[currentPage * 2 + 1];

@@ -16,51 +16,51 @@ namespace tbfyoyl
 {
 
     //*************************************************************************
-    public class MediaManager
+    public static class MediaManager
     {
-        ContentManager content;
+        private static ContentManager content;
 
         public static Dictionary<String, Texture2D> textures;
 
-        ArrayList arrayArt = new ArrayList();
-        ArrayList arraySound = new ArrayList();
+        private static ArrayList arrayArt = new ArrayList();
+        private static ArrayList arraySound = new ArrayList();
 
-        SpriteFont smallFont;
-        SpriteFont mediumFont;
-        public SpriteFont mediumFont2;
-        public SpriteFont mediumFont3;
-        SpriteFont bigFont;
+        private static SpriteFont smallFont;
+        private static SpriteFont mediumFont;
+        public static SpriteFont mediumFont2;
+        public static SpriteFont mediumFont3;
+        private static SpriteFont bigFont;
 
         public static Answer[][] allAnswers;
 
-        public Texture2D pixel;
+        public static Texture2D pixel;
 
-        Random randomNumberGenerator = new Random();
+        private static Random randomNumberGenerator = new Random();
 
-        public int screenW, screenH;
+        public static int screenW, screenH;
 
-        bool isAdvanced;
+        private static bool isAdvanced;
 
         public static float MasterVolume { get; set; }
 
 
         //*************************************************************************
-        public void Setup(IServiceProvider Services, GraphicsDeviceManager g, bool advancedFlag = false)
+        public static void Setup(IServiceProvider Services, GraphicsDeviceManager g, bool advancedFlag = false)
         {
 
-        content = new ContentManager(Services);
+            content = new ContentManager(Services);
 
-        textures = new Dictionary<string, Texture2D>();
-        //TODO: add right pictures
-        textures.Add("BLAH", content.Load<Texture2D>("content/BLAH"));
-        textures.Add("MENU_TOP", content.Load<Texture2D>("content/UI_Top_150p"));
-        textures.Add("MENU_MIDDLE", content.Load<Texture2D>("content/UI_Middle_150p"));
-        textures.Add("MENU_BOTTOM", content.Load<Texture2D>("content/UI_Bottom_150p"));
-        textures.Add("paper", content.Load<Texture2D>("content/Paper"));
-        textures.Add("answer", content.Load<Texture2D>("content/BLAH"));
-        textures.Add("pen_incorrect", content.Load<Texture2D>("content/pen_incorrect"));
-        textures.Add("pen_cheater", content.Load<Texture2D>("content/pen_cheater"));
-        textures.Add("paper stack", content.Load<Texture2D>("content/Paper"));
+            textures = new Dictionary<string, Texture2D>();
+            //TODO: add right pictures
+            textures.Add("BLAH", content.Load<Texture2D>("content/BLAH"));
+            textures.Add("MENU_TOP", content.Load<Texture2D>("content/UI_Top_150p"));
+            textures.Add("MENU_MIDDLE", content.Load<Texture2D>("content/UI_Middle_150p"));
+            textures.Add("MENU_BOTTOM", content.Load<Texture2D>("content/UI_Bottom_150p"));
+            textures.Add("paper", content.Load<Texture2D>("content/Paper"));
+            textures.Add("answer", content.Load<Texture2D>("content/BLAH"));
+            textures.Add("pen_incorrect", content.Load<Texture2D>("content/pen_incorrect"));
+            textures.Add("pen_cheater", content.Load<Texture2D>("content/pen_cheater"));
+            textures.Add("paper stack", content.Load<Texture2D>("content/PaperStack"));
 
             Texture2D answerTexture = textures["BLAH"];
             allAnswers = new Answer[][]
@@ -106,7 +106,7 @@ namespace tbfyoyl
         }
 
         //*************************************************************************
-        public Texture2D GetArt(string artFileName)
+        public static Texture2D GetArt(string artFileName)
         {
             Texture2D retVal;
 
@@ -128,13 +128,13 @@ namespace tbfyoyl
         }
 
         //*************************************************************************
-        public void DrawArt(SpriteBatch sb, string artFileName, int x, int y)
+        public static void DrawArt(SpriteBatch sb, string artFileName, int x, int y)
         {
             DrawArt(sb, artFileName, x, y, Color.White);
         }
 
         //*************************************************************************
-        public void DrawArt(SpriteBatch sb, string artFileName, int x, int y, Color c)
+        public static void DrawArt(SpriteBatch sb, string artFileName, int x, int y, Color c)
         {
             Vector2 pos;
             pos.X = x;
@@ -146,13 +146,13 @@ namespace tbfyoyl
         }
 
         //*************************************************************************
-        public void DrawPartOfTexture(SpriteBatch sb, Texture2D texture, Rectangle sourceRect, Rectangle destRect, Color c)
+        public static void DrawPartOfTexture(SpriteBatch sb, Texture2D texture, Rectangle sourceRect, Rectangle destRect, Color c)
         {
             sb.Draw(texture, destRect, sourceRect, Color.White);
         }
 
         //*************************************************************************
-        public SoundEffect GetSound(string soundFileName)
+        public static SoundEffect GetSound(string soundFileName)
         {
             SoundEffect retVal;
 
@@ -174,7 +174,7 @@ namespace tbfyoyl
         }
 
         //*************************************************************************
-        public void PlaySound(string soundFileName)
+        public static void PlaySound(string soundFileName)
         {
             SoundEffect retVal = GetSound(soundFileName);
             if (retVal != null)
@@ -191,7 +191,7 @@ namespace tbfyoyl
         }
 
         //*************************************************************************
-        public void DrawText(SpriteBatch sb, string text, int x, int y, Color c)
+        public static void DrawText(SpriteBatch sb, string text, int x, int y, Color c)
         {
             Vector2 pos;
             pos.X = x;
@@ -201,7 +201,7 @@ namespace tbfyoyl
         }
 
         //*************************************************************************
-        public void DrawTextCentered(SpriteBatch sb, string text, int y, Color c)
+        public static void DrawTextCentered(SpriteBatch sb, string text, int y, Color c)
         {
             Vector2 textSize = mediumFont.MeasureString(text);
             Vector2 pos = new Vector2(screenW / 2 - textSize.X / 2, y);
@@ -210,13 +210,13 @@ namespace tbfyoyl
         }
 
         //*************************************************************************
-        public void DrawPoint(SpriteBatch sb, Vector2 point, Color color)
+        public static void DrawPoint(SpriteBatch sb, Vector2 point, Color color)
         {
             sb.Draw(pixel, point, color);
         }
 
         //*************************************************************************
-        public void DrawLine(SpriteBatch sb, Vector2 p1, Vector2 p2, Color color)
+        public static void DrawLine(SpriteBatch sb, Vector2 p1, Vector2 p2, Color color)
         {
 
             float angle = 0f;
@@ -234,7 +234,7 @@ namespace tbfyoyl
         }
 
         //*************************************************************************
-        public void DrawRectangle(SpriteBatch sb, Rectangle rectangle, Color color)
+        public static void DrawRectangle(SpriteBatch sb, Rectangle rectangle, Color color)
         {
             Vector2 TopLeft = new Vector2(rectangle.Left, rectangle.Top);
             Vector2 TopRight = new Vector2(rectangle.Right, rectangle.Top);
@@ -248,13 +248,13 @@ namespace tbfyoyl
         }
 
         //*************************************************************************
-        public int GetRandomInt(int min, int max)
+        public static int GetRandomInt(int min, int max)
         {
             return randomNumberGenerator.Next(max - min) + min;
         }
 
         //*************************************************************************
-        public float GetRandomFloat(double min, double max)
+        public static float GetRandomFloat(double min, double max)
         {
             return (float)(randomNumberGenerator.NextDouble() * (max - min) + min);
         }

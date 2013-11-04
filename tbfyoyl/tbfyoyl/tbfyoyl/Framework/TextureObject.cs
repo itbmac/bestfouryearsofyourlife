@@ -37,7 +37,9 @@ namespace tbfyoyl
             spriteBatch.Draw(texture, position, Color.White);
         }
 
-        public virtual void Click(Vector2 pos) { }
+        public virtual void ClickDown(Vector2 pos) { }
+
+        public virtual void ClickUp(Vector2 pos) { }
 
         public virtual void Drag(Vector2 start, Vector2 end) { }
 
