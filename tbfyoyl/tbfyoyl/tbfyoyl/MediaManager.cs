@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
-using tbfyoyl;
+using tbfyoyl.TAGame;
 
 namespace tbfyoyl
 {
@@ -43,6 +43,7 @@ namespace tbfyoyl
 
         public static float MasterVolume { get; set; }
 
+        public static Camera2d cam;
 
         //*************************************************************************
         public static void Setup(IServiceProvider Services, GraphicsDeviceManager g, bool advancedFlag = false)

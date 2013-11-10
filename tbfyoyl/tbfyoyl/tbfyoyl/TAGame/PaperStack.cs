@@ -10,18 +10,22 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
-namespace tbfyoyl
+namespace tbfyoyl.TAGame
 {
-    class PaperStack : TextureObject
+    class PaperStack : DecoratorObject
     {
+        int last_paper;
         public PaperStack(Texture2D t, Vector2 p)
-            : base(t, p)
         {
+            last_paper = -1;
+            base.parent = new TextureObject(t, p);
         }
+
 
         public Paper getPaper()
         {
-            return null;
+            last_paper++;
+            return new Paper(MediaManager.textures["paper"], Position, MediaManager.allAnswers[last_paper]);
         }
 
         public void addPaper(Paper p)

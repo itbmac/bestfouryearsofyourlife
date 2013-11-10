@@ -21,6 +21,11 @@ namespace tbfyoyl
 
         protected GameObject parent;
 
+        protected DecoratorObject()
+        {
+            parent = null;
+        }
+
         public DecoratorObject(GameObject p)
         {
             parent = p;
@@ -51,7 +56,7 @@ namespace tbfyoyl
             return parent.Contains(pos);
         }
 
-        public Vector2 Position
+        public virtual Vector2 Position
         {
             get
             {

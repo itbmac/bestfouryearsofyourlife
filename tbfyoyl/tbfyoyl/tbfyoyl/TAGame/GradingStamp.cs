@@ -11,29 +11,26 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
 
-namespace tbfyoyl
+namespace tbfyoyl.TAGame
 {
-    class GradingStamp : TextureObject
+    class GradingStamp : DecoratorObject
     {
-        
+
+        private Vector2 initalPosition;
+
         public GradingStamp(Texture2D t, Vector2 p)
-            : base(t, p)
         {
+            base.parent = new TextureObject(t, p);
+            base.parent = new DraggableObject(base.parent);
+
+            initalPosition = p;
         }
 
-        public override void Draw(SpriteBatch spriteBatch)
+        public void SnapBack()
         {
-            base.Draw(spriteBatch);
+            Position = initalPosition;
         }
 
-        public override void ClickDown(Vector2 pos)
-        {
-        }
-
-        public override void Drag(Vector2 start, Vector2 end)
-        {
-            Position = Position - start + end;
-        }
     }
 }
 

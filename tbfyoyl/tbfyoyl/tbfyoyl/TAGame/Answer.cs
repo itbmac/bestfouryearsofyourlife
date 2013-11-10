@@ -11,27 +11,37 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using tbfyoyl;
 
-namespace tbfyoyl
+namespace tbfyoyl.TAGame
 {
-    public class Answer : TextureObject
+    public class Answer : DecoratorObject
     {
 
         bool isSelected;
-        bool isCorrect;
+        bool isMarkedCorrect;
         bool isActuallyCorrect;
-        bool isCopied;
+        bool isMarkedCopied;
         bool isActuallyCopied;
-        Vector2 pageOffset;
         
         public Answer(Texture2D t, Vector2 pos, bool isCorrect, bool isCopied)
-            : base(t, pos)
         {
-            this.isCopied = isCopied;
-            this.isCorrect = isCorrect;
+            base.parent = new TextureObject(t, pos);
+
+            this.isActuallyCorrect = isCopied;
+            this.isActuallyCopied = isCorrect;
+            this.isMarkedCorrect = true;
+            this.isMarkedCopied = false;
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
+            if (isMarkedCopied)
+            {
+                MediaManager.DrawArt(spriteBatch, "content/BLAH", (int)this.Position.X+50, (int)this.Position.Y);
+            }
+            else if(!isMarkedCorrect)
+            {
+                MediaManager.DrawArt(spriteBatch, "content/BLAH", (int)this.Position.X+100, (int)this.Position.Y);
+            }
             if (isSelected)
             {
                 base.Draw(spriteBatch);
@@ -49,8 +59,9 @@ namespace tbfyoyl
 
         public void Stamp(bool isCopyStamp)
         {
-            isCopied = isCopyStamp;
-            isCorrect = false;
+            System.Diagnostics.Debug.Write("TryStamp Answer\n");
+            isMarkedCorrect = false;
+            isMarkedCopied |= isCopyStamp;
             isSelected = false;
         }
 
@@ -68,5 +79,16 @@ namespace tbfyoyl
             }
             return false;
         }
+
+        public bool IsMarkedCorrectly()
+        {
+            return !(isActuallyCorrect ^ isMarkedCorrect);
+        }
+
+        public bool WasCheaterIdentified()
+        {
+            return !(isActuallyCopied ^ isMarkedCopied);
+        }
+
     }
 }

@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
-namespace tbfyoyl
+namespace tbfyoyl.TAGame
 {
     class Paper : TextureObject
     {
@@ -21,9 +21,6 @@ namespace tbfyoyl
 
         Answer selectedAnswer;
 
-        int expectedScore;
-        int actualScore;
-
         public Paper(Texture2D t, Vector2 p, Answer[] ans)
             : base(t, p)
         {
@@ -32,6 +29,21 @@ namespace tbfyoyl
             
             selectedAnswer = answers[0];
             SetCurrentPage(0);
+        }
+
+        public override Vector2 Position
+        {
+            get
+            {
+                return base.Position;
+            }
+            set
+            {
+                Vector2 diff = value - base.Position;
+                answers[currentPage * 2].Position += diff;
+                answers[currentPage * 2 + 1].Position += diff;
+                base.Position = value;
+            }
         }
 
         public override void Draw(SpriteBatch spriteBatch)
@@ -47,10 +59,18 @@ namespace tbfyoyl
             answers[currentPage * 2].Position = this.Position;
             answers[currentPage * 2 + 1].Position = this.Position + new Vector2(0, 60);
         }
-
-        
-        public void TryStamp(int x, int y, bool isCopyStamp)
+   
+        public void TryStamp(Vector2 pos, bool isCopyStamp)
         {
+            if (answers[currentPage * 2].Contains(pos))
+            {
+                answers[currentPage * 2].Stamp(isCopyStamp);
+            }
+            else if (answers[currentPage * 2 + 1].Contains(pos))
+            {
+                answers[currentPage * 2 + 1].Stamp(isCopyStamp);
+            }
+            System.Diagnostics.Debug.Write("TryStamp Paper\n");
         }
 
         public override void ClickDown(Vector2 pos)
@@ -73,8 +93,24 @@ namespace tbfyoyl
         public override void Drag(Vector2 start, Vector2 end)
         {
             Position += end - start;
-            answers[currentPage * 2].Position += end - start;
-            answers[currentPage * 2 + 1].Position += end - start;
+        }
+
+        public Score GetScore()
+        {
+            Score ret = new Score();
+            ret.NumQuestions = answers.Length;
+            foreach (Answer a in answers)
+            {
+                if (!a.IsMarkedCorrectly())
+                {
+                    ret.NumGradingMistakes++;
+                }
+                if (!a.WasCheaterIdentified())
+                {
+                    ret.NumCheaterMistakes++;
+                }
+            }
+            return ret;
         }
 
     }

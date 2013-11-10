@@ -19,14 +19,11 @@ namespace tbfyoyl.Framework
          * top, ie. is drawn last, and clicked on first.
          */
 
-        public enum Click_Mode { NONE, FIRST, ALL };
-        private Click_Mode click_mode;
         private Vector2 position;
 
         public CollectionObject() 
             : base()
         {
-            click_mode = Click_Mode.FIRST;
             position = new Vector2(0, 0);
         }
 
@@ -57,9 +54,6 @@ namespace tbfyoyl.Framework
 
         public void ClickUp(Vector2 pos)
         {
-            switch (click_mode)
-            {
-            }
             for (int i = this.Count - 1; i >= 0; i--)
             {
             }

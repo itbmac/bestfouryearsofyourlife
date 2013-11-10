@@ -62,6 +62,10 @@ namespace tbfyoyl
 
             graphics.PreferredBackBufferWidth = 1200;
             graphics.PreferredBackBufferHeight = 800;
+
+            MediaManager.cam = new Camera2d();
+            MediaManager.cam.Move(new Vector2(600, 400));
+
         }
 
         /// <summary>
@@ -79,7 +83,6 @@ namespace tbfyoyl
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             MediaManager.Setup(Services, graphics);
-
             prevMouseState = Mouse.GetState();
 
             games = new Dictionary<String, Minigame>()
@@ -87,7 +90,7 @@ namespace tbfyoyl
                 {"UI", new UI(this)},
                 {"WORLDMAP", new WorldMap(this)},
                 {"BOOKSTOREGAME", new BookstoreGame(this)},
-                {"TAGAME", new TAGame(this)},
+                {"TAGAME", new TAGame.TAGame(this)},
                 {"SPLASHSCREEN", new SplashScreen(this)},
             };
             ActiveGame = "SPLASHSCREEN";
@@ -177,9 +180,17 @@ namespace tbfyoyl
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            spriteBatch.Begin();
+            
+            spriteBatch.Begin(SpriteSortMode.Immediate,
+                        BlendState.AlphaBlend,
+                        null,
+                        null,
+                        null,
+                        null,
+                        MediaManager.cam.get_transformation(GraphicsDevice));
 
             activeGame.Draw(spriteBatch);
+
             games["UI"].Draw(spriteBatch);
 
             spriteBatch.End();

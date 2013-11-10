@@ -49,7 +49,7 @@ namespace tbfyoyl
             return texture.Bounds.Contains((int)relative.X, (int)relative.Y);
         }
 
-        public Vector2 Position
+        public virtual Vector2 Position
         {
             get
             {
