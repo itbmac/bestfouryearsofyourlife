@@ -57,9 +57,9 @@ namespace tbfyoyl.Framework
 
         public void ClickUp(Vector2 pos)
         {
-            switch (click_mode)
-            {
-            }
+          //  switch (click_mode)
+          //  {
+          //  }
             for (int i = this.Count - 1; i >= 0; i--)
             {
             }

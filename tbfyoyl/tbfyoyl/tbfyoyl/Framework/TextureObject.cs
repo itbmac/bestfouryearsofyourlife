@@ -19,14 +19,18 @@ namespace tbfyoyl
          * A GameObject that is drawn with a Texture2D
          */
 
+        // Should this actually be drawn
+        private Boolean shouldDraw;
+
         // The texture this object should display as
         private Texture2D texture;
 
         // The absolute position of this object
         private Vector2 position;
 
-        public TextureObject(Texture2D t, Vector2 pos)
+        public TextureObject(Texture2D t, Vector2 pos, Boolean shouldBeDrawn = true)
         {
+            shouldDraw = shouldBeDrawn;
             texture = t;
             position = new Vector2(pos.X, pos.Y);
         }
@@ -34,7 +38,8 @@ namespace tbfyoyl
         public virtual void Draw(SpriteBatch spriteBatch)
         {
             //assumes spriteBatch.begin() has already been called
-            spriteBatch.Draw(texture, position, Color.White);
+            if (shouldDraw)
+                spriteBatch.Draw(texture, position, Color.White);
         }
 
         public virtual void ClickDown(Vector2 pos) { }

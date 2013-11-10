@@ -18,7 +18,7 @@ namespace tbfyoyl
     //*************************************************************************
     public static class MediaManager
     {
-        private static ContentManager content;
+        public static ContentManager content;
 
         public static Dictionary<String, Texture2D> textures;
 
@@ -49,7 +49,7 @@ namespace tbfyoyl
         {
 
             content = new ContentManager(Services);
-
+            
             textures = new Dictionary<string, Texture2D>();
             //TODO: add right pictures
             textures.Add("BLAH", content.Load<Texture2D>("content/BLAH"));
