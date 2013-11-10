@@ -1,6 +1,6 @@
 using System;
+using System.IO;
 using System.Collections.Generic;
-using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
-
+using Spine;
 
 namespace tbfyoyl
 {
@@ -17,10 +17,18 @@ namespace tbfyoyl
     /// </summary>
     public class BookstoreGame : Minigame
     {
+        public Player player;
+        
+        protected override void LoadContent () {
+			
+		}
+        
         public BookstoreGame(MainGame game)
             : base(game)
         {
             // TODO: Construct any child components here
+
+            player = new Player(MediaManager.textures["BLAH"], new Vector2(400, 400), game.GraphicsDevice);
         }
 
         /// <summary>
@@ -34,6 +42,14 @@ namespace tbfyoyl
             base.Initialize();
         }
 
+        public override bool ClickDown(Vector2 pos)
+        {
+            player.setX(pos.X);
+            
+            bool ret = base.ClickDown(pos);
+            return ret;
+        }
+
         /// <summary>
         /// Allows the game component to update itself.
         /// </summary>
@@ -41,12 +57,14 @@ namespace tbfyoyl
         public override void Update(GameTime gameTime)
         {
             // TODO: Add your update code here
+            player.Update(gameTime);
 
             base.Update(gameTime);
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
+            player.Draw(spriteBatch);
         }
 
     }

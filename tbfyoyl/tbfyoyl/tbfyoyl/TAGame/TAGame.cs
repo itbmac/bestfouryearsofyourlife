@@ -131,7 +131,7 @@ namespace tbfyoyl.TAGame
                     currentPaper = null;
                     activeObject = null;
                 }
-                if (working.Contains(pos))
+                else if (working.Contains(pos))
                 {
                     activeObject.Position = working.Position;
                     MediaManager.cam = new Camera2d();
