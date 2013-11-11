@@ -67,8 +67,8 @@ namespace tbfyoyl
             
             bool ret = base.ClickDown(pos);
 
-            System.Diagnostics.Debug.WriteLine("BGO: " + bgXOffset.ToString());
-            System.Diagnostics.Debug.WriteLine("POS: " + pos.ToString());
+            //System.Diagnostics.Debug.WriteLine("BGO: " + bgXOffset.ToString());
+            //System.Diagnostics.Debug.WriteLine("POS: " + pos.ToString());
 
             if ((bgXOffset <= 0) && ((bgXOffset + Math.Abs((screenWidth / 2) - pos.X)) >= 0) && (pos.X < (screenWidth / 2)))
             {
@@ -133,8 +133,6 @@ namespace tbfyoyl
                 //state.SetAnimation(0, "stand", false);
               
             }
-
-            System.Diagnostics.Debug.WriteLine("BGO: " + bgXOffset.ToString());
 
             base.Update(gameTime);
         }

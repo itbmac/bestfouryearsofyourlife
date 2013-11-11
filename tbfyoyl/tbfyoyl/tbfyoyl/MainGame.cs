@@ -139,7 +139,10 @@ namespace tbfyoyl
 
             if ((prevMouseState.LeftButton == ButtonState.Released) && (curMouseState.LeftButton == ButtonState.Pressed))
             {
-                activeGame.ClickDown(curPos);
+                if (games["UI"].ClickDown(curPos))
+                {
+                    activeGame.ClickDown(curPos);
+                }
                 startClickState = curMouseState;
             }
 
