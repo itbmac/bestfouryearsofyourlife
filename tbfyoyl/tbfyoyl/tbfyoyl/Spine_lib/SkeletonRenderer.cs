@@ -91,6 +91,7 @@ namespace Spine {
 				if (regionAttachment != null) {
 					BlendState blend = slot.Data.AdditiveBlending ? BlendState.Additive : defaultBlendState;
 					if (device.BlendState != blend) {
+                        
 						End();
 						device.BlendState = blend;
 					}

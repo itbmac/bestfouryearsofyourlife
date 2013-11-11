@@ -127,6 +127,15 @@
       <Output>C:\Users\itbmac\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\PaperStack.xnb</Output>
       <Time>2013-11-03T19:30:19.8532712-05:00</Time>
     </Item>
+    <Item>
+      <Source>bookstore_background.png</Source>
+      <Name>bookstore_background</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\itbmac\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\bookstore_background.xnb</Output>
+      <Time>2013-11-10T18:46:01.9826353-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{7B28A253-7A47-44FA-81D6-A8FE740A99AD}</ContentProjectGUID>

@@ -24,10 +24,12 @@ namespace tbfyoyl
         int direction = 1;
         float speed = 1;
         float distStartToTarget = 10;
-        float targetX = 400;
+        float targetX = 600;
+        GraphicsDevice graphics;
 
         protected void LoadContent(GraphicsDevice gD)
         {
+            graphics = gD;
             skeletonRenderer = new SkeletonRenderer(gD);
             skeletonRenderer.PremultipliedAlpha = true;
 
@@ -67,8 +69,8 @@ namespace tbfyoyl
                 state.AddAnimation(0, "walk", true, 0);
             }
 
-            skeleton.X = 320;
-            skeleton.Y = 440;
+            skeleton.X = 600;
+            skeleton.Y = 600;
             skeleton.UpdateWorldTransform();
 
             headSlot = skeleton.FindSlot("head");
@@ -78,6 +80,15 @@ namespace tbfyoyl
             : base(t, pos, false)
         {
             LoadContent(gD);
+
+            skeleton.X = pos.X;
+            skeleton.Y = pos.Y;
+        }
+
+        public void setCurX(float X)
+        {
+            skeleton.X = X;
+            distStartToTarget = 0;
         }
 
         public void setX(float X)
@@ -94,6 +105,11 @@ namespace tbfyoyl
             }
             targetX = X;
             distStartToTarget = Math.Abs(skeleton.X - X);
+        }
+
+        public void setDirection(Boolean isFlipped)
+        {
+            skeleton.FlipX = isFlipped;
         }
 
         /// <summary>
@@ -123,15 +139,24 @@ namespace tbfyoyl
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            base.Draw(spriteBatch);
-
             skeleton.UpdateWorldTransform();
+
+            spriteBatch.End();
+
             skeletonRenderer.Begin();
             skeletonRenderer.Draw(skeleton);
             skeletonRenderer.End();
 
+            spriteBatch.Begin(SpriteSortMode.Immediate,
+                        BlendState.AlphaBlend,
+                        null,
+                        null,
+                        null,
+                        null,
+                        MediaManager.cam.get_transformation(graphics));
+
             bounds.Update(skeleton, true);
-            MouseState mouse = Mouse.GetState();
+           /* MouseState mouse = Mouse.GetState();
             headSlot.G = 1;
             headSlot.B = 1;
             if (bounds.AabbContainsPoint(mouse.X, mouse.Y))
@@ -142,7 +167,7 @@ namespace tbfyoyl
                     headSlot.G = 0;
                     headSlot.B = 0;
                 }
-            }
+            } */
         }
 
         public void Start(object sender, StartEndArgs e)
