@@ -8,8 +8,7 @@ namespace tbfyoyl.TAGame
     public class Score
     {
 
-        //very basic class the score for a paper.
-
+        //very basic class the score for a paper
         public int NumQuestions;
         public int NumGradingMistakes;
         public int NumCheaterMistakes;
@@ -33,6 +32,13 @@ namespace tbfyoyl.TAGame
             return new Score(s1.NumQuestions + s2.NumQuestions,
                 s1.NumGradingMistakes + s2.NumGradingMistakes,
                 s1.NumCheaterMistakes + s2.NumCheaterMistakes);
+        }
+
+        public static Score operator -(Score s1, Score s2)
+        {
+            return new Score(s1.NumQuestions - s2.NumQuestions,
+                s1.NumGradingMistakes - s2.NumGradingMistakes,
+                s1.NumCheaterMistakes - s2.NumCheaterMistakes);
         }
 
     }

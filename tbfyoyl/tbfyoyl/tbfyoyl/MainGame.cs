@@ -180,9 +180,9 @@ namespace tbfyoyl
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            
+
             spriteBatch.Begin(SpriteSortMode.Immediate,
-                        BlendState.AlphaBlend,
+                        null,
                         null,
                         null,
                         null,
@@ -190,9 +190,9 @@ namespace tbfyoyl
                         MediaManager.cam.get_transformation(GraphicsDevice));
 
             activeGame.Draw(spriteBatch);
-
+            
             games["UI"].Draw(spriteBatch);
-
+            
             spriteBatch.End();
             base.Draw(gameTime);
         }

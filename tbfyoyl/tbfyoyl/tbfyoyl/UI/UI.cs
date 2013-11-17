@@ -133,7 +133,7 @@ namespace tbfyoyl
                     }
                 }
 
-
+                /*
                 switch (game.ActiveGame)
                 {
                     case "TAGAME":
@@ -261,7 +261,9 @@ namespace tbfyoyl
                         break;
                 }
                 UI_BUTTON_X = UI_X;
+                 */
             }
+                 
             MediaManager.DrawArt(spriteBatch, "Content/cursorSmall30", (int)ms.X - 30 / 2, (int)ms.Y - 30 / 2);
         }
 

@@ -80,6 +80,7 @@ namespace tbfyoyl
             }
             return true;
         }
+
         public virtual bool Drag(Vector2 start, Vector2 end)
         {
             if (activeObject != null)
@@ -88,6 +89,7 @@ namespace tbfyoyl
             }
             return true;
         }
+
         public virtual bool ClickUp(Vector2 pos)
         {
             if (activeObject != null)

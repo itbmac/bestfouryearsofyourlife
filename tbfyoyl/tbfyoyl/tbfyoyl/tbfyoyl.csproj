@@ -77,6 +77,7 @@
     <Compile Include="BookstoreGame\Person.cs" />
     <Compile Include="BookstoreGame\Player.cs" />
     <Compile Include="Framework\CollectionObject.cs" />
+    <Compile Include="Framework\EmptyObject.cs" />
     <Compile Include="Spine_lib\Animation.cs" />
     <Compile Include="Spine_lib\AnimationState.cs" />
     <Compile Include="Spine_lib\AnimationStateData.cs" />

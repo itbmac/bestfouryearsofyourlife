@@ -39,6 +39,8 @@ namespace tbfyoyl
         {
             // TODO: Add your initialization code here
 
+            MediaManager.cam = new Camera2d();
+            MediaManager.cam.Move(new Vector2(600, 400));
             base.Initialize();
         }
 
