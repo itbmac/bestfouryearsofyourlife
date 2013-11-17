@@ -42,6 +42,8 @@ namespace tbfyoyl
         public override void Initialize()
         {
             base.Initialize();
+
+           // MediaManager.PlaySound("Content/dark_beat");
         }
 
         public override bool ClickDown(Vector2 pos)

@@ -136,6 +136,60 @@
       <Output>C:\Users\itbmac\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\bookstore_background.xnb</Output>
       <Time>2013-11-10T18:46:01.9826353-05:00</Time>
     </Item>
+    <Item>
+      <Source>shopping_cart.png</Source>
+      <Name>shopping_cart</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\itbmac\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\shopping_cart.xnb</Output>
+      <Time>2013-11-15T12:27:21.6464721-05:00</Time>
+    </Item>
+    <Item>
+      <Source>shopping_cart_200.png</Source>
+      <Name>shopping_cart_200</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\itbmac\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\shopping_cart_200.xnb</Output>
+      <Time>2013-11-15T12:29:34.6277809-05:00</Time>
+    </Item>
+    <Item>
+      <Source>shopping_cart_200_h.png</Source>
+      <Name>shopping_cart_200_h</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\itbmac\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\shopping_cart_200_h.xnb</Output>
+      <Time>2013-11-15T12:31:55.7613907-05:00</Time>
+    </Item>
+    <Item>
+      <Source>books.png</Source>
+      <Name>books</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\itbmac\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\books.xnb</Output>
+      <Time>2013-11-15T13:41:52.4238505-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Emilia.wav</Source>
+      <Name>Emilia</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\itbmac\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\Emilia.xnb</Output>
+      <Time>2013-11-15T16:12:34.0702164-05:00</Time>
+    </Item>
+    <Item>
+      <Source>dark_beat.wav</Source>
+      <Name>dark_beat</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\itbmac\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\dark_beat.xnb</Output>
+      <Time>2013-11-15T16:25:51.5368289-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{7B28A253-7A47-44FA-81D6-A8FE740A99AD}</ContentProjectGUID>
