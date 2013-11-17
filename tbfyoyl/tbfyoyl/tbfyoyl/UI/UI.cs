@@ -64,13 +64,26 @@ namespace tbfyoyl
 
         public override bool ClickUp(Vector2 pos)
         {
-            if (pos.X >= UI_MIN_X && pos.Y <= UI_MAX_Y)
-            {
-                foreach (ClickableObject o in menuItems)
-                    o.ClickDown(new Vector2(UI_BUTTON_X, UI_BUTTON_Y));
-            }
+            bool isInUI = true;
+            return isInUI;
+        }
+
+        public override bool ClickDown(Vector2 pos)
+        {
+            System.Diagnostics.Debug.WriteLine("POS Y: " + pos.Y.ToString());
             
             bool isInUI = true;
+
+            if (pos.X >= UI_MIN_X && pos.Y <= UI_MAX_Y)
+            {
+                if (UI_display_state == 0)
+                    UI_display_state = 1;
+                else
+                    UI_display_state = 0;
+
+                isInUI = false;
+            }
+            
             return isInUI;
         }
 

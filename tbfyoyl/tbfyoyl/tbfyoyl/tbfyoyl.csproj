@@ -72,6 +72,8 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BookstoreGame\BSObject.cs" />
+    <Compile Include="BookstoreGame\Cart.cs" />
     <Compile Include="Camera\Camera2d.cs" />
     <Compile Include="Framework\DraggableObject.cs" />
     <Compile Include="BookstoreGame\Person.cs" />

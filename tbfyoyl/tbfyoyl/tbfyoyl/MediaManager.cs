@@ -42,6 +42,8 @@ namespace tbfyoyl
 
         private static bool isAdvanced;
 
+        public static SoundEffect curSoundEffect;
+
         public static float MasterVolume { get; set; }
 
         public static Camera2d cam;
@@ -53,11 +55,14 @@ namespace tbfyoyl
             content = new ContentManager(Services);
             
             textures = new Dictionary<string, Texture2D>();
-            //TODO: add right pictures
+            
+            // UI'S ASSETS
             textures.Add("BLAH", content.Load<Texture2D>("content/BLAH"));
             textures.Add("MENU_TOP", content.Load<Texture2D>("content/UI_Top_150p"));
             textures.Add("MENU_MIDDLE", content.Load<Texture2D>("content/UI_Middle_150p"));
             textures.Add("MENU_BOTTOM", content.Load<Texture2D>("content/UI_Bottom_150p"));
+            
+            // TA GAME'S ASSETS
             textures.Add("paper", content.Load<Texture2D>("content/Paper"));
             textures.Add("answer", content.Load<Texture2D>("content/BLAH"));
             textures.Add("pen_incorrect", content.Load<Texture2D>("content/pen_incorrect"));
@@ -69,6 +74,11 @@ namespace tbfyoyl
             empty.SetData(empty_color);
             textures.Add("paper stack", empty);
             //textures.Add("paper stack", content.Load<Texture2D>("content/PaperStack"));
+
+            // BOOKSTORE GAME'S ASSETS
+            textures.Add("books", content.Load<Texture2D>("content/books"));
+            textures.Add("cart", content.Load<Texture2D>("content/shopping_cart_200"));
+
 
             Texture2D answerTexture = textures["BLAH"];
             allAnswers = new Answer[][]
@@ -182,9 +192,11 @@ namespace tbfyoyl
         public static void PlaySound(string soundFileName)
         {
             SoundEffect retVal = GetSound(soundFileName);
+            if ((curSoundEffect != null) && (curSoundEffect.IsDisposed))
+                curSoundEffect.CreateInstance();
             if (retVal != null)
             {
-                if (soundFileName == "Content/Embrace The Martian" || soundFileName == "Content/The Arrival")
+                if (true) //soundFileName == "Content/Embrace The Martian" || soundFileName == "Content/The Arrival")
                 {
                     retVal.Play(.5f, 0f, 0f);
                 }
@@ -193,6 +205,13 @@ namespace tbfyoyl
                     retVal.Play(.7f, 0f, 0f);
                 }
             }
+            curSoundEffect = retVal;
+        }
+
+        //*************************************************************************
+        public static void StopSound()
+        {
+            //curSoundEffect.Duration = 0;
         }
 
         //*************************************************************************

@@ -28,11 +28,15 @@ namespace tbfyoyl
                 delegate()
                 {
                     game.ActiveGame = "TAGAME";
+                    MediaManager.StopSound();
+                    MediaManager.PlaySound("Content/dark_beat");
                 });
             menuItems[1] = new ClickableObject(new TextureObject(MediaManager.textures["BLAH"], new Vector2(700, 100)),
                 delegate()
                 {
                     game.ActiveGame = "BOOKSTOREGAME";
+                    MediaManager.StopSound();
+                    MediaManager.PlaySound("Content/Emilia");
                 });
         }
 
