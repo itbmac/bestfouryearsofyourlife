@@ -26,7 +26,7 @@ namespace tbfyoyl.TAGame
         {
             answers = new Answer[ans.Length];
             ans.CopyTo(answers, 0);
-            
+
             selectedAnswer = answers[0];
             SetCurrentPage(0);
         }

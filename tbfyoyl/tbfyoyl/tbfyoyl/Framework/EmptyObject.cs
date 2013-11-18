@@ -36,13 +36,10 @@ namespace tbfyoyl
         public Vector2 Position { get; set; }
 
         public void Draw(SpriteBatch spriteBatch) { }
-        public void Click(Vector2 pos) { }
+        public void ClickDown(Vector2 pos) { }
+        public void ClickUp(Vector2 pos) { }
         public void Drag(Vector2 start, Vector2 end) { }
-        public bool Contains(Vector2 pos)
-        {
-            return true;
-        }
-
+        public bool Contains(Vector2 pos) { return false; }
 
     }
 }

@@ -14,21 +14,44 @@ namespace tbfyoyl.TAGame
 {
     class PaperStack : DecoratorObject
     {
-        int last_paper;
+
+        private Stack<Paper> papers;
+
         public PaperStack(Texture2D t, Vector2 p)
         {
-            last_paper = -1;
-            base.parent = new TextureObject(t, p);
+            papers = new Stack<Paper>();
+            papers.Push(new Paper(t, p, new Answer[] {new Answer(), new Answer()}));
+            parent = papers.Peek();
         }
-
 
         public Paper getPaper()
         {
-            last_paper++;
-            return new Paper(MediaManager.textures["paper"], Position, MediaManager.allAnswers[last_paper]);
+            if (papers.Count != 1)
+            {
+                Paper ret = papers.Pop();
+                parent = papers.Peek();
+                return ret;
+            }
+            return null;
+        }
+
+        public Paper peekPaper()
+        {
+            if (papers.Count != 1)
+            {
+                return (Paper) parent;
+            }
+            return null;
         }
 
         public void addPaper(Paper p)
+        {
+            p.Position = Position;
+            papers.Push(p);
+            parent = p;
+        }
+
+        public override void Drag(Vector2 start, Vector2 end)
         {
         }
 

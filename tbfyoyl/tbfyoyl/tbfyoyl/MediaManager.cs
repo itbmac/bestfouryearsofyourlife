@@ -32,6 +32,7 @@ namespace tbfyoyl
         private static SpriteFont bigFont;
 
         public static Answer[][] allAnswers;
+        public static Answer nullAnswer;
 
         public static Texture2D pixel;
 
@@ -66,7 +67,13 @@ namespace tbfyoyl
             textures.Add("answer", content.Load<Texture2D>("content/BLAH"));
             textures.Add("pen_incorrect", content.Load<Texture2D>("content/pen_incorrect"));
             textures.Add("pen_cheater", content.Load<Texture2D>("content/pen_cheater"));
-            textures.Add("paper stack", content.Load<Texture2D>("content/PaperStack"));
+            Texture2D empty = new Texture2D(g.GraphicsDevice, 400, 250);
+            Color[] empty_color = new Color[400 * 250];
+            for (int i = 0; i < 400 * 250; i++)
+                empty_color[i] = Color.Transparent;
+            empty.SetData(empty_color);
+            textures.Add("paper stack", empty);
+            //textures.Add("paper stack", content.Load<Texture2D>("content/PaperStack"));
 
             // BOOKSTORE GAME'S ASSETS
             textures.Add("books", content.Load<Texture2D>("content/books"));
@@ -86,9 +93,6 @@ namespace tbfyoyl
                 new Answer[] {new Answer(answerTexture, new Vector2(0, 0), true, true),
                     new Answer(answerTexture, new Vector2(0, 0), true, true)}
             };
-
-            //allAnswers[0][0].Position = new Vector2(0, 0);
-            //allAnswers[0][1].Position = new Vector2(0, 0);
 
             isAdvanced = advancedFlag;
             if (advancedFlag)

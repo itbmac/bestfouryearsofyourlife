@@ -21,7 +21,14 @@ namespace tbfyoyl.TAGame
         bool isActuallyCorrect;
         bool isMarkedCopied;
         bool isActuallyCopied;
-        
+
+        public Answer()
+        {
+            base.parent = EmptyObject.Instance;
+            this.isMarkedCorrect = true;
+            this.isMarkedCopied = false;
+        }
+
         public Answer(Texture2D t, Vector2 pos, bool isCorrect, bool isCopied)
         {
             base.parent = new TextureObject(t, pos);
@@ -59,7 +66,6 @@ namespace tbfyoyl.TAGame
 
         public void Stamp(bool isCopyStamp)
         {
-            System.Diagnostics.Debug.Write("TryStamp Answer\n");
             isMarkedCorrect = false;
             isMarkedCopied |= isCopyStamp;
             isSelected = false;
