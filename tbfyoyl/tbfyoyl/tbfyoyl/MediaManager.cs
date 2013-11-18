@@ -71,6 +71,7 @@ namespace tbfyoyl
             // BOOKSTORE GAME'S ASSETS
             textures.Add("books", content.Load<Texture2D>("content/books"));
             textures.Add("cart", content.Load<Texture2D>("content/shopping_cart_200"));
+            textures.Add("cart_h", content.Load<Texture2D>("content/shopping_cart_200_h"));
 
 
             Texture2D answerTexture = textures["BLAH"];
