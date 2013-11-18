@@ -32,9 +32,9 @@ namespace tbfyoyl
             Position = new Vector2(newX, initalPosition.Y);
         }
 
-        public void updateX(float diff)
+        public void updateX(float diff, bool forceUpdate = false)
         {
-            if (shouldUpdatePos)
+            if (shouldUpdatePos || forceUpdate)
                 Position = new Vector2(Position.X + diff, Position.Y);
         }
 

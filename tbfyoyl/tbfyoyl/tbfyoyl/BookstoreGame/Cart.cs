@@ -14,10 +14,15 @@ namespace tbfyoyl
 {
     class Cart : TextureObject
     {
-        public Cart(Texture2D t, Vector2 p)
-            : base(t, p)
-        {
+        Texture2D texture_1;
+        Texture2D texture_2;
+        bool flipTexture = false;
 
+        public Cart(Texture2D t1, Texture2D t2, Vector2 p)
+            : base(t1, p)
+        {
+            texture_1 = t1;
+            texture_2 = t2;
         }
 
         public override Vector2 Position
@@ -33,9 +38,22 @@ namespace tbfyoyl
             }
         }
 
+        public void SetTextureFlip(bool isFlipped)
+        {
+            flipTexture = isFlipped;
+
+            if (isFlipped)
+                Position = new Vector2(400, Position.Y);
+            else
+                Position = new Vector2(600, Position.Y);
+        }
+
         public override void Draw(SpriteBatch spriteBatch)
         {
-            base.Draw(spriteBatch);
+            if (!flipTexture)
+                spriteBatch.Draw(texture_1, Position, Color.White);
+            else
+                spriteBatch.Draw(texture_2, Position, Color.White);
         }
 
         public bool TryInsert(Vector2 pos)

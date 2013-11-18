@@ -53,7 +53,7 @@ namespace tbfyoyl
             books3 = new BSObject(MediaManager.textures["books"], new Vector2(1100, 500));
             books4 = new BSObject(MediaManager.textures["books"], new Vector2(1300, 500));
             books5 = new BSObject(MediaManager.textures["books"], new Vector2(1500, 500));
-            cart = new Cart(MediaManager.textures["cart"], new Vector2(600, 425));
+            cart = new Cart(MediaManager.textures["cart"], MediaManager.textures["cart_h"], new Vector2(600, 425));
 
             drawableObjects.Add(books);
             drawableObjects.Add(books1);
@@ -134,18 +134,45 @@ namespace tbfyoyl
         }
 
 
-        public void moveTo(Vector2 pos)
+
+        public void flipArt(bool isFlipped)
         {
-            if (pos.X > (screenWidth / 2))
+            int attachedObjOffset = 0;
+            if (isFlipped && (direction != -1))
             {
                 direction = -1;
+                attachedObjOffset = 200;
                 player.setDirection(false);
+                cart.SetTextureFlip(false);
+            }
+            else if (!isFlipped && (direction != 1))
+            {
+                direction = 1;
+                attachedObjOffset = -200;
+                player.setDirection(true);
+                cart.SetTextureFlip(true);
             }
             else
             {
-                direction = 1;
-                player.setDirection(true);
+                return;
             }
+
+            foreach (BSObject o in bookstoreObjects)
+            {
+                if (!o.getState())
+                {
+                    if (!isFlipped)
+                        o.updateX(attachedObjOffset + (700 - o.Position.X) - 30, true);
+                    else
+                        o.updateX(attachedObjOffset + (o.Position.X - 500) + 40, true);
+                }
+            }
+        }
+
+
+        public void moveTo(Vector2 pos)
+        {
+            flipArt(pos.X > (screenWidth / 2));
 
             //System.Diagnostics.Debug.WriteLine("BGO: " + bgXOffset.ToString());
             //System.Diagnostics.Debug.WriteLine("POS: " + pos.ToString());
