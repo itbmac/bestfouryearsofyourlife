@@ -162,9 +162,9 @@ namespace tbfyoyl
                 if (!o.getState())
                 {
                     if (!isFlipped)
-                        o.updateX(attachedObjOffset + (700 - o.Position.X) - 30, true);
+                        o.updateX((800 - o.Position.X) + 400 - o.textureWidth, true);
                     else
-                        o.updateX(attachedObjOffset + (o.Position.X - 500) + 40, true);
+                        o.updateX((600 - o.Position.X) + 600 - o.textureWidth, true);
                 }
             }
         }
