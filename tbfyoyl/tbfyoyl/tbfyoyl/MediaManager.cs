@@ -48,12 +48,14 @@ namespace tbfyoyl
 
         public static Camera2d cam;
 
+        public static GraphicsDevice gd;
+
         //*************************************************************************
         public static void Setup(IServiceProvider Services, GraphicsDeviceManager g, bool advancedFlag = false)
         {
 
             content = new ContentManager(Services);
-            
+            gd = g.GraphicsDevice;
             textures = new Dictionary<string, Texture2D>();
             
             // UI'S ASSETS
@@ -63,17 +65,17 @@ namespace tbfyoyl
             textures.Add("MENU_BOTTOM", content.Load<Texture2D>("content/UI_Bottom_150p"));
             
             // TA GAME'S ASSETS
-            textures.Add("paper", content.Load<Texture2D>("content/Paper"));
+            textures.Add("paper", content.Load<Texture2D>("content/main_paper"));
             textures.Add("answer", content.Load<Texture2D>("content/BLAH"));
-            textures.Add("pen_incorrect", content.Load<Texture2D>("content/pen_incorrect"));
+            textures.Add("pen_incorrect", content.Load<Texture2D>("content/main_pen"));
             textures.Add("pen_cheater", content.Load<Texture2D>("content/pen_cheater"));
             Texture2D empty = new Texture2D(g.GraphicsDevice, 400, 250);
             Color[] empty_color = new Color[400 * 250];
             for (int i = 0; i < 400 * 250; i++)
                 empty_color[i] = Color.Transparent;
             empty.SetData(empty_color);
-            textures.Add("paper stack", empty);
-            //textures.Add("paper stack", content.Load<Texture2D>("content/PaperStack"));
+            textures.Add("graded stack", empty);
+            textures.Add("ungraded stack", content.Load<Texture2D>("content/hw_stack"));
 
             // BOOKSTORE GAME'S ASSETS
             textures.Add("books", content.Load<Texture2D>("content/books"));
@@ -121,6 +123,18 @@ namespace tbfyoyl
         }
 
         //*************************************************************************
+
+        public static Vector2 GetMousePos(MouseState state)
+        {
+            return Vector2.Transform(new Vector2(state.X, state.Y),
+                   Matrix.Invert(MediaManager.cam.get_transformation(gd)));
+        }
+
+        public static Vector2 GetCurMousePos()
+        {
+            return GetMousePos(Mouse.GetState());
+        }
+
         public static Texture2D GetArt(string artFileName)
         {
             Texture2D retVal;

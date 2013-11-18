@@ -34,6 +34,9 @@ namespace tbfyoyl.TAGame
         //how accurately we've been grading
         private Score currentScore;
 
+        private Camera2d zoomedOut;
+        private Camera2d zoomedIn;
+
         public TAGame(MainGame game)
             : base(game) { }
 
@@ -43,15 +46,22 @@ namespace tbfyoyl.TAGame
         /// </summary>
         public override void Initialize()
         {
+            /*
+            zoomedOut = new Camera2d();
+            zoomedOut.Zoom = 0.5f;
+            zoomedOut.Pos = new Vector2(750, 500);
 
-            MediaManager.cam = new Camera2d();
-            MediaManager.cam.Move(new Vector2(600, 400));
+            zoomedIn = new Camera2d();
+            zoomedIn.Zoom = 0.8f;
+            zoomedIn.Pos = new Vector2(750, 500);
+            MediaManager.cam = zoomedOut;
+            */
 
             currentScore = new Score();
 
-            answerKey = new Paper(MediaManager.textures["paper"], new Vector2(800, 450), MediaManager.allAnswers[0]);
-            graded = new PaperStack(MediaManager.textures["paper stack"], new Vector2(400, 450));
-            ungraded = new PaperStack(MediaManager.textures["paper stack"], new Vector2(0, 400));
+            answerKey = new Paper(MediaManager.textures["paper"], new Vector2(1000, 450), MediaManager.allAnswers[0]);
+            graded = new PaperStack(MediaManager.textures["paper"], new Vector2(500, 450));
+            ungraded = new PaperStack(MediaManager.textures["ungraded stack"], new Vector2(0, 450));
 
             pen = new GradingStamp(MediaManager.textures["pen_incorrect"], new Vector2(800, 500));
             cheater = new GradingStamp(MediaManager.textures["pen_cheater"], new Vector2(800, 550));
@@ -131,15 +141,11 @@ namespace tbfyoyl.TAGame
                         activeObject = null;
 
                         //zoom in
-                        MediaManager.cam = new Camera2d();
-                        MediaManager.cam.Pos = new Vector2(800, 550);
-                        MediaManager.cam.Zoom = 1.4f;
-
+                        MediaManager.cam = zoomedIn;
                     }
                     else
                     {
-                        MediaManager.cam = new Camera2d();
-                        MediaManager.cam.Move(new Vector2(600, 400));
+                        MediaManager.cam = zoomedOut;
                         if (ungraded.Contains(pos))
                         {
                             //destroy old paper
@@ -174,14 +180,12 @@ namespace tbfyoyl.TAGame
                 }
                 else
                 {
-                    MediaManager.cam = new Camera2d();
-                    MediaManager.cam.Move(new Vector2(600, 400));
+                    MediaManager.cam = zoomedOut;
                 }
             }
             else
             {
-                MediaManager.cam = new Camera2d();
-                MediaManager.cam.Move(new Vector2(600, 400));
+                MediaManager.cam = zoomedOut;
             }
             bool ret = base.ClickUp(pos);
             return ret;
@@ -189,8 +193,13 @@ namespace tbfyoyl.TAGame
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            MediaManager.DrawArt(spriteBatch, "Content/background", 0, 0);
+            MediaManager.DrawArt(spriteBatch, "Content/table_clear", 0, 0);
+            MediaManager.DrawArt(spriteBatch, "Content/books_pen", 0, 0);
+            MediaManager.DrawArt(spriteBatch, "Content/lamp", 400, -200);
+            MediaManager.DrawArt(spriteBatch, "Content/implied_partay", 0, 0);
+            MediaManager.DrawArt(spriteBatch, "Content/math", 0, 0);
             base.Draw(spriteBatch);
+            MediaManager.DrawArt(spriteBatch, "Content/lamp_light", 0, 0);
         }
     }
 }

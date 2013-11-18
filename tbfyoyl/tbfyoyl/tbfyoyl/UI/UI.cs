@@ -101,7 +101,7 @@ namespace tbfyoyl
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            MouseState ms = Mouse.GetState();
+            Vector2 mousePos = MediaManager.GetCurMousePos();
             
             if (game.ActiveGame == "TAGAME" || game.ActiveGame == "BOOKSTOREGAME")
             {
@@ -277,7 +277,7 @@ namespace tbfyoyl
                  */
             }
                  
-            MediaManager.DrawArt(spriteBatch, "Content/cursorSmall30", (int)ms.X - 30 / 2, (int)ms.Y - 30 / 2);
+            MediaManager.DrawArt(spriteBatch, "Content/cursorSmall30", (int)mousePos.X - 30 / 2, (int)mousePos.Y - 30 / 2);
         }
 
     }

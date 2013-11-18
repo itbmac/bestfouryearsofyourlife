@@ -94,7 +94,7 @@ namespace tbfyoyl
                 {"SPLASHSCREEN", new SplashScreen(this)},
             };
             ActiveGame = "SPLASHSCREEN";
-
+            
             foreach (Minigame game in games.Values)
             {
                 game.Initialize();
@@ -132,8 +132,8 @@ namespace tbfyoyl
 
             MouseState curMouseState = Mouse.GetState();
 
-            Vector2 curPos = new Vector2(curMouseState.X, curMouseState.Y);
-            Vector2 prevPos = new Vector2(prevMouseState.X, prevMouseState.Y);
+            Vector2 curPos = MediaManager.GetMousePos(curMouseState);
+            Vector2 prevPos = MediaManager.GetMousePos(prevMouseState);
             games["UI"].MouseOver(curPos);
             activeGame.MouseOver(curPos);
 
@@ -142,6 +142,7 @@ namespace tbfyoyl
                 if (games["UI"].ClickDown(curPos))
                 {
                     activeGame.ClickDown(curPos);
+                    System.Diagnostics.Debug.Write("going\n");
                 }
                 startClickState = curMouseState;
             }
