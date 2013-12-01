@@ -16,28 +16,45 @@ namespace tbfyoyl.TAGame
     {
 
         private Stack<Paper> papers;
+        private GameObject baseObject;
 
         public PaperStack(Texture2D t, Vector2 p)
         {
             papers = new Stack<Paper>();
             papers.Push(new Paper(t, p, new Answer[] {new Answer(), new Answer()}));
             parent = papers.Peek();
+            baseObject = new TextureObject(t, p);
+        }
+
+        public int numPapers()
+        {
+            return papers.Count - 1;
+        }
+
+        public void clear()
+        {
+            while (papers.Count > 1)
+            {
+                papers.Pop();
+            }
+            parent = papers.Peek();
         }
 
         public Paper getPaper()
         {
-            if (papers.Count != 1)
+            if (papers.Count > 1)
             {
                 Paper ret = papers.Pop();
                 parent = papers.Peek();
                 return ret;
             }
+            parent = papers.Peek();
             return null;
         }
 
         public Paper peekPaper()
         {
-            if (papers.Count != 1)
+            if (papers.Count > 1)
             {
                 return (Paper) parent;
             }
@@ -51,8 +68,12 @@ namespace tbfyoyl.TAGame
             parent = p;
         }
 
-        public override void Drag(Vector2 start, Vector2 end)
+        public override void Drag(Vector2 start, Vector2 end) {}
+
+        public override void Draw(SpriteBatch b)
         {
+            baseObject.Draw(b);
+            base.Draw(b);
         }
 
     }

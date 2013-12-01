@@ -47,7 +47,8 @@ namespace tbfyoyl
         public override void Initialize()
         {
             // TODO: Add your initialization code here
-
+            MediaManager.cam = new Camera2d();
+            MediaManager.cam.Move(new Vector2(600, 400));
             base.Initialize();
         }
 
@@ -58,7 +59,9 @@ namespace tbfyoyl
                 if (o.Contains(pos))
                 {
                     activeObject = o;
-                    break;
+                 
+            MediaManager.cam = new Camera2d();
+            MediaManager.cam.Move(new Vector2(600, 400));   break;
                 }
             }
             return base.ClickDown(pos);

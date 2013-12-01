@@ -28,6 +28,7 @@ namespace tbfyoyl
         private MouseState prevMouseState;
         private MouseState startClickState;
 
+
         //in cents
         public int money;
         //mg/dL
@@ -50,8 +51,13 @@ namespace tbfyoyl
             }
             set
             {
-                if(games.ContainsKey(value))
+                if (games.ContainsKey(value))
+                {
+                    if (activeGame != null)
+                        activeGame.Deinitialize();
                     activeGame = games[value];
+                    activeGame.Initialize();
+                }
             }
         }
 
@@ -62,9 +68,6 @@ namespace tbfyoyl
 
             graphics.PreferredBackBufferWidth = 1200;
             graphics.PreferredBackBufferHeight = 800;
-
-            MediaManager.cam = new Camera2d();
-            MediaManager.cam.Move(new Vector2(600, 400));
 
         }
 
@@ -77,7 +80,6 @@ namespace tbfyoyl
         protected override void Initialize()
         {
             base.Initialize();
-
 
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
@@ -94,11 +96,6 @@ namespace tbfyoyl
                 {"SPLASHSCREEN", new SplashScreen(this)},
             };
             ActiveGame = "SPLASHSCREEN";
-            
-            foreach (Minigame game in games.Values)
-            {
-                game.Initialize();
-            }
         }
 
         /// <summary>

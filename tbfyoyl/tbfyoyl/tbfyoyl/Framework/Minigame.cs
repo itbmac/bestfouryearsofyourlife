@@ -45,6 +45,10 @@ namespace tbfyoyl
             activeObject = null;
         }
 
+        public virtual void Deinitialize()
+        {
+        }
+
         /// <summary>
         /// Allows the game component to update itself.
         /// </summary>

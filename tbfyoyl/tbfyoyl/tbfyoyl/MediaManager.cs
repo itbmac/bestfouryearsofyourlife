@@ -31,7 +31,7 @@ namespace tbfyoyl
         public static SpriteFont mediumFont3;
         private static SpriteFont bigFont;
 
-        public static Answer[][] allAnswers;
+        public static Answer[][][] allAnswers;
         public static Answer nullAnswer;
 
         public static Texture2D pixel;
@@ -68,7 +68,7 @@ namespace tbfyoyl
             textures.Add("paper", content.Load<Texture2D>("content/main_paper"));
             textures.Add("answer", content.Load<Texture2D>("content/BLAH"));
             textures.Add("pen_incorrect", content.Load<Texture2D>("content/main_pen"));
-            textures.Add("pen_cheater", content.Load<Texture2D>("content/pen_cheater"));
+            textures.Add("pen_cheater", content.Load<Texture2D>("content/main_pen"));
             Texture2D empty = new Texture2D(g.GraphicsDevice, 400, 250);
             Color[] empty_color = new Color[400 * 250];
             for (int i = 0; i < 400 * 250; i++)
@@ -84,16 +84,40 @@ namespace tbfyoyl
 
 
             Texture2D answerTexture = textures["BLAH"];
-            allAnswers = new Answer[][]
-            {
-                new Answer[] {new Answer(answerTexture, new Vector2(0, 0), true, true),
-                    new Answer(answerTexture, new Vector2(0, 0), true, true)},
-
-                new Answer[] {new Answer(answerTexture, new Vector2(0, 0), true, true),
-                    new Answer(answerTexture, new Vector2(0, 0), true, true)},
-
-                new Answer[] {new Answer(answerTexture, new Vector2(0, 0), true, true),
-                    new Answer(answerTexture, new Vector2(0, 0), true, true)}
+            //allAnswers[problemSet#][paper#][answer#]
+            allAnswers = new Answer[][][] {
+                new Answer[][] {
+                    new Answer[] {
+                        new Answer(answerTexture, new Vector2(0, 0), true, true),
+                        new Answer(answerTexture, new Vector2(0, 0), true, true)
+                    },
+                    new Answer[] {
+                        new Answer(answerTexture, new Vector2(0, 0), true, true),
+                        new Answer(answerTexture, new Vector2(0, 0), true, true)
+                    },
+                    new Answer[] {
+                        new Answer(answerTexture, new Vector2(0, 0), true, true),
+                        new Answer(answerTexture, new Vector2(0, 0), true, true)
+                    }
+                },
+                new Answer[][] {
+                    new Answer[] {
+                        new Answer(answerTexture, new Vector2(0, 0), true, true),
+                        new Answer(answerTexture, new Vector2(0, 0), true, true)
+                    },
+                    new Answer[] {
+                        new Answer(answerTexture, new Vector2(0, 0), true, true),
+                        new Answer(answerTexture, new Vector2(0, 0), true, true)
+                    },
+                    new Answer[] {
+                        new Answer(answerTexture, new Vector2(0, 0), true, true),
+                        new Answer(answerTexture, new Vector2(0, 0), true, true)
+                    },
+                    new Answer[] {
+                        new Answer(answerTexture, new Vector2(0, 0), true, true),
+                        new Answer(answerTexture, new Vector2(0, 0), true, true)
+                    }
+                }
             };
 
             isAdvanced = advancedFlag;

@@ -41,9 +41,10 @@ namespace tbfyoyl
         /// </summary>
         public override void Initialize()
         {
+            // TODO: Add your initialization code here
+            MediaManager.cam = new Camera2d();
+            MediaManager.cam.Move(new Vector2(600, 400));
             base.Initialize();
-
-           // MediaManager.PlaySound("Content/dark_beat");
         }
 
         public override bool ClickDown(Vector2 pos)

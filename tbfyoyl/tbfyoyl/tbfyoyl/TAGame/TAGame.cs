@@ -19,7 +19,7 @@ namespace tbfyoyl.TAGame
         //the current paper being graded
         private Paper currentPaper;
         //the answer key
-        private Paper answerKey;
+        //private Paper answerKey;
 
         //the stack of graded papers
         private PaperStack graded;
@@ -33,12 +33,54 @@ namespace tbfyoyl.TAGame
 
         //how accurately we've been grading
         private Score currentScore;
-
+    
         private Camera2d zoomedOut;
         private Camera2d zoomedIn;
 
+        private int lastAnswerSet;
+
         public TAGame(MainGame game)
-            : base(game) { }
+            : base(game)
+        {
+
+            lastAnswerSet = -1;
+
+            //create camera views
+            zoomedOut = new Camera2d();
+            zoomedOut.Zoom = 0.533333333f; // = 1200/2250
+            zoomedOut.Pos = new Vector2(1125, 750);
+
+            zoomedIn = new Camera2d();
+            zoomedIn.Zoom = 1.0f; // = 1200/1200
+            zoomedIn.Pos = new Vector2(1350, 975);
+
+            //create paperstacks
+            graded = new PaperStack(MediaManager.textures["paper"], new Vector2(750, 600));
+            ungraded = new PaperStack(MediaManager.textures["ungraded stack"], new Vector2(0, 570));
+
+            pen = new GradingStamp(MediaManager.textures["pen_incorrect"], new Vector2(1500, 750));
+            cheater = new GradingStamp(MediaManager.textures["pen_cheater"], new Vector2(1500, 1050));
+            currentScore = new Score();
+
+            ClickableObject back = new ClickableObject(new TextureObject(MediaManager.textures["BLAH"], new Vector2(0, 0)),
+                delegate()
+                {
+                    game.ActiveGame = "WORLDMAP";
+                });
+
+            drawableObjects.Add(back);
+            drawableObjects.Add(ungraded);
+            drawableObjects.Add(graded);
+            //drawableObjects.Add(cheater);
+            drawableObjects.Add(pen);
+
+            clickableObjects.Add(back);
+            clickableObjects.Add(ungraded);
+            clickableObjects.Add(graded);
+            //clickableObjects.Add(cheater);
+            clickableObjects.Add(pen);
+
+        }
 
         /// <summary>
         /// Allows the game component to perform any initialization it needs to before starting
@@ -46,44 +88,51 @@ namespace tbfyoyl.TAGame
         /// </summary>
         public override void Initialize()
         {
-            /*
-            zoomedOut = new Camera2d();
-            zoomedOut.Zoom = 0.5f;
-            zoomedOut.Pos = new Vector2(750, 500);
-
-            zoomedIn = new Camera2d();
-            zoomedIn.Zoom = 0.8f;
-            zoomedIn.Pos = new Vector2(750, 500);
-            MediaManager.cam = zoomedOut;
-            */
-
-            currentScore = new Score();
-
-            answerKey = new Paper(MediaManager.textures["paper"], new Vector2(1000, 450), MediaManager.allAnswers[0]);
-            graded = new PaperStack(MediaManager.textures["paper"], new Vector2(500, 450));
-            ungraded = new PaperStack(MediaManager.textures["ungraded stack"], new Vector2(0, 450));
-
-            pen = new GradingStamp(MediaManager.textures["pen_incorrect"], new Vector2(800, 500));
-            cheater = new GradingStamp(MediaManager.textures["pen_cheater"], new Vector2(800, 550));
             
-            for (int i = 1; i < MediaManager.allAnswers.Length; i++)
+            MediaManager.cam = zoomedOut;
+
+            //only resets the game if we finished all the previous papers
+            if(lastAnswerSet == -1 || (lastAnswerSet < MediaManager.allAnswers.Length && graded.numPapers() == MediaManager.allAnswers[lastAnswerSet].Length - 1))
             {
-                Paper p1 = new Paper(MediaManager.textures["paper"], new Vector2(0, 0), MediaManager.allAnswers[i]);
-                ungraded.addPaper(p1);
+                //clear the papers
+                lastAnswerSet++;
+                ungraded.clear();
+                graded.clear();
+                currentScore.zero();
+
+                //TODO: algorithmically generate answer sets
+                //TODO: reincorporate UI
+
+                //if we can, construct a set of papers and answers
+                if (MediaManager.allAnswers.Length > lastAnswerSet)
+                {
+                    //answerKey = new Paper(MediaManager.textures["paper"], new Vector2(1000, 400), MediaManager.allAnswers[lastAnswerSet][0]);
+                    for (int i = 0; i < MediaManager.allAnswers[lastAnswerSet].Length; i++)
+                    {
+                        Paper p1 = new Paper(MediaManager.textures["paper"], new Vector2(0, 0), MediaManager.allAnswers[lastAnswerSet][i]);
+                        ungraded.addPaper(p1);
+                    }
+                    //drawableObjects.Add(answerKey);
+                }
             }
-
-            drawableObjects.Add(ungraded);
-            drawableObjects.Add(graded);
-            drawableObjects.Add(answerKey);
-            drawableObjects.Add(cheater);
-            drawableObjects.Add(pen);
-
-            clickableObjects.Add(ungraded);
-            clickableObjects.Add(graded);
-            clickableObjects.Add(cheater);
-            clickableObjects.Add(pen);
             
             base.Initialize();
+            System.Diagnostics.Debug.WriteLine("Creating new set");
+        }
+
+        public override void Deinitialize()
+        {
+            //cut off accuracy at 70%, below 70% means no scores
+            double accuracy = 0.3 - (1.0 * currentScore.NumGradingMistakes) / currentScore.NumQuestions;
+            if (accuracy < 0)
+                accuracy = 0;
+            accuracy *= 1 / 0.3;
+            //accuracy now ranges from 0 to 0.3, with a higher score being better
+
+            double wagePerPaper = 0.7; //an arbitrary number
+            game.money += (int) (wagePerPaper * graded.numPapers() * accuracy);
+
+            base.Deinitialize();
         }
 
         public override bool ClickDown(Vector2 pos)
@@ -163,7 +212,7 @@ namespace tbfyoyl.TAGame
                     if (graded.peekPaper() != null)
                     {
                         currentScore -= graded.peekPaper().GetScore();
-                        graded.peekPaper().TryStamp(pos, false);
+                        graded.peekPaper().TryStamp(pen.Position, false);
                         currentScore += graded.peekPaper().GetScore();
                     }
                     pen.SnapBack();
@@ -173,7 +222,7 @@ namespace tbfyoyl.TAGame
                     if (graded.peekPaper() != null)
                     {
                         currentScore -= graded.peekPaper().GetScore();
-                        graded.peekPaper().TryStamp(pos, true);
+                        graded.peekPaper().TryStamp(cheater.Position, true);
                         currentScore += graded.peekPaper().GetScore();
                     }
                     cheater.SnapBack();
@@ -183,7 +232,7 @@ namespace tbfyoyl.TAGame
                     MediaManager.cam = zoomedOut;
                 }
             }
-            else
+            else //if(!answerKey.Contains(pos))
             {
                 MediaManager.cam = zoomedOut;
             }
@@ -195,9 +244,9 @@ namespace tbfyoyl.TAGame
         {
             MediaManager.DrawArt(spriteBatch, "Content/table_clear", 0, 0);
             MediaManager.DrawArt(spriteBatch, "Content/books_pen", 0, 0);
-            MediaManager.DrawArt(spriteBatch, "Content/lamp", 400, -200);
             MediaManager.DrawArt(spriteBatch, "Content/implied_partay", 0, 0);
             MediaManager.DrawArt(spriteBatch, "Content/math", 0, 0);
+            MediaManager.DrawArt(spriteBatch, "Content/lamp", 525, -150);
             base.Draw(spriteBatch);
             MediaManager.DrawArt(spriteBatch, "Content/lamp_light", 0, 0);
         }

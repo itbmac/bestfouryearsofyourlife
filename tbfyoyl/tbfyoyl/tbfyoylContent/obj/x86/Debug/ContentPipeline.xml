@@ -161,7 +161,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\shopping_cart_200_h.xnb</Output>
-      <Time>2013-11-17T18:18:05.0653371-05:00</Time>
+      <Time>2013-11-17T19:27:47.5795633-05:00</Time>
     </Item>
     <Item>
       <Source>books.png</Source>
@@ -171,6 +171,87 @@
       <Options>None</Options>
       <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\books.xnb</Output>
       <Time>2013-11-17T18:18:02.8172085-05:00</Time>
+    </Item>
+    <Item>
+      <Source>hw_stack.png</Source>
+      <Name>hw_stack</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\hw_stack.xnb</Output>
+      <Time>2013-11-24T19:34:18.2627493-05:00</Time>
+    </Item>
+    <Item>
+      <Source>main_paper.png</Source>
+      <Name>main_paper</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\main_paper.xnb</Output>
+      <Time>2013-11-24T19:32:32.2636865-05:00</Time>
+    </Item>
+    <Item>
+      <Source>main_pen.png</Source>
+      <Name>main_pen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\main_pen.xnb</Output>
+      <Time>2013-11-24T19:33:40.2705763-05:00</Time>
+    </Item>
+    <Item>
+      <Source>books_pen.png</Source>
+      <Name>books_pen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\books_pen.xnb</Output>
+      <Time>2013-11-24T19:26:58.0525708-05:00</Time>
+    </Item>
+    <Item>
+      <Source>implied_partay.png</Source>
+      <Name>implied_partay</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\implied_partay.xnb</Output>
+      <Time>2013-11-24T19:27:36.5497727-05:00</Time>
+    </Item>
+    <Item>
+      <Source>lamp.png</Source>
+      <Name>lamp</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\lamp.xnb</Output>
+      <Time>2013-11-24T19:28:45.9137401-05:00</Time>
+    </Item>
+    <Item>
+      <Source>lamp_light.png</Source>
+      <Name>lamp_light</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\lamp_light.xnb</Output>
+      <Time>2013-11-24T19:29:52.4365449-05:00</Time>
+    </Item>
+    <Item>
+      <Source>math.png</Source>
+      <Name>math</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\math.xnb</Output>
+      <Time>2013-11-24T19:28:12.414824-05:00</Time>
+    </Item>
+    <Item>
+      <Source>table_clear.png</Source>
+      <Name>table_clear</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\table_clear.xnb</Output>
+      <Time>2013-11-24T19:26:30.0669701-05:00</Time>
     </Item>
     <Item>
       <Source>Emilia.wav</Source>
@@ -190,91 +271,10 @@
       <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\dark_beat.xnb</Output>
       <Time>2013-11-17T18:18:05.0423358-05:00</Time>
     </Item>
-    <Item>
-      <Source>hw_stack.png</Source>
-      <Name>hw_stack</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\hw_stack.xnb</Output>
-      <Time>2013-11-17T18:45:38.0968851-05:00</Time>
-    </Item>
-    <Item>
-      <Source>main_paper.png</Source>
-      <Name>main_paper</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\main_paper.xnb</Output>
-      <Time>2013-11-17T18:45:40.6970338-05:00</Time>
-    </Item>
-    <Item>
-      <Source>main_pen.png</Source>
-      <Name>main_pen</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\main_pen.xnb</Output>
-      <Time>2013-11-17T18:47:20.98477-05:00</Time>
-    </Item>
-    <Item>
-      <Source>books_pen.png</Source>
-      <Name>books_pen</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\books_pen.xnb</Output>
-      <Time>2013-11-17T18:49:12.127127-05:00</Time>
-    </Item>
-    <Item>
-      <Source>implied_partay.png</Source>
-      <Name>implied_partay</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\implied_partay.xnb</Output>
-      <Time>2013-11-17T18:48:47.1857004-05:00</Time>
-    </Item>
-    <Item>
-      <Source>lamp.png</Source>
-      <Name>lamp</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\lamp.xnb</Output>
-      <Time>2013-11-17T18:48:50.3278801-05:00</Time>
-    </Item>
-    <Item>
-      <Source>lamp_light.png</Source>
-      <Name>lamp_light</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\lamp_light.xnb</Output>
-      <Time>2013-11-17T18:48:57.0482645-05:00</Time>
-    </Item>
-    <Item>
-      <Source>math.png</Source>
-      <Name>math</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\math.xnb</Output>
-      <Time>2013-11-17T18:49:07.0958392-05:00</Time>
-    </Item>
-    <Item>
-      <Source>table_clear.png</Source>
-      <Name>table_clear</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\table_clear.xnb</Output>
-      <Time>2013-11-17T18:51:24.8947208-05:00</Time>
-    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
-      <TargetProfile>Reach</TargetProfile>
+      <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
       <RootDirectory>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoylContent\</RootDirectory>

@@ -41,5 +41,12 @@ namespace tbfyoyl.TAGame
                 s1.NumCheaterMistakes - s2.NumCheaterMistakes);
         }
 
+        public void zero()
+        {
+            NumCheaterMistakes = 0;
+            NumGradingMistakes = 0;
+            NumQuestions = 0;
+        }
+
     }
 }
