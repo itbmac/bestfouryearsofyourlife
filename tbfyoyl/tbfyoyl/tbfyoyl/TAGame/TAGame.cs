@@ -33,7 +33,7 @@ namespace tbfyoyl.TAGame
 
         //how accurately we've been grading
         private Score currentScore;
-
+        private Score totalScore;
     
         private Camera2d zoomedOut;
         private Camera2d zoomedIn;
@@ -66,6 +66,7 @@ namespace tbfyoyl.TAGame
             pen = new GradingStamp(MediaManager.textures["pen_incorrect"], new Vector2(1500, 750));
             cheater = new GradingStamp(MediaManager.textures["pen_cheater"], new Vector2(1500, 1050));
             currentScore = new Score();
+            totalScore = new Score();
 
             ClickableObject back = new ClickableObject(new TextureObject(MediaManager.textures["BLAH"], new Vector2(0, 0)),
                 delegate()
@@ -97,12 +98,16 @@ namespace tbfyoyl.TAGame
             //only resets the game if we finished all the previous papers
             if(graded.numPapers() == numPapers)
             {
+
+                if (numPapers == 0)
+                {
+                    numPapers = 3;
+                }
                 //clear the papers
                 ungraded.clear();
                 graded.clear();
                 currentScore.zero();
 
-                //TODO: algorithmically generate answer sets
                 //TODO: reincorporate UI
 
                 //if we can, construct a set of papers and answers
@@ -114,7 +119,6 @@ namespace tbfyoyl.TAGame
                     {
                         numPapers = 20;
                     }
-
                     for (int i = 0; i < numPapers; i++)
                     {
                         Paper p1 = problemSet.generatePaper(MediaManager.GetRandomFloat(0, 0.3));
@@ -134,6 +138,9 @@ namespace tbfyoyl.TAGame
                 accuracy = 0;
             accuracy *= 1 / 0.3;
             //accuracy now ranges from 0 to 0.3, with a higher score being better
+
+            totalScore += currentScore;
+            System.Diagnostics.Debug.WriteLine("total score: " + totalScore);
 
             double wagePerPaper = 0.7; //an arbitrary number
             game.money += (int) (wagePerPaper * graded.numPapers() * accuracy);
@@ -187,10 +194,11 @@ namespace tbfyoyl.TAGame
                 {
                     if (graded.Contains(pos))
                     {
+                        currentScore += currentPaper.GetScore();
+
                         //destroy old paper
                         drawableObjects.Remove(currentPaper);
                         clickableObjects.Remove(currentPaper);
-                        currentScore += currentPaper.GetScore();
                         graded.addPaper(currentPaper);
                         currentPaper = null;
                         activeObject = null;
@@ -200,13 +208,13 @@ namespace tbfyoyl.TAGame
                     }
                     else
                     {
+                        currentScore -= currentPaper.GetScore();
                         MediaManager.cam = zoomedOut;
                         if (ungraded.Contains(pos))
                         {
                             //destroy old paper
                             drawableObjects.Remove(currentPaper);
                             clickableObjects.Remove(currentPaper);
-                            currentScore -= currentPaper.GetScore();
                             ungraded.addPaper(currentPaper);
                             currentPaper = null;
                             activeObject = null;
@@ -232,6 +240,7 @@ namespace tbfyoyl.TAGame
                         currentScore += graded.peekPaper().GetScore();
                     }
                     cheater.SnapBack();
+
                 }
                 else
                 {

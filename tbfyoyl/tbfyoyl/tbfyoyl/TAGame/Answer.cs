@@ -32,9 +32,8 @@ namespace tbfyoyl.TAGame
         public Answer(Texture2D t, Vector2 pos, bool isCorrect, bool isCopied)
         {
             base.parent = new TextureObject(t, pos);
-
-            this.isActuallyCorrect = isCopied;
-            this.isActuallyCopied = isCorrect;
+            this.isActuallyCorrect = isCorrect;
+            this.isActuallyCopied = isCopied;
             this.isMarkedCorrect = true;
             this.isMarkedCopied = false;
         }

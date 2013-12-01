@@ -63,12 +63,14 @@ namespace tbfyoyl
 
         public override bool ClickUp(Vector2 pos)
         {
+            pos = Vector2.Transform(pos, MediaManager.cam.get_transformation(game.GraphicsDevice));
             bool isInUI = true;
             return isInUI;
         }
 
         public override bool ClickDown(Vector2 pos)
         {
+            pos = Vector2.Transform(pos, MediaManager.cam.get_transformation(game.GraphicsDevice));
             System.Diagnostics.Debug.WriteLine("POS Y: " + pos.Y.ToString());
             
             bool isInUI = true;
@@ -88,6 +90,7 @@ namespace tbfyoyl
 
         public override void MouseOver(Vector2 pos)
         {
+            pos = Vector2.Transform(pos, MediaManager.cam.get_transformation(game.GraphicsDevice));
             if (pos.X >= UI_MIN_X && pos.Y <= UI_MAX_Y)
             {
                 UI_button_state = 1;
@@ -100,8 +103,12 @@ namespace tbfyoyl
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            Vector2 mousePos = MediaManager.GetCurMousePos();
-            
+
+            spriteBatch.End();
+            spriteBatch.Begin();
+
+            Vector2 mousePos = Vector2.Transform(MediaManager.GetCurMousePos(), MediaManager.cam.get_transformation(game.GraphicsDevice));
+   
             if (game.ActiveGame == "TAGAME" || game.ActiveGame == "BOOKSTOREGAME")
             {
 
@@ -145,7 +152,7 @@ namespace tbfyoyl
                     }
                 }
 
-                /*
+                
                 switch (game.ActiveGame)
                 {
                     case "TAGAME":
@@ -273,10 +280,18 @@ namespace tbfyoyl
                         break;
                 }
                 UI_BUTTON_X = UI_X;
-                 */
-            }
                  
+            }
+
             MediaManager.DrawArt(spriteBatch, "Content/cursorSmall30", (int)mousePos.X - 30 / 2, (int)mousePos.Y - 30 / 2);
+            spriteBatch.End();
+            spriteBatch.Begin(SpriteSortMode.Deferred,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        MediaManager.cam.get_transformation(spriteBatch.GraphicsDevice));
         }
 
     }

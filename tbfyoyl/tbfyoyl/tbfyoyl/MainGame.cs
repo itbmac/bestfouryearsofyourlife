@@ -182,7 +182,7 @@ namespace tbfyoyl
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            spriteBatch.Begin(SpriteSortMode.Immediate,
+            spriteBatch.Begin(SpriteSortMode.Deferred,
                         null,
                         null,
                         null,

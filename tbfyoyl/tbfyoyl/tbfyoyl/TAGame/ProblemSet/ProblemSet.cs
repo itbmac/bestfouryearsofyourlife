@@ -31,8 +31,6 @@ namespace tbfyoyl.TAGame
             System.Array.Copy(positions, newPositions, positions.Length);
 
             int numSwaps = (int)Math.Round(positions.Length * threshold);
-            System.Diagnostics.Debug.WriteLine(positions.Length * threshold);
-            System.Diagnostics.Debug.WriteLine(numSwaps);
             for (int i = 0; i < numSwaps; i++)
             {
                 int x = MediaManager.GetRandomInt(0, positions.Length);

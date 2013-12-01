@@ -48,5 +48,10 @@ namespace tbfyoyl.TAGame
             NumQuestions = 0;
         }
 
+        public override string ToString()
+        {
+            return "num questions = " + NumQuestions + ", num mistakes = " + NumGradingMistakes;
+        }
+
     }
 }
