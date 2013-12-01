@@ -17,8 +17,6 @@ namespace tbfyoyl.TAGame
 
         Answer[] answers;
 
-        int currentPage;
-
         Answer selectedAnswer;
 
         public Paper(Texture2D t, Vector2 p, Answer[] ans)
@@ -28,7 +26,6 @@ namespace tbfyoyl.TAGame
             ans.CopyTo(answers, 0);
 
             selectedAnswer = answers[0];
-            SetCurrentPage(0);
         }
 
         public override Vector2 Position
@@ -40,8 +37,10 @@ namespace tbfyoyl.TAGame
             set
             {
                 Vector2 diff = value - base.Position;
-                answers[currentPage * 2].Position += diff;
-                answers[currentPage * 2 + 1].Position += diff;
+                foreach (Answer a in answers)
+                {
+                    a.Position += diff;
+                }
                 base.Position = value;
             }
         }
@@ -49,43 +48,34 @@ namespace tbfyoyl.TAGame
         public override void Draw(SpriteBatch spriteBatch)
         {
             base.Draw(spriteBatch);
-            answers[currentPage * 2].Draw(spriteBatch);
-            answers[currentPage * 2 + 1].Draw(spriteBatch);
-        }
-
-        public void SetCurrentPage(int newPageIndex)
-        {
-            currentPage = newPageIndex;
-            answers[currentPage * 2].Position = this.Position;
-            answers[currentPage * 2 + 1].Position = this.Position + new Vector2(0, 60);
+            foreach (Answer a in answers)
+            {
+                a.Draw(spriteBatch);
+            }
         }
    
         public void TryStamp(Vector2 pos, bool isCopyStamp)
         {
-            if (answers[currentPage * 2].Contains(pos))
+            foreach (Answer a in answers)
             {
-                answers[currentPage * 2].Stamp(isCopyStamp);
+                if (a.Contains(pos))
+                {
+                    a.Stamp(isCopyStamp);
+                }
             }
-            else if (answers[currentPage * 2 + 1].Contains(pos))
-            {
-                answers[currentPage * 2 + 1].Stamp(isCopyStamp);
-            }
-            System.Diagnostics.Debug.Write("TryStamp Paper\n");
         }
 
         public override void ClickDown(Vector2 pos)
         {
             if(base.Contains(pos))
             {
-                if (answers[currentPage * 2].ClickDown(pos))
+                foreach (Answer a in answers)
                 {
-                    selectedAnswer.Deselect();
-                    selectedAnswer = answers[currentPage * 2];
-                }
-                else if (answers[currentPage * 2 + 1].ClickDown(pos))
-                {
-                    selectedAnswer.Deselect();
-                    selectedAnswer = answers[currentPage * 2 + 1];
+                    if (a.ClickDown(pos))
+                    {
+                        selectedAnswer.Deselect();
+                        selectedAnswer = a;
+                    }
                 }
             }
         }

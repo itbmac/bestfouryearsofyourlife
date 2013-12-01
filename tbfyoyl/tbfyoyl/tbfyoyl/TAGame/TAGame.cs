@@ -33,17 +33,22 @@ namespace tbfyoyl.TAGame
 
         //how accurately we've been grading
         private Score currentScore;
+
     
         private Camera2d zoomedOut;
         private Camera2d zoomedIn;
 
-        private int lastAnswerSet;
+        //a list of problem sets
+        private Queue<ProblemSet> problems;
+        private int numPapers;
 
         public TAGame(MainGame game)
             : base(game)
         {
 
-            lastAnswerSet = -1;
+            problems = new Queue<ProblemSet>();
+            problems.Enqueue(new GeographySet1());
+            numPapers = 0;
 
             //create camera views
             zoomedOut = new Camera2d();
@@ -87,15 +92,12 @@ namespace tbfyoyl.TAGame
         /// to run.  This is where it can query for any required services and load content.
         /// </summary>
         public override void Initialize()
-        {
-            
+        {            
             MediaManager.cam = zoomedOut;
-
             //only resets the game if we finished all the previous papers
-            if(lastAnswerSet == -1 || (lastAnswerSet < MediaManager.allAnswers.Length && graded.numPapers() == MediaManager.allAnswers[lastAnswerSet].Length - 1))
+            if(graded.numPapers() == numPapers)
             {
                 //clear the papers
-                lastAnswerSet++;
                 ungraded.clear();
                 graded.clear();
                 currentScore.zero();
@@ -104,20 +106,24 @@ namespace tbfyoyl.TAGame
                 //TODO: reincorporate UI
 
                 //if we can, construct a set of papers and answers
-                if (MediaManager.allAnswers.Length > lastAnswerSet)
+                if (problems.Count != 0)
                 {
-                    //answerKey = new Paper(MediaManager.textures["paper"], new Vector2(1000, 400), MediaManager.allAnswers[lastAnswerSet][0]);
-                    for (int i = 0; i < MediaManager.allAnswers[lastAnswerSet].Length; i++)
+                    ProblemSet problemSet = problems.Dequeue();
+                    numPapers += 2;
+                    if (numPapers > 20)
                     {
-                        Paper p1 = new Paper(MediaManager.textures["paper"], new Vector2(0, 0), MediaManager.allAnswers[lastAnswerSet][i]);
+                        numPapers = 20;
+                    }
+
+                    for (int i = 0; i < numPapers; i++)
+                    {
+                        Paper p1 = problemSet.generatePaper(MediaManager.GetRandomFloat(0, 0.3));
                         ungraded.addPaper(p1);
                     }
-                    //drawableObjects.Add(answerKey);
                 }
             }
             
             base.Initialize();
-            System.Diagnostics.Debug.WriteLine("Creating new set");
         }
 
         public override void Deinitialize()

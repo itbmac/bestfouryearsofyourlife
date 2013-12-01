@@ -31,8 +31,8 @@ namespace tbfyoyl
         public static SpriteFont mediumFont3;
         private static SpriteFont bigFont;
 
-        public static Answer[][][] allAnswers;
-        public static Answer nullAnswer;
+        //public static Answer[][][] allAnswers;
+        //public static Answer nullAnswer;
 
         public static Texture2D pixel;
 
@@ -83,6 +83,7 @@ namespace tbfyoyl
             textures.Add("cart_h", content.Load<Texture2D>("content/shopping_cart_200_h"));
 
 
+            /*
             Texture2D answerTexture = textures["BLAH"];
             //allAnswers[problemSet#][paper#][answer#]
             allAnswers = new Answer[][][] {
@@ -119,6 +120,7 @@ namespace tbfyoyl
                     }
                 }
             };
+             */
 
             isAdvanced = advancedFlag;
             if (advancedFlag)
