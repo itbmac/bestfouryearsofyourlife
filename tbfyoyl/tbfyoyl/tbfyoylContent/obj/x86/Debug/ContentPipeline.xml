@@ -8,7 +8,7 @@
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\MainSpriteFont1.xnb</Output>
-      <Time>2013-11-03T17:05:03.5555806-05:00</Time>
+      <Time>2013-12-01T18:39:26.6227569-05:00</Time>
     </Item>
     <Item>
       <Source>cursorSmall30.png</Source>
@@ -270,6 +270,69 @@
       <Options>None</Options>
       <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\dark_beat.xnb</Output>
       <Time>2013-11-17T18:18:05.0423358-05:00</Time>
+    </Item>
+    <Item>
+      <Source>state_flags.png</Source>
+      <Name>state_flags</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\state_flags.xnb</Output>
+      <Time>2013-12-01T18:51:55.5905954-05:00</Time>
+    </Item>
+    <Item>
+      <Source>hw_us_geo_hw1.png</Source>
+      <Name>hw_us_geo_hw1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\hw_us_geo_hw1.xnb</Output>
+      <Time>2013-12-03T16:45:51.2074252-05:00</Time>
+    </Item>
+    <Item>
+      <Source>hw_us_geo_hw2.png</Source>
+      <Name>hw_us_geo_hw2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\hw_us_geo_hw2.xnb</Output>
+      <Time>2013-12-01T19:49:03.3296509-05:00</Time>
+    </Item>
+    <Item>
+      <Source>hw_us_geo_hw3.png</Source>
+      <Name>hw_us_geo_hw3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\hw_us_geo_hw3.xnb</Output>
+      <Time>2013-12-01T19:49:10.3790541-05:00</Time>
+    </Item>
+    <Item>
+      <Source>hw_us_geo_hw4.png</Source>
+      <Name>hw_us_geo_hw4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\hw_us_geo_hw4.xnb</Output>
+      <Time>2013-12-01T19:49:16.9144279-05:00</Time>
+    </Item>
+    <Item>
+      <Source>hw_us_geo_hw5.png</Source>
+      <Name>hw_us_geo_hw5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\hw_us_geo_hw5.xnb</Output>
+      <Time>2013-12-03T16:47:44.7409189-05:00</Time>
+    </Item>
+    <Item>
+      <Source>state_flags_small.png</Source>
+      <Name>state_flags_small</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kuyou-s\Documents\GitHub\bestfouryearsofyourlife\tbfyoyl\tbfyoyl\tbfyoyl\bin\x86\Debug\Content\state_flags_small.xnb</Output>
+      <Time>2013-12-03T16:41:16.5757171-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

@@ -75,6 +75,8 @@
     <Compile Include="BookstoreGame\BSObject.cs" />
     <Compile Include="BookstoreGame\Cart.cs" />
     <Compile Include="Camera\Camera2d.cs" />
+    <Compile Include="Framework\TextureSheetObject.cs" />
+    <Compile Include="Framework\TextObject.cs" />
     <Compile Include="Framework\DraggableObject.cs" />
     <Compile Include="BookstoreGame\Person.cs" />
     <Compile Include="BookstoreGame\Player.cs" />
@@ -111,6 +113,12 @@
     <Compile Include="Framework\DecoratorObject.cs" />
     <Compile Include="Framework\TextureObject.cs" />
     <Compile Include="Framework\GameObject.cs" />
+    <Compile Include="TAGame\DummyPaper.cs" />
+    <Compile Include="TAGame\ProblemSet\GeographySet5.cs" />
+    <Compile Include="TAGame\ProblemSet\GeographySet4.cs" />
+    <Compile Include="TAGame\ProblemSet\GeographySet3.cs" />
+    <Compile Include="TAGame\ProblemSet\GeographySet2.cs" />
+    <Compile Include="TAGame\TAResults.cs" />
     <Compile Include="TAGame\GradingStamp.cs" />
     <Compile Include="Framework\ClickableObject.cs" />
     <Compile Include="Framework\Minigame.cs" />

@@ -22,6 +22,8 @@ namespace tbfyoyl.TAGame
         bool isMarkedCopied;
         bool isActuallyCopied;
 
+        Texture2D incorrectOverlay;
+
         public Answer()
         {
             base.parent = EmptyObject.Instance;
@@ -29,9 +31,10 @@ namespace tbfyoyl.TAGame
             this.isMarkedCopied = false;
         }
 
-        public Answer(Texture2D t, Vector2 pos, bool isCorrect, bool isCopied)
+        public Answer(Texture2D t, Texture2D i, Vector2 pos, Rectangle source, bool isCorrect, bool isCopied)
         {
-            base.parent = new TextureObject(t, pos);
+            incorrectOverlay = i;
+            base.parent = new TextureSheetObject(t, pos, source);
             this.isActuallyCorrect = isCorrect;
             this.isActuallyCopied = isCopied;
             this.isMarkedCorrect = true;
@@ -40,14 +43,6 @@ namespace tbfyoyl.TAGame
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            if (isMarkedCopied)
-            {
-                MediaManager.DrawArt(spriteBatch, "content/BLAH", (int)this.Position.X+50, (int)this.Position.Y);
-            }
-            else if(!isMarkedCorrect)
-            {
-                MediaManager.DrawArt(spriteBatch, "content/BLAH", (int)this.Position.X+100, (int)this.Position.Y);
-            }
             if (isSelected)
             {
                 base.Draw(spriteBatch);
@@ -55,6 +50,13 @@ namespace tbfyoyl.TAGame
             else
             {
                 base.Draw(spriteBatch);
+            }
+            if (isMarkedCopied)
+            {
+            }
+            else if (!isMarkedCorrect)
+            {
+                spriteBatch.Draw(incorrectOverlay, Position, Color.White);
             }
         }
 

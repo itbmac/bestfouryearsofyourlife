@@ -11,20 +11,23 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
 
-namespace tbfyoyl
+namespace tbfyoyl.TAGame
 {
-    public class SplashScreen : Minigame
+    public class TAResults : Minigame
     {
         /*
          * The initial splash screen for the game
          */
         private ClickableObject[] menuItems;
+        private TAGame tagame;
 
-        public SplashScreen(MainGame game)
+        public TAResults(MainGame game, TAGame ta)
             : base(game)
         {
+
+            tagame = ta;
             menuItems = new ClickableObject[2];
-            menuItems[0] = new ClickableObject(new TextObject("PLAY GAME", new Vector2(800, 850)),
+            menuItems[0] = new ClickableObject(new TextObject("CONTINUE", new Vector2(800, 850)),
                 delegate()
                 {
                     game.ActiveGame = "TAGAME";
@@ -47,6 +50,7 @@ namespace tbfyoyl
             MediaManager.cam.Zoom = 0.533333333f; // = 1200/2250
             MediaManager.cam.Pos = new Vector2(1125, 750);
             base.Initialize();
+
         }
 
         public override bool ClickDown(Vector2 pos)
@@ -80,7 +84,12 @@ namespace tbfyoyl
             MediaManager.DrawArt(spriteBatch, "Content/lamp", 525, -150);
             MediaManager.DrawArt(spriteBatch, "Content/main_paper", 750, 600);
 
+
             MediaManager.DrawText(spriteBatch, "test", 750, 600, Color.Black);
+            MediaManager.DrawText(spriteBatch, tagame.CurrentScore.ToString(),
+                800, 650, Color.Black);
+            MediaManager.DrawText(spriteBatch, tagame.TotalScore.ToString(),
+                800, 700, Color.Black);
 
             foreach (ClickableObject o in menuItems)
             {

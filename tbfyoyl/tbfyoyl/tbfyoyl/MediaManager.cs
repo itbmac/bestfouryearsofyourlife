@@ -25,6 +25,12 @@ namespace tbfyoyl
         private static ArrayList arrayArt = new ArrayList();
         private static ArrayList arraySound = new ArrayList();
 
+
+        public static int flagwidth = 115;
+        public static int flagheight = 73;
+        public static int spacingwidth = 133;
+        public static int spacingheight = 92;
+
         private static SpriteFont smallFont;
         private static SpriteFont mediumFont;
         public static SpriteFont mediumFont2;
@@ -74,8 +80,11 @@ namespace tbfyoyl
             for (int i = 0; i < 400 * 250; i++)
                 empty_color[i] = Color.Transparent;
             empty.SetData(empty_color);
+            textures.Add("empty", empty);
             textures.Add("graded stack", empty);
             textures.Add("ungraded stack", content.Load<Texture2D>("content/hw_stack"));
+            textures.Add("state flags", content.Load<Texture2D>("content/state_flags_small"));
+            textures.Add("flag incorrect", content.Load<Texture2D>("content/BLAH"));
 
             // BOOKSTORE GAME'S ASSETS
             textures.Add("books", content.Load<Texture2D>("content/books"));

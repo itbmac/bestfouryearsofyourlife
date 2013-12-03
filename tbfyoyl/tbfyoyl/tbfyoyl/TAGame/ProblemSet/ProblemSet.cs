@@ -19,8 +19,10 @@ namespace tbfyoyl.TAGame
          */
 
         protected Vector2[] positions;
-        protected Texture2D[] textures;
+        protected Rectangle[] textureLocations;
         protected Texture2D baseTexture;
+        protected Texture2D answerTexture;
+        protected Texture2D incorrectOverlay;
 
         protected ProblemSet () { }
 
@@ -42,7 +44,7 @@ namespace tbfyoyl.TAGame
 
             for (int i = 0; i < positions.Length; i++)
             {
-                ret[i] = new Answer(textures[i], newPositions[i], positions[i] == newPositions[i], false);
+                ret[i] = new Answer(answerTexture, incorrectOverlay, newPositions[i], textureLocations[i], positions[i] == newPositions[i], false);
             }
 
             return new Paper(baseTexture, new Vector2(0, 0), ret);

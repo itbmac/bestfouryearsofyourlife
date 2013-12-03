@@ -16,16 +16,17 @@ namespace tbfyoyl.TAGame
     {
 
         Answer[] answers;
-
         Answer selectedAnswer;
+        Texture2D questions;
 
         public Paper(Texture2D t, Vector2 p, Answer[] ans)
-            : base(t, p)
+            : base(MediaManager.textures["paper"], p)
         {
             answers = new Answer[ans.Length];
             ans.CopyTo(answers, 0);
 
             selectedAnswer = answers[0];
+            questions = t;
         }
 
         public override Vector2 Position
@@ -48,6 +49,7 @@ namespace tbfyoyl.TAGame
         public override void Draw(SpriteBatch spriteBatch)
         {
             base.Draw(spriteBatch);
+            spriteBatch.Draw(questions, Position, Color.White);
             foreach (Answer a in answers)
             {
                 a.Draw(spriteBatch);

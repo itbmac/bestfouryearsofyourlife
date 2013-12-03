@@ -109,6 +109,7 @@ namespace tbfyoyl
 
             Vector2 mousePos = Vector2.Transform(MediaManager.GetCurMousePos(), MediaManager.cam.get_transformation(game.GraphicsDevice));
    
+            /*
             if (game.ActiveGame == "TAGAME" || game.ActiveGame == "BOOKSTOREGAME")
             {
 
@@ -282,7 +283,7 @@ namespace tbfyoyl
                 UI_BUTTON_X = UI_X;
                  
             }
-
+            */
             MediaManager.DrawArt(spriteBatch, "Content/cursorSmall30", (int)mousePos.X - 30 / 2, (int)mousePos.Y - 30 / 2);
             spriteBatch.End();
             spriteBatch.Begin(SpriteSortMode.Deferred,
@@ -295,4 +296,5 @@ namespace tbfyoyl
         }
 
     }
+
 }

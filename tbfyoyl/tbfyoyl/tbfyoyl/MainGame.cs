@@ -87,13 +87,16 @@ namespace tbfyoyl
             MediaManager.Setup(Services, graphics);
             prevMouseState = Mouse.GetState();
 
+            TAGame.TAGame tagame = new TAGame.TAGame(this);
+
             games = new Dictionary<String, Minigame>()
             {
                 {"UI", new UI(this)},
                 {"WORLDMAP", new WorldMap(this)},
                 {"BOOKSTOREGAME", new BookstoreGame(this)},
-                {"TAGAME", new TAGame.TAGame(this)},
+                {"TAGAME", tagame},
                 {"SPLASHSCREEN", new SplashScreen(this)},
+                {"TARESULTS", new TAGame.TAResults(this, tagame)},
             };
             ActiveGame = "SPLASHSCREEN";
         }

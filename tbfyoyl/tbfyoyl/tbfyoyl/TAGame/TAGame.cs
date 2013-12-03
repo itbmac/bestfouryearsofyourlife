@@ -34,6 +34,23 @@ namespace tbfyoyl.TAGame
         //how accurately we've been grading
         private Score currentScore;
         private Score totalScore;
+
+        public Score CurrentScore
+        {
+            get
+            {
+                return new Score() + currentScore;
+            }
+        }
+
+        public Score TotalScore
+        {
+            get
+            {
+                return new Score() + totalScore;
+            }
+        }
+    
     
         private Camera2d zoomedOut;
         private Camera2d zoomedIn;
@@ -48,7 +65,11 @@ namespace tbfyoyl.TAGame
 
             problems = new Queue<ProblemSet>();
             problems.Enqueue(new GeographySet1());
-            numPapers = 0;
+            problems.Enqueue(new GeographySet2());
+            problems.Enqueue(new GeographySet3());
+            problems.Enqueue(new GeographySet4());
+            problems.Enqueue(new GeographySet5());
+            numPapers = -1;
 
             //create camera views
             zoomedOut = new Camera2d();
@@ -68,22 +89,12 @@ namespace tbfyoyl.TAGame
             currentScore = new Score();
             totalScore = new Score();
 
-            ClickableObject back = new ClickableObject(new TextureObject(MediaManager.textures["BLAH"], new Vector2(0, 0)),
-                delegate()
-                {
-                    game.ActiveGame = "WORLDMAP";
-                });
-
-            drawableObjects.Add(back);
             drawableObjects.Add(ungraded);
             drawableObjects.Add(graded);
-            //drawableObjects.Add(cheater);
             drawableObjects.Add(pen);
 
-            clickableObjects.Add(back);
             clickableObjects.Add(ungraded);
             clickableObjects.Add(graded);
-            //clickableObjects.Add(cheater);
             clickableObjects.Add(pen);
 
         }
@@ -96,10 +107,10 @@ namespace tbfyoyl.TAGame
         {            
             MediaManager.cam = zoomedOut;
             //only resets the game if we finished all the previous papers
-            if(graded.numPapers() == numPapers)
+            if(graded.numPapers() == (numPapers+1))
             {
 
-                if (numPapers == 0)
+                if (numPapers < 3)
                 {
                     numPapers = 3;
                 }
@@ -108,13 +119,15 @@ namespace tbfyoyl.TAGame
                 graded.clear();
                 currentScore.zero();
 
+                ungraded.addPaper(new DummyPaper());
+
                 //TODO: reincorporate UI
 
                 //if we can, construct a set of papers and answers
                 if (problems.Count != 0)
                 {
                     ProblemSet problemSet = problems.Dequeue();
-                    numPapers += 2;
+                    //numPapers += 2;
                     if (numPapers > 20)
                     {
                         numPapers = 20;
@@ -194,25 +207,33 @@ namespace tbfyoyl.TAGame
                 {
                     if (graded.Contains(pos))
                     {
-                        currentScore += currentPaper.GetScore();
 
                         //destroy old paper
                         drawableObjects.Remove(currentPaper);
                         clickableObjects.Remove(currentPaper);
                         graded.addPaper(currentPaper);
+
+                        if (ungraded.numPapers() == 0)
+                        {
+                            game.ActiveGame = "TARESULTS";
+                            return base.ClickUp(pos);
+                        }
+                        currentScore += currentPaper.GetScore();
+
                         currentPaper = null;
                         activeObject = null;
 
                         //zoom in
                         MediaManager.cam = zoomedIn;
+
                     }
                     else
                     {
-                        currentScore -= currentPaper.GetScore();
                         MediaManager.cam = zoomedOut;
                         if (ungraded.Contains(pos))
                         {
                             //destroy old paper
+                            currentScore -= currentPaper.GetScore();
                             drawableObjects.Remove(currentPaper);
                             clickableObjects.Remove(currentPaper);
                             ungraded.addPaper(currentPaper);
