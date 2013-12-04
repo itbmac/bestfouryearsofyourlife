@@ -85,6 +85,8 @@ namespace tbfyoyl
             textures.Add("ungraded stack", content.Load<Texture2D>("content/hw_stack"));
             textures.Add("state flags", content.Load<Texture2D>("content/state_flags_small"));
             textures.Add("flag incorrect", content.Load<Texture2D>("content/BLAH"));
+            textures.Add("next button", content.Load<Texture2D>("content/BLAH"));
+            textures.Add("prev button", content.Load<Texture2D>("content/BLAH"));
 
             // BOOKSTORE GAME'S ASSETS
             textures.Add("books", content.Load<Texture2D>("content/books"));

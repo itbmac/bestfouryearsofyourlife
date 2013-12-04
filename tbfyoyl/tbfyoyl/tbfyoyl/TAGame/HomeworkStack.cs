@@ -12,59 +12,59 @@ using Microsoft.Xna.Framework.Media;
 
 namespace tbfyoyl.TAGame
 {
-    class PaperStack : DecoratorObject
+    class HomeworkStack : DecoratorObject
     {
 
-        private Stack<Paper> papers;
+        private Stack<Homework> homeworks;
         private GameObject baseObject;
 
-        public PaperStack(Texture2D t, Vector2 p)
+        public HomeworkStack(Texture2D t, Vector2 p)
         {
-            papers = new Stack<Paper>();
-            papers.Push(new Paper(t, p, new Answer[] {new Answer(), new Answer()}));
-            parent = papers.Peek();
+            homeworks = new Stack<Homework>();
+            homeworks.Push(new Homework(EmptyObject.Instance, EmptyObject.Instance, new Paper[] { new Paper(t, p, new Answer[] { new Answer(), new Answer() }) }));
+            parent = homeworks.Peek();
             baseObject = new TextureObject(t, p);
         }
 
-        public int numPapers()
+        public int numHomeworks()
         {
-            return papers.Count - 1;
+            return homeworks.Count - 1;
         }
 
         public void clear()
         {
-            while (papers.Count > 1)
+            while (homeworks.Count > 1)
             {
-                papers.Pop();
+                homeworks.Pop();
             }
-            parent = papers.Peek();
+            parent = homeworks.Peek();
         }
 
-        public Paper getPaper()
+        public Homework getPaper()
         {
-            if (papers.Count > 1)
+            if (homeworks.Count > 1)
             {
-                Paper ret = papers.Pop();
-                parent = papers.Peek();
+                Homework ret = homeworks.Pop();
+                parent = homeworks.Peek();
                 return ret;
             }
-            parent = papers.Peek();
+            parent = homeworks.Peek();
             return null;
         }
 
-        public Paper peekPaper()
+        public Homework peekPaper()
         {
-            if (papers.Count > 1)
+            if (homeworks.Count > 1)
             {
-                return (Paper) parent;
+                return (Homework) parent;
             }
             return null;
         }
 
-        public void addPaper(Paper p)
+        public void addHomework(Homework p)
         {
             p.Position = Position;
-            papers.Push(p);
+            homeworks.Push(p);
             parent = p;
         }
 

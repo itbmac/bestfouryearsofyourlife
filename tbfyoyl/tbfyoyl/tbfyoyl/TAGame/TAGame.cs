@@ -17,14 +17,14 @@ namespace tbfyoyl.TAGame
     public class TAGame : Minigame
     {
         //the current paper being graded
-        private Paper currentPaper;
+        private Homework currentHomework;
         //the answer key
         //private Paper answerKey;
 
         //the stack of graded papers
-        private PaperStack graded;
+        private HomeworkStack graded;
         //the stack of ungraded papers
-        private PaperStack ungraded;
+        private HomeworkStack ungraded;
 
         //the pens marking whether a particular question is wrong,
         //or whether it was copied
@@ -56,19 +56,19 @@ namespace tbfyoyl.TAGame
         private Camera2d zoomedIn;
 
         //a list of problem sets
-        private Queue<ProblemSet> problems;
+        private Queue<HomeworkSet> homeworks;
         private int numPapers;
 
         public TAGame(MainGame game)
             : base(game)
         {
 
-            problems = new Queue<ProblemSet>();
-            problems.Enqueue(new GeographySet1());
-            problems.Enqueue(new GeographySet2());
-            problems.Enqueue(new GeographySet3());
-            problems.Enqueue(new GeographySet4());
-            problems.Enqueue(new GeographySet5());
+            homeworks = new Queue<HomeworkSet>();
+            homeworks.Enqueue(new HomeworkSet(new ProblemSet[] { new GeographySet1(), new GeographySet2() }));
+            //homeworks.Enqueue(new HomeworkSet(new ProblemSet[] { new GeographySet2() }));
+            homeworks.Enqueue(new HomeworkSet(new ProblemSet[] { new GeographySet3() }));
+            homeworks.Enqueue(new HomeworkSet(new ProblemSet[] { new GeographySet4() }));
+            homeworks.Enqueue(new HomeworkSet(new ProblemSet[] { new GeographySet5() }));
             numPapers = -1;
 
             //create camera views
@@ -81,8 +81,8 @@ namespace tbfyoyl.TAGame
             zoomedIn.Pos = new Vector2(1350, 975);
 
             //create paperstacks
-            graded = new PaperStack(MediaManager.textures["paper"], new Vector2(750, 600));
-            ungraded = new PaperStack(MediaManager.textures["ungraded stack"], new Vector2(0, 570));
+            graded = new HomeworkStack(MediaManager.textures["paper"], new Vector2(750, 600));
+            ungraded = new HomeworkStack(MediaManager.textures["ungraded stack"], new Vector2(0, 570));
 
             pen = new GradingStamp(MediaManager.textures["pen_incorrect"], new Vector2(1500, 750));
             cheater = new GradingStamp(MediaManager.textures["pen_cheater"], new Vector2(1500, 1050));
@@ -107,7 +107,7 @@ namespace tbfyoyl.TAGame
         {            
             MediaManager.cam = zoomedOut;
             //only resets the game if we finished all the previous papers
-            if(graded.numPapers() == (numPapers+1))
+            if(graded.numHomeworks() == (numPapers+1))
             {
 
                 if (numPapers < 3)
@@ -119,14 +119,14 @@ namespace tbfyoyl.TAGame
                 graded.clear();
                 currentScore.zero();
 
-                ungraded.addPaper(new DummyPaper());
+                ungraded.addHomework(new Homework(EmptyObject.Instance, EmptyObject.Instance, new Paper[] { new DummyPaper() }));
 
                 //TODO: reincorporate UI
 
                 //if we can, construct a set of papers and answers
-                if (problems.Count != 0)
+                if (homeworks.Count != 0)
                 {
-                    ProblemSet problemSet = problems.Dequeue();
+                    HomeworkSet problemSet = homeworks.Dequeue();
                     //numPapers += 2;
                     if (numPapers > 20)
                     {
@@ -134,8 +134,8 @@ namespace tbfyoyl.TAGame
                     }
                     for (int i = 0; i < numPapers; i++)
                     {
-                        Paper p1 = problemSet.generatePaper(MediaManager.GetRandomFloat(0, 0.3));
-                        ungraded.addPaper(p1);
+                        Homework h = problemSet.GenerateHomework(MediaManager.GetRandomFloat(0, 0.4));
+                        ungraded.addHomework(h);
                     }
                 }
             }
@@ -156,7 +156,7 @@ namespace tbfyoyl.TAGame
             System.Diagnostics.Debug.WriteLine("total score: " + totalScore);
 
             double wagePerPaper = 0.7; //an arbitrary number
-            game.money += (int) (wagePerPaper * graded.numPapers() * accuracy);
+            game.money += (int) (wagePerPaper * graded.numHomeworks() * accuracy);
 
             base.Deinitialize();
         }
@@ -165,31 +165,31 @@ namespace tbfyoyl.TAGame
         {
 
             bool ret = base.ClickDown(pos);
-            if (activeObject == ungraded && !drawableObjects.Contains(currentPaper))
+            if (activeObject == ungraded && !drawableObjects.Contains(currentHomework))
             {
                 //create new paper
-                currentPaper = ungraded.getPaper();
-                if (currentPaper != null)
+                currentHomework = ungraded.getPaper();
+                if (currentHomework != null)
                 {
-                    drawableObjects.Add(currentPaper);
-                    clickableObjects.Add(currentPaper);
+                    drawableObjects.Add(currentHomework);
+                    clickableObjects.Add(currentHomework);
                 }
-                activeObject = currentPaper;
+                activeObject = currentHomework;
             }
-            if (activeObject == graded && !drawableObjects.Contains(currentPaper))
+            if (activeObject == graded && !drawableObjects.Contains(currentHomework))
             {
                 //create new paper
-                currentPaper = graded.getPaper();
-                if (currentPaper != null)
+                currentHomework = graded.getPaper();
+                if (currentHomework != null)
                 {
-                    drawableObjects.Add(currentPaper);
-                    clickableObjects.Add(currentPaper);
+                    drawableObjects.Add(currentHomework);
+                    clickableObjects.Add(currentHomework);
                 }
-                activeObject = currentPaper;
+                activeObject = currentHomework;
             }
 
             //puts the selected object at the front
-            if (activeObject != null && (activeObject == currentPaper || activeObject  == cheater || activeObject == pen))
+            if (activeObject != null && (activeObject == currentHomework || activeObject  == cheater || activeObject == pen))
             {
                 drawableObjects.Remove(activeObject);
                 clickableObjects.Remove(activeObject);
@@ -203,24 +203,26 @@ namespace tbfyoyl.TAGame
         {
             if (activeObject != null)
             {
-                if (activeObject == currentPaper)
+                if (activeObject == currentHomework)
                 {
                     if (graded.Contains(pos))
                     {
 
                         //destroy old paper
-                        drawableObjects.Remove(currentPaper);
-                        clickableObjects.Remove(currentPaper);
-                        graded.addPaper(currentPaper);
+                        drawableObjects.Remove(currentHomework);
+                        clickableObjects.Remove(currentHomework);
+                        graded.addHomework(currentHomework);
 
-                        if (ungraded.numPapers() == 0)
+                        if (ungraded.numHomeworks() == 0)
                         {
                             game.ActiveGame = "TARESULTS";
                             return base.ClickUp(pos);
                         }
-                        currentScore += currentPaper.GetScore();
+                        currentScore += currentHomework.GetScore();
 
-                        currentPaper = null;
+                        currentHomework.ClickUp(pos);
+
+                        currentHomework = null;
                         activeObject = null;
 
                         //zoom in
@@ -233,11 +235,11 @@ namespace tbfyoyl.TAGame
                         if (ungraded.Contains(pos))
                         {
                             //destroy old paper
-                            currentScore -= currentPaper.GetScore();
-                            drawableObjects.Remove(currentPaper);
-                            clickableObjects.Remove(currentPaper);
-                            ungraded.addPaper(currentPaper);
-                            currentPaper = null;
+                            currentScore -= currentHomework.GetScore();
+                            drawableObjects.Remove(currentHomework);
+                            clickableObjects.Remove(currentHomework);
+                            ungraded.addHomework(currentHomework);
+                            currentHomework = null;
                             activeObject = null;
                         }
                     }

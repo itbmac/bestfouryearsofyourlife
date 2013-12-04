@@ -29,22 +29,21 @@ namespace tbfyoyl.TAGame
         public Paper generatePaper(double threshold)
         {
             Answer[] ret = new Answer[positions.Length];
-            Vector2[] newPositions = new Vector2[positions.Length];
-            System.Array.Copy(positions, newPositions, positions.Length);
+            Rectangle[] newLocations = new Rectangle[textureLocations.Length];
+            Array.Copy(textureLocations, newLocations, textureLocations.Length);
 
-            int numSwaps = (int)Math.Round(positions.Length * threshold);
+            int numSwaps = (int)Math.Round(textureLocations.Length * threshold);
             for (int i = 0; i < numSwaps; i++)
             {
                 int x = MediaManager.GetRandomInt(0, positions.Length);
                 int y = MediaManager.GetRandomInt(0, positions.Length);
-                Vector2 tmp = newPositions[x];
-                newPositions[x] = newPositions[y];
-                newPositions[y] = tmp;
+                newLocations[x] = textureLocations[y];
             }
 
             for (int i = 0; i < positions.Length; i++)
             {
-                ret[i] = new Answer(answerTexture, incorrectOverlay, newPositions[i], textureLocations[i], positions[i] == newPositions[i], false);
+                ret[i] = new Answer(answerTexture, incorrectOverlay, positions[i], newLocations[i],
+                    textureLocations[i] == newLocations[i], false);
             }
 
             return new Paper(baseTexture, new Vector2(0, 0), ret);
