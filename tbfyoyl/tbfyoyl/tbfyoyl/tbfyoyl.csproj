@@ -115,10 +115,29 @@
     <Compile Include="Framework\GameObject.cs" />
     <Compile Include="TAGame\DummyPaper.cs" />
     <Compile Include="TAGame\Homework.cs" />
-    <Compile Include="TAGame\ProblemSet\GeographySet5.cs" />
-    <Compile Include="TAGame\ProblemSet\GeographySet4.cs" />
-    <Compile Include="TAGame\ProblemSet\GeographySet3.cs" />
-    <Compile Include="TAGame\ProblemSet\GeographySet2.cs" />
+    <Compile Include="TAGame\ProblemSet\Chemistry\ChemistrySet19.cs" />
+    <Compile Include="TAGame\ProblemSet\Chemistry\ChemistrySet18.cs" />
+    <Compile Include="TAGame\ProblemSet\Chemistry\ChemistrySet17.cs" />
+    <Compile Include="TAGame\ProblemSet\Chemistry\ChemistrySet16.cs" />
+    <Compile Include="TAGame\ProblemSet\Chemistry\ChemistrySet15.cs" />
+    <Compile Include="TAGame\ProblemSet\Chemistry\ChemistrySet14.cs" />
+    <Compile Include="TAGame\ProblemSet\Chemistry\ChemistrySet13.cs" />
+    <Compile Include="TAGame\ProblemSet\Chemistry\ChemistrySet12.cs" />
+    <Compile Include="TAGame\ProblemSet\Chemistry\ChemistrySet11.cs" />
+    <Compile Include="TAGame\ProblemSet\Chemistry\ChemistrySet10.cs" />
+    <Compile Include="TAGame\ProblemSet\Chemistry\ChemistrySet2.cs" />
+    <Compile Include="TAGame\ProblemSet\Chemistry\ChemistrySet3.cs" />
+    <Compile Include="TAGame\ProblemSet\Chemistry\ChemistrySet4.cs" />
+    <Compile Include="TAGame\ProblemSet\Chemistry\ChemistrySet5.cs" />
+    <Compile Include="TAGame\ProblemSet\Chemistry\ChemistrySet6.cs" />
+    <Compile Include="TAGame\ProblemSet\Chemistry\ChemistrySet7.cs" />
+    <Compile Include="TAGame\ProblemSet\Chemistry\ChemistrySet8.cs" />
+    <Compile Include="TAGame\ProblemSet\Chemistry\ChemistrySet9.cs" />
+    <Compile Include="TAGame\ProblemSet\Chemistry\ChemistrySet1.cs" />
+    <Compile Include="TAGame\ProblemSet\Geography\GeographySet5.cs" />
+    <Compile Include="TAGame\ProblemSet\Geography\GeographySet4.cs" />
+    <Compile Include="TAGame\ProblemSet\Geography\GeographySet3.cs" />
+    <Compile Include="TAGame\ProblemSet\Geography\GeographySet2.cs" />
     <Compile Include="TAGame\ProblemSet\HomeworkSet.cs" />
     <Compile Include="TAGame\TAResults.cs" />
     <Compile Include="TAGame\GradingStamp.cs" />
@@ -132,7 +151,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="MainGame.cs" />
     <Compile Include="SplashScreen\SplashScreen.cs" />
-    <Compile Include="TAGame\ProblemSet\GeographySet1.cs" />
+    <Compile Include="TAGame\ProblemSet\Geography\GeographySet1.cs" />
     <Compile Include="TAGame\ProblemSet\ProblemSet.cs" />
     <Compile Include="TAGame\Score.cs" />
     <Compile Include="TAGame\TAGame.cs" />
@@ -199,6 +218,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />
   <!--

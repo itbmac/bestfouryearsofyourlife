@@ -29,6 +29,16 @@ namespace tbfyoyl.TAGame
                 new Vector2 (273,119),
             };
 
+
+            possibleLocations = new Rectangle[50];
+            for (int i = 0; i < 5; i++)
+            {
+                for (int j = 0; j < 10; j++)
+                {
+                    possibleLocations[i * 10 + j] = new Rectangle(i * MediaManager.spacingwidth, j * MediaManager.spacingheight,
+                        MediaManager.flagwidth, MediaManager.flagheight);
+                }
+            }
             //177x122
             //153x98
             textureLocations = new Rectangle[] {

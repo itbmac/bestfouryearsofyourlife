@@ -30,6 +30,8 @@ namespace tbfyoyl
         public static int flagheight = 73;
         public static int spacingwidth = 133;
         public static int spacingheight = 92;
+        public static int chemAnswerHeight = 30;
+        public static int chemAnswerWidth = 30;
 
         private static SpriteFont smallFont;
         private static SpriteFont mediumFont;
@@ -87,6 +89,8 @@ namespace tbfyoyl
             textures.Add("flag incorrect", content.Load<Texture2D>("content/BLAH"));
             textures.Add("next button", content.Load<Texture2D>("content/BLAH"));
             textures.Add("prev button", content.Load<Texture2D>("content/BLAH"));
+            textures.Add("chem answers", content.Load<Texture2D>("content/ABCDE"));
+            textures.Add("chem incorrect", content.Load<Texture2D>("content/BLAH"));
 
             // BOOKSTORE GAME'S ASSETS
             textures.Add("books", content.Load<Texture2D>("content/books"));

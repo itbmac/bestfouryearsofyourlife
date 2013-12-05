@@ -23,8 +23,8 @@ namespace tbfyoyl.TAGame
 
         public Homework GenerateHomework(float threshold)
         {
-            GameObject nextButton = new TextureObject(MediaManager.textures["next button"], new Vector2(0, 600));
-            GameObject prevButton = new TextureObject(MediaManager.textures["prev button"], new Vector2(600, 600));
+            GameObject nextButton = new TextureObject(MediaManager.textures["next button"], new Vector2(0, 650));
+            GameObject prevButton = new TextureObject(MediaManager.textures["prev button"], new Vector2(600, 650));
 
             Paper[] papers = new Paper[problems.Length];
             for (int i = 0; i < problems.Length; i++)

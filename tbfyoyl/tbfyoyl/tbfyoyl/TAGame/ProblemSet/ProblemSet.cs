@@ -20,6 +20,7 @@ namespace tbfyoyl.TAGame
 
         protected Vector2[] positions;
         protected Rectangle[] textureLocations;
+        protected Rectangle[] possibleLocations;
         protected Texture2D baseTexture;
         protected Texture2D answerTexture;
         protected Texture2D incorrectOverlay;
@@ -36,8 +37,8 @@ namespace tbfyoyl.TAGame
             for (int i = 0; i < numSwaps; i++)
             {
                 int x = MediaManager.GetRandomInt(0, positions.Length);
-                int y = MediaManager.GetRandomInt(0, positions.Length);
-                newLocations[x] = textureLocations[y];
+                int y = MediaManager.GetRandomInt(0, possibleLocations.Length);
+                newLocations[x] = possibleLocations[y];
             }
 
             for (int i = 0; i < positions.Length; i++)
