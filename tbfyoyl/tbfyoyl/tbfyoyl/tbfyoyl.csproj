@@ -75,6 +75,7 @@
     <Compile Include="BookstoreGame\BSObject.cs" />
     <Compile Include="BookstoreGame\Cart.cs" />
     <Compile Include="Camera\Camera2d.cs" />
+    <Compile Include="Framework\AnimatedObject.cs" />
     <Compile Include="Framework\TextureSheetObject.cs" />
     <Compile Include="Framework\TextObject.cs" />
     <Compile Include="Framework\DraggableObject.cs" />

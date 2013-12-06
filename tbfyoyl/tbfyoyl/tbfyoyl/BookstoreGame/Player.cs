@@ -116,7 +116,7 @@ namespace tbfyoyl
         /// Allows the game component to update itself.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
-        public void Update(GameTime gameTime)
+        public override void Update(GameTime gameTime)
         {
             // TODO: Add your update code here
             if (Math.Abs(skeleton.X - targetX) > 10)

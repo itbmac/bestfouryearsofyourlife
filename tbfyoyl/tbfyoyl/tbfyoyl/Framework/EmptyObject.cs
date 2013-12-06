@@ -40,6 +40,7 @@ namespace tbfyoyl
         public void ClickUp(Vector2 pos) { }
         public void Drag(Vector2 start, Vector2 end) { }
         public bool Contains(Vector2 pos) { return false; }
+        public void Update(GameTime gameTime) { }
 
     }
 }

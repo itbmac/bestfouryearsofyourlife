@@ -23,7 +23,7 @@ namespace tbfyoyl
         private Boolean shouldDraw;
 
         // The texture this object should display as
-        private Texture2D texture;
+        protected Texture2D texture;
 
         // The absolute position of this object
         private Vector2 position;
@@ -64,6 +64,10 @@ namespace tbfyoyl
             {
                 position = new Vector2(value.X, value.Y);
             }
+        }
+
+        public virtual void Update(GameTime gameTime)
+        {
         }
 
     }

@@ -66,5 +66,9 @@ namespace tbfyoyl
             }
         }
 
+        public virtual void Update(GameTime gameTime)
+        {
+        }
+
     }
 }

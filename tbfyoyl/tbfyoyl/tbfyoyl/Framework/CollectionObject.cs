@@ -73,5 +73,8 @@ namespace tbfyoyl.Framework
         {
             return true;
         }
+        public void Update(GameTime gameTime)
+        {
+        }
     }
 }

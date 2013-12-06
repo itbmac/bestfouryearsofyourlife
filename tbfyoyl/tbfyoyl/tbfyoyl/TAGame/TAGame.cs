@@ -94,6 +94,15 @@ namespace tbfyoyl.TAGame
             currentScore = new Score();
             totalScore = new Score();
 
+            //create flashing party
+            Texture2D[] animation = new Texture2D[37];
+            for (int i = 0; i < 37; i++)
+            {
+                animation[i] = MediaManager.content.Load<Texture2D>(String.Format("content/partay/implied_partay0_{0:00000}", i));
+            }
+            AnimatedObject party = new AnimatedObject(animation, new Vector2(0, 0), 24);
+            drawableObjects.Add(party);
+
             drawableObjects.Add(ungraded);
             drawableObjects.Add(graded);
             drawableObjects.Add(pen);
@@ -101,6 +110,8 @@ namespace tbfyoyl.TAGame
             clickableObjects.Add(ungraded);
             clickableObjects.Add(graded);
             clickableObjects.Add(pen);
+
+            updateableObjects.Add(party);
 
         }
 
@@ -289,7 +300,7 @@ namespace tbfyoyl.TAGame
         {
             MediaManager.DrawArt(spriteBatch, "Content/table_clear", 0, 0);
             MediaManager.DrawArt(spriteBatch, "Content/books_pen", 0, 0);
-            MediaManager.DrawArt(spriteBatch, "Content/implied_partay", 0, 0);
+            //MediaManager.DrawArt(spriteBatch, "Content/implied_partay", 0, 0);
             MediaManager.DrawArt(spriteBatch, "Content/math", 0, 0);
             MediaManager.DrawArt(spriteBatch, "Content/lamp", 525, -150);
             base.Draw(spriteBatch);

@@ -96,6 +96,7 @@ namespace tbfyoyl
             textures.Add("books", content.Load<Texture2D>("content/books"));
             textures.Add("cart", content.Load<Texture2D>("content/shopping_cart_200"));
             textures.Add("cart_h", content.Load<Texture2D>("content/shopping_cart_200_h"));
+            textures.Add("a", content.Load<Texture2D>("content/partay/implied_partay0_00000"));
 
 
             /*

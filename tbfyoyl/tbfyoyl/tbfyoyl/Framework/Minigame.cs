@@ -24,6 +24,7 @@ namespace tbfyoyl
         protected GameObject activeObject; //the object that was first selected when clicking
         protected List<GameObject> clickableObjects; //all objects in the game that are clickable
         protected List<GameObject> drawableObjects; //all objects in the game that should be drawn
+        protected List<GameObject> updateableObjects;
 
         public Minigame(MainGame m_game)
             : base(m_game)
@@ -32,6 +33,7 @@ namespace tbfyoyl
             activeObject = null;
             clickableObjects = new List<GameObject>();
             drawableObjects = new List<GameObject>();
+            updateableObjects = new List<GameObject>();
         }
 
         /// <summary>
@@ -56,6 +58,10 @@ namespace tbfyoyl
         public override void Update(GameTime gameTime)
         {
             // TODO: Add your update code here
+            foreach (GameObject o in updateableObjects)
+            {
+                o.Update(gameTime);
+            }
             base.Update(gameTime);
         }
 
