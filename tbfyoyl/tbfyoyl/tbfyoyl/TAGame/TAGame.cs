@@ -64,16 +64,26 @@ namespace tbfyoyl.TAGame
         {
 
             homeworks = new Queue<HomeworkSet>();
-            homeworks.Enqueue(new HomeworkSet(new ProblemSet[] { new ChemistrySet19(), new ChemistrySet18(), new ChemistrySet17(), new ChemistrySet16() }));
-            homeworks.Enqueue(new HomeworkSet(new ProblemSet[] { new ChemistrySet15(), new ChemistrySet14(), new ChemistrySet13(), new ChemistrySet12() }));
-            homeworks.Enqueue(new HomeworkSet(new ProblemSet[] { new ChemistrySet11(), new ChemistrySet10(), new ChemistrySet9(), new ChemistrySet8() }));
-            homeworks.Enqueue(new HomeworkSet(new ProblemSet[] { new ChemistrySet7(), new ChemistrySet6(), new ChemistrySet5(), new ChemistrySet4() }));
-            homeworks.Enqueue(new HomeworkSet(new ProblemSet[] { new ChemistrySet3(), new ChemistrySet2(), new ChemistrySet1() }));
-            homeworks.Enqueue(new HomeworkSet(new ProblemSet[] { new GeographySet1() }));
-            homeworks.Enqueue(new HomeworkSet(new ProblemSet[] { new GeographySet2() }));
-            homeworks.Enqueue(new HomeworkSet(new ProblemSet[] { new GeographySet3() }));
-            homeworks.Enqueue(new HomeworkSet(new ProblemSet[] { new GeographySet4() }));
-            homeworks.Enqueue(new HomeworkSet(new ProblemSet[] { new GeographySet5() }));
+            homeworks.Enqueue(new HomeworkSet(new ProblemSet[] { new GeographySet1() }
+                , MediaManager.textures["geo results"]));
+            homeworks.Enqueue(new HomeworkSet(new ProblemSet[] { new ChemistrySet3(), new ChemistrySet2(), new ChemistrySet1() }
+                , MediaManager.textures["chem results"]));
+            homeworks.Enqueue(new HomeworkSet(new ProblemSet[] { new GeographySet2() }
+                , MediaManager.textures["geo results"]));
+            homeworks.Enqueue(new HomeworkSet(new ProblemSet[] { new ChemistrySet7(), new ChemistrySet6(), new ChemistrySet5(), new ChemistrySet4() }
+                , MediaManager.textures["chem results"]));
+            homeworks.Enqueue(new HomeworkSet(new ProblemSet[] { new GeographySet3() }
+                , MediaManager.textures["geo results"]));
+            homeworks.Enqueue(new HomeworkSet(new ProblemSet[] { new ChemistrySet11(), new ChemistrySet10(), new ChemistrySet9(), new ChemistrySet8() }
+                , MediaManager.textures["geo results"]));
+            homeworks.Enqueue(new HomeworkSet(new ProblemSet[] { new GeographySet4() }
+                , MediaManager.textures["chem results"]));
+            homeworks.Enqueue(new HomeworkSet(new ProblemSet[] { new ChemistrySet15(), new ChemistrySet14(), new ChemistrySet13(), new ChemistrySet12() }
+                , MediaManager.textures["geo results"]));
+            homeworks.Enqueue(new HomeworkSet(new ProblemSet[] { new GeographySet5() }
+                , MediaManager.textures["chem results"]));
+            homeworks.Enqueue(new HomeworkSet(new ProblemSet[] { new ChemistrySet19(), new ChemistrySet18(), new ChemistrySet17(), new ChemistrySet16() }
+                , MediaManager.textures["geo results"]));
             numPapers = -1;
 
             //create camera views
@@ -120,7 +130,12 @@ namespace tbfyoyl.TAGame
         /// to run.  This is where it can query for any required services and load content.
         /// </summary>
         public override void Initialize()
-        {            
+        {
+
+
+            //MediaManager.emilia.Stop();
+            //MediaManager.dark_beat.Play();
+
             MediaManager.cam = zoomedOut;
             //only resets the game if we finished all the previous papers
             if(graded.numHomeworks() == (numPapers+1))
@@ -135,7 +150,8 @@ namespace tbfyoyl.TAGame
                 graded.clear();
                 currentScore.zero();
 
-                ungraded.addHomework(new Homework(EmptyObject.Instance, EmptyObject.Instance, new Paper[] { new DummyPaper() }));
+                ungraded.addHomework(new Homework(EmptyObject.Instance, EmptyObject.Instance, 
+                    new Paper[] { new Paper(MediaManager.textures["hw done"], new Vector2(0, 0), new Answer[] {new Answer()}) }));
 
                 //TODO: reincorporate UI
 
@@ -143,17 +159,17 @@ namespace tbfyoyl.TAGame
                 if (homeworks.Count != 0)
                 {
                     HomeworkSet problemSet = homeworks.Dequeue();
-                    //numPapers += 2;
-                    if (numPapers > 20)
-                    {
-                        numPapers = 20;
-                    }
+                    MediaManager.textures["results sheet"] = problemSet.Results;
                     numPapers = 1;
                     for (int i = 0; i < numPapers; i++)
                     {
                         Homework h = problemSet.GenerateHomework(MediaManager.GetRandomFloat(0, 0.4));
                         ungraded.addHomework(h);
                     }
+                }
+                else
+                {
+                    game.ActiveGame = "SPLASHSCREEN";
                 }
             }
             
@@ -253,7 +269,6 @@ namespace tbfyoyl.TAGame
                         if (ungraded.Contains(pos))
                         {
                             //destroy old paper
-                            currentScore -= currentHomework.GetScore();
                             drawableObjects.Remove(currentHomework);
                             clickableObjects.Remove(currentHomework);
                             ungraded.addHomework(currentHomework);

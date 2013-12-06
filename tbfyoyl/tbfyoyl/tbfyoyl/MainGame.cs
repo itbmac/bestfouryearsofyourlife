@@ -89,6 +89,13 @@ namespace tbfyoyl
 
             TAGame.TAGame tagame = new TAGame.TAGame(this);
 
+            Restart();
+            ActiveGame = "SPLASHSCREEN";
+        }
+
+        public void Restart()
+        {
+            TAGame.TAGame tagame = new TAGame.TAGame(this);
             games = new Dictionary<String, Minigame>()
             {
                 {"UI", new UI(this)},
@@ -98,7 +105,6 @@ namespace tbfyoyl
                 {"SPLASHSCREEN", new SplashScreen(this)},
                 {"TARESULTS", new TAGame.TAResults(this, tagame)},
             };
-            ActiveGame = "SPLASHSCREEN";
         }
 
         /// <summary>
@@ -127,8 +133,15 @@ namespace tbfyoyl
         protected override void Update(GameTime gameTime)
         {
             // Allows the game to exit
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
+            if (Keyboard.GetState().IsKeyDown(Keys.Q))
                 this.Exit();
+            // Allows the game to exit
+            if (Keyboard.GetState().IsKeyDown(Keys.R))
+            {
+                Restart();
+                ActiveGame = "SPLASHSCREEN";
+                return;
+            }
 
             MouseState curMouseState = Mouse.GetState();
 

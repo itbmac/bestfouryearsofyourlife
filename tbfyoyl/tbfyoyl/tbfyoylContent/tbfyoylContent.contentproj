@@ -202,11 +202,6 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="lamp_light.png">
-      <Name>lamp_light</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="math.png">
       <Name>math</Name>
       <Importer>TextureImporter</Importer>
@@ -552,6 +547,158 @@
     </Compile>
     <Compile Include="partay\implied_partay0_00036.png">
       <Name>implied_partay0_00036</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="crossout_2.png">
+      <Name>crossout_2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="main_pen_red.png">
+      <Name>main_pen_red</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="splash_screen_paper.png">
+      <Name>splash_screen_paper</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="hw_set_completion_paper.png">
+      <Name>hw_set_completion_paper</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="hw_stats_paper_us_geo.png">
+      <Name>hw_stats_paper_us_geo</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="lamp_light.png">
+      <Name>lamp_light</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="latex_font.spritefont">
+      <SubType>Designer</SubType>
+      <Name>latex_font</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="hw_stats_paper_chem.png">
+      <Name>hw_stats_paper_chem</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Chemistry\hw_chemistry_hw1.png">
+      <Name>hw_chemistry_hw1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Chemistry\hw_chemistry_hw10.png">
+      <Name>hw_chemistry_hw10</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Chemistry\hw_chemistry_hw11.png">
+      <Name>hw_chemistry_hw11</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Chemistry\hw_chemistry_hw12.png">
+      <Name>hw_chemistry_hw12</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Chemistry\hw_chemistry_hw13.png">
+      <Name>hw_chemistry_hw13</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Chemistry\hw_chemistry_hw14.png">
+      <Name>hw_chemistry_hw14</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Chemistry\hw_chemistry_hw15.png">
+      <Name>hw_chemistry_hw15</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Chemistry\hw_chemistry_hw16.png">
+      <Name>hw_chemistry_hw16</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Chemistry\hw_chemistry_hw17.png">
+      <Name>hw_chemistry_hw17</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Chemistry\hw_chemistry_hw18.png">
+      <Name>hw_chemistry_hw18</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Chemistry\hw_chemistry_hw19.png">
+      <Name>hw_chemistry_hw19</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Chemistry\hw_chemistry_hw2.png">
+      <Name>hw_chemistry_hw2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Chemistry\hw_chemistry_hw3.png">
+      <Name>hw_chemistry_hw3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Chemistry\hw_chemistry_hw4.png">
+      <Name>hw_chemistry_hw4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Chemistry\hw_chemistry_hw5.png">
+      <Name>hw_chemistry_hw5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Chemistry\hw_chemistry_hw6.png">
+      <Name>hw_chemistry_hw6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Chemistry\hw_chemistry_hw7.png">
+      <Name>hw_chemistry_hw7</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Chemistry\hw_chemistry_hw8.png">
+      <Name>hw_chemistry_hw8</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Chemistry\hw_chemistry_hw9.png">
+      <Name>hw_chemistry_hw9</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

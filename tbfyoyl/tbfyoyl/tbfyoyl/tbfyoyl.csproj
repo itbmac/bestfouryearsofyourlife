@@ -114,7 +114,6 @@
     <Compile Include="Framework\DecoratorObject.cs" />
     <Compile Include="Framework\TextureObject.cs" />
     <Compile Include="Framework\GameObject.cs" />
-    <Compile Include="TAGame\DummyPaper.cs" />
     <Compile Include="TAGame\Homework.cs" />
     <Compile Include="TAGame\ProblemSet\Chemistry\ChemistrySet19.cs" />
     <Compile Include="TAGame\ProblemSet\Chemistry\ChemistrySet18.cs" />

@@ -13,12 +13,14 @@ namespace tbfyoyl.TAGame
 {
     class HomeworkSet
     {
-        ProblemSet[] problems;
+        private ProblemSet[] problems;
+        public Texture2D Results;
 
         //shallow copy, be careful
-        public HomeworkSet(ProblemSet[] set)
+        public HomeworkSet(ProblemSet[] set, Texture2D resultSheet)
         {
             problems = set;
+            Results = resultSheet;
         }
 
         public Homework GenerateHomework(float threshold)

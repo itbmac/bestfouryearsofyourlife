@@ -56,7 +56,7 @@ namespace tbfyoyl.TAGame
             }
             else if (!isMarkedCorrect)
             {
-                spriteBatch.Draw(incorrectOverlay, Position, Color.White);
+                spriteBatch.Draw(incorrectOverlay, Position - new Vector2(5, 5), Color.White);
             }
         }
 

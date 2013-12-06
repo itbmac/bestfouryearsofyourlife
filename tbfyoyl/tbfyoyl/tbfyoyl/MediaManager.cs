@@ -25,6 +25,9 @@ namespace tbfyoyl
         private static ArrayList arrayArt = new ArrayList();
         private static ArrayList arraySound = new ArrayList();
 
+        public static SoundEffectInstance emilia;
+        public static SoundEffectInstance dark_beat;
+
 
         public static int flagwidth = 115;
         public static int flagheight = 73;
@@ -38,6 +41,8 @@ namespace tbfyoyl
         public static SpriteFont mediumFont2;
         public static SpriteFont mediumFont3;
         private static SpriteFont bigFont;
+
+        public static SpriteFont latexFont;
 
         //public static Answer[][][] allAnswers;
         //public static Answer nullAnswer;
@@ -65,7 +70,10 @@ namespace tbfyoyl
             content = new ContentManager(Services);
             gd = g.GraphicsDevice;
             textures = new Dictionary<string, Texture2D>();
-            
+
+            emilia = (content.Load<SoundEffect>("Content/emilia")).CreateInstance();
+            dark_beat = (content.Load<SoundEffect>("Content/dark_beat")).CreateInstance();
+
             // UI'S ASSETS
             textures.Add("BLAH", content.Load<Texture2D>("content/BLAH"));
             textures.Add("MENU_TOP", content.Load<Texture2D>("content/UI_Top_150p"));
@@ -75,7 +83,7 @@ namespace tbfyoyl
             // TA GAME'S ASSETS
             textures.Add("paper", content.Load<Texture2D>("content/main_paper"));
             textures.Add("answer", content.Load<Texture2D>("content/BLAH"));
-            textures.Add("pen_incorrect", content.Load<Texture2D>("content/main_pen"));
+            textures.Add("pen_incorrect", content.Load<Texture2D>("content/main_pen_red"));
             textures.Add("pen_cheater", content.Load<Texture2D>("content/main_pen"));
             Texture2D empty = new Texture2D(g.GraphicsDevice, 400, 250);
             Color[] empty_color = new Color[400 * 250];
@@ -86,11 +94,15 @@ namespace tbfyoyl
             textures.Add("graded stack", empty);
             textures.Add("ungraded stack", content.Load<Texture2D>("content/hw_stack"));
             textures.Add("state flags", content.Load<Texture2D>("content/state_flags_small"));
-            textures.Add("flag incorrect", content.Load<Texture2D>("content/BLAH"));
+            textures.Add("flag incorrect", content.Load<Texture2D>("content/crossout_2"));
             textures.Add("next button", content.Load<Texture2D>("content/BLAH"));
             textures.Add("prev button", content.Load<Texture2D>("content/BLAH"));
             textures.Add("chem answers", content.Load<Texture2D>("content/ABCDE"));
-            textures.Add("chem incorrect", content.Load<Texture2D>("content/BLAH"));
+            textures.Add("chem incorrect", content.Load<Texture2D>("content/crossout_2"));
+            textures.Add("hw done", content.Load<Texture2D>("content/hw_set_completion_paper"));
+            textures.Add("geo results", content.Load<Texture2D>("content/hw_stats_paper_us_geo"));
+            textures.Add("chem results", content.Load<Texture2D>("content/hw_stats_paper_chem"));
+            textures.Add("math results", content.Load<Texture2D>("content/hw_stats_paper_us_geo"));
 
             // BOOKSTORE GAME'S ASSETS
             textures.Add("books", content.Load<Texture2D>("content/books"));
@@ -137,6 +149,8 @@ namespace tbfyoyl
                 }
             };
              */
+
+            latexFont = content.Load<SpriteFont>("Content/latex_font");
 
             isAdvanced = advancedFlag;
             if (advancedFlag)

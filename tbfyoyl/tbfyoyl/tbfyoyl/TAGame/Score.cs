@@ -50,7 +50,7 @@ namespace tbfyoyl.TAGame
 
         public override string ToString()
         {
-            return "num questions = " + NumQuestions + ", num mistakes = " + NumGradingMistakes;
+            return "You Caught " + (NumQuestions - NumGradingMistakes) + " / " + NumQuestions + " mistakes";
         }
 
     }

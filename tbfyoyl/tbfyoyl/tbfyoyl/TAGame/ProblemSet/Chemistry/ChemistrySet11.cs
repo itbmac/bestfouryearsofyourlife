@@ -35,7 +35,7 @@ namespace tbfyoyl.TAGame
                 new Rectangle(0, 4*MediaManager.chemAnswerHeight, MediaManager.chemAnswerWidth, MediaManager.chemAnswerHeight),
             };
 
-            baseTexture = MediaManager.content.Load<Texture2D>("content/hw_chemistry_hw11");
+            baseTexture = MediaManager.content.Load<Texture2D>("content/Chemistry/hw_chemistry_hw11");
             answerTexture = MediaManager.textures["chem answers"];
             incorrectOverlay = MediaManager.textures["chem incorrect"];
 

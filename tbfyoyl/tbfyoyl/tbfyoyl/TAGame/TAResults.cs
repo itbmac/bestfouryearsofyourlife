@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
@@ -20,13 +19,14 @@ namespace tbfyoyl.TAGame
          */
         private ClickableObject[] menuItems;
         private TAGame tagame;
+        private Texture2D resultsSheet;
 
         public TAResults(MainGame game, TAGame ta)
             : base(game)
         {
 
             tagame = ta;
-            menuItems = new ClickableObject[2];
+            menuItems = new ClickableObject[0];/*
             menuItems[0] = new ClickableObject(new TextObject("CONTINUE", new Vector2(800, 850)),
                 delegate()
                 {
@@ -36,7 +36,7 @@ namespace tbfyoyl.TAGame
                 delegate()
                 {
                     game.Exit();
-                });
+                });*/
         }
 
         /// <summary>
@@ -49,6 +49,7 @@ namespace tbfyoyl.TAGame
             MediaManager.cam = new Camera2d();
             MediaManager.cam.Zoom = 0.533333333f; // = 1200/2250
             MediaManager.cam.Pos = new Vector2(1125, 750);
+            resultsSheet = MediaManager.textures["results sheet"];
             base.Initialize();
 
         }
@@ -64,6 +65,12 @@ namespace tbfyoyl.TAGame
                 }
             }
             return base.ClickDown(pos);
+        }
+
+        public override bool ClickUp(Vector2 pos)
+        {
+            game.ActiveGame = "TAGAME";
+            return false;
         }
 
         /// <summary>
@@ -82,14 +89,13 @@ namespace tbfyoyl.TAGame
             MediaManager.DrawArt(spriteBatch, "Content/implied_partay", 0, 0);
             MediaManager.DrawArt(spriteBatch, "Content/math", 0, 0);
             MediaManager.DrawArt(spriteBatch, "Content/lamp", 525, -150);
-            MediaManager.DrawArt(spriteBatch, "Content/main_paper", 750, 600);
+            spriteBatch.Draw(resultsSheet, new Vector2(750, 600), Color.White);
 
 
-            MediaManager.DrawText(spriteBatch, "test", 750, 600, Color.Black);
             MediaManager.DrawText(spriteBatch, tagame.CurrentScore.ToString(),
-                800, 650, Color.Black);
+                900, 820, Color.Black);
             MediaManager.DrawText(spriteBatch, tagame.TotalScore.ToString(),
-                800, 700, Color.Black);
+                900, 1104, Color.Black);
 
             foreach (ClickableObject o in menuItems)
             {
